@@ -52,7 +52,7 @@ const footerNavItems: NavItem[] = [
 
 const socialItems: NavItem[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/sd-standard" },
-  { label: "Instagram", href: "https://www.instagram.com/sdstandard" },
+  { label: "Instagram", href: "https://www.instagram.com/sdstandard_org" },
   { label: "GitHub", href: "https://github.com/alexquintoc/sd-standard" },
   { label: "Bluesky", href: "https://bsky.app/profile/sdstandard.bsky.social" },
 ];

@@ -33,7 +33,7 @@ export default function Projects() {
           </p>
         </header>
 
-        <section className="public-passport-entry" aria-label="Project Passports"><p className="public-eyebrow">Project Passport · In development</p><h2>SD Standard × Abierto de Diseño</h2><p>An installation presenting the framework as a communication tool and a material experiment.</p><p className="public-count">Exhibition installation · Mexico City · September 25 – October 4, 2026</p><Link className="public-link" href="/projects/abierto">View Project Passport →</Link></section><h2 className="public-gallery-heading">Project case studies</h2>
+        <section className="public-passport-entry" aria-label="Project Passports" id="projects"><p className="public-eyebrow">Project Passport · In development</p><h2>SD Standard × Abierto de Diseño</h2><p>An installation presenting the framework as a communication tool and a material experiment.</p><p className="public-count">Exhibition installation · Mexico City · September 25 – October 4, 2026</p><Link className="public-link" href="/projects/abierto">View Project Passport →</Link></section><h2 className="public-gallery-heading" id="case-studies">Project case studies</h2>
         <aside className="mb-8 rounded-lg border border-[#d9d4c8] bg-[#e5efe9] p-6 text-[#1f241f]">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>

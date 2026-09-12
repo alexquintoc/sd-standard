@@ -177,7 +177,7 @@ function writeIndexPage() {
         <p class="subtitle">Tools and resources for applying sustainable design criteria to communication design projects.</p>
       </section>
       <section class="resource-grid" aria-label="SD Standard resources">
-        <a class="resource-card" href="/knowledge-base/">
+        <a class="resource-card" href="/knowledge-base/" target="_blank" rel="noopener noreferrer">
           <span>
             <span class="resource-card__accent"></span>
             <h2>Knowledge Base</h2>
