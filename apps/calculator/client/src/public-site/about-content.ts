@@ -74,7 +74,7 @@ export const currentTools = [
   { title: "Self-assessment Impact Calculator", href: "/calculator" },
   { title: "Impact Snapshot / Quick Project Scan tool", href: "/impact-snapshot" },
   { title: "Knowledge Base", href: "/knowledge-base" },
-  { title: "Footprints", href: "/footprints" },
+  { title: "References", href: "/references" },
 ];
 
 export const roadmap = [

@@ -19,7 +19,7 @@ import About from "@/pages/About";
 import BaselineDetail from "@/pages/BaselineDetail";
 import Baselines from "@/pages/Baselines";
 const BriefGenerator = lazy(() => import("@/pages/BriefGenerator"));
-import Footprints from "@/pages/Footprints";
+import References from "@/pages/Footprints";
 const Home = lazy(() => import("@/pages/Home"));
 import Index from "@/pages/Index";
 import ProjectDetail from "@/pages/ProjectDetail";
@@ -67,8 +67,10 @@ function Router() {
       <Route path="/brief-generator/" component={BriefGenerator} />
       <Route path="/calculator" component={Home} />
       <Route path="/calculator/" component={Home} />
-      <Route path="/footprints" component={Footprints} />
-      <Route path="/footprints/" component={Footprints} />
+      <Route path="/references" component={References} />
+      <Route path="/references/" component={References} />
+      <Route path="/footprints">{() => <Redirect to="/references" />}</Route>
+      <Route path="/footprints/">{() => <Redirect to="/references" />}</Route>
       <Route path="/impact-snapshot" component={QuickProjectScan} />
       <Route path="/impact-snapshot/" component={QuickProjectScan} />
       <Route path="/impact-snapshot/embed" component={QuickProjectScanEmbed} />

@@ -3,6 +3,8 @@
 /quick-project-scan/* /impact-snapshot/:splat 301
 /project-scan /impact-snapshot 301
 /project-scan/* /impact-snapshot/:splat 301
+/footprints /references 301
+/footprints/* /references/:splat 301
 # Printed Brief Generator QR aliases: keep paths stable and redirects temporary.
 /b/e /brief-generator?pillar=environment&lang=es 302
 /b/e/ /brief-generator?pillar=environment&lang=es 302

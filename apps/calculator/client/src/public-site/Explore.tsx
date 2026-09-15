@@ -3,6 +3,7 @@ import { PageIntro, PageMeta } from "./PageIntro";
 import { pillars } from "./content";
 import { projectTypes } from "./project-types";
 import { DesignQuestions } from "./DesignQuestions";
+import { ToolsAndResources } from "./ToolsAndResources";
 
 export default function Explore() {
   return <main className="public-page">
@@ -22,10 +23,6 @@ export default function Explore() {
       <div className="public-actions">{pillars.map(pillar => <Link className="public-link" key={pillar.colorKey} href={`/explore/criteria?pillar=${pillar.colorKey}`}>{pillar.title} →</Link>)}</div>
     </section>
     <DesignQuestions />
-    <section className="public-section" id="tools-and-resources">
-      <h2>Explore tools and resources</h2>
-      <p>Review reference footprints and baseline studies, scan project opportunities, or evaluate your work.</p>
-      <div className="public-actions"><Link className="public-link" href="/footprints">Footprints →</Link><Link className="public-link" href="/baselines">Baseline studies →</Link><Link className="public-link" href="/impact-snapshot">Impact Snapshot →</Link><Link className="public-link" href="/calculator">Evaluate →</Link></div>
-    </section>
+    <ToolsAndResources />
   </main>;
 }

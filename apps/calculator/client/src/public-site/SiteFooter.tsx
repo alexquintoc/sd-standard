@@ -9,7 +9,7 @@ const socialItems = [
 ];
 
 const utilityItems = [
-  { label: "Footprints", href: "/footprints" },
+  { label: "References", href: "/references" },
   { label: "Baselines", href: "/baselines" },
   { label: "Impact Snapshot", href: "/impact-snapshot" },
   { label: "Brief Generator", href: "/brief-generator" },
