@@ -1,1 +1,226 @@
-{}
+{
+  "E1": {
+    "label": "Reducción del impacto ambiental",
+    "summary": "Reduce el impacto ambiental y se sustenta en un estudio calificado de ciclo de vida (LCS) o una evaluación cuantitativa del ciclo de vida (LCA)."
+  },
+  "E3": {
+    "label": "Transparencia de ingredientes o componentes del producto",
+    "summary": "Muestra los ingredientes o componentes materiales."
+  },
+  "E4": {
+    "label": "Tintas, impresión y acabados",
+    "summary": "Reduce la cobertura de tinta en materiales impresos."
+  },
+  "E5": {
+    "label": "Papel",
+    "summary": "Reduce el uso de papel."
+  },
+  "E6": {
+    "label": "Cantidad de producto",
+    "summary": "Considera las necesidades de reproducción."
+  },
+  "E7": {
+    "label": "Durabilidad y vida útil prolongada",
+    "summary": "Integra una mayor durabilidad mediante la reutilización, reparación, recarga y/o actualización."
+  },
+  "E9": {
+    "label": "Sustancias tóxicas",
+    "summary": "Reduce o elimina las sustancias tóxicas."
+  },
+  "E10": {
+    "label": "Política ambiental",
+    "summary": "Cuenta con políticas ambientales de acceso público."
+  },
+  "EM4": {
+    "label": "Bienestar animal",
+    "summary": "Protege a los animales involucrados."
+  },
+  "EM6": {
+    "label": "Conservación de ecosistemas",
+    "summary": "Conserva ecosistemas valiosos."
+  },
+  "E14": {
+    "label": "Reciclabilidad o reutilización",
+    "summary": "Facilita el reciclaje o la reutilización."
+  },
+  "E17": {
+    "label": "Recursos no renovables",
+    "summary": "Reduce el uso de recursos naturales y materiales no renovables."
+  },
+  "E15": {
+    "label": "Materiales biológicos u orgánicos",
+    "summary": "Aprovecha residuos como nutrientes o combustible, o permite su compostaje."
+  },
+  "E13": {
+    "label": "Cero residuos",
+    "summary": "Elimina la generación de residuos."
+  },
+  "E16": {
+    "label": "Energía renovable",
+    "summary": "Utiliza energía renovable."
+  },
+  "E18": {
+    "label": "Eficiencia energética para el usuario",
+    "summary": "Optimiza la eficiencia energética durante el uso del producto o sistema."
+  },
+  "energy-efficiency": {
+    "label": "Eficiencia energética",
+    "summary": "Maximiza la eficiencia energética del producto o sistema."
+  },
+  "E19": {
+    "label": "Almacenamiento y transporte",
+    "summary": "Optimiza la eficiencia del almacenamiento y el transporte."
+  },
+  "E11": {
+    "label": "Reporte cuantificado de emisiones y certificación",
+    "summary": "Presenta un informe accesible al público sobre emisiones de gases de efecto invernadero (GEI), uso de materiales y residuos."
+  },
+  "E21": {
+    "label": "Contaminación del aire",
+    "summary": "Reduce la contaminación del aire."
+  },
+  "E22": {
+    "label": "Compensaciones de carbono",
+    "summary": "Compensa las emisiones derivadas de viajes, producción y presencia web mediante la adquisición de créditos de carbono."
+  },
+  "E23": {
+    "label": "Agua",
+    "summary": "Reduce o elimina el uso de agua y/o su contaminación."
+  },
+  "sound-light-pollution": {
+    "label": "Contaminación sonora y lumínica",
+    "summary": "Reduce o elimina la contaminación sonora y lumínica."
+  },
+  "odor-scent-fragrance": {
+    "label": "Olores, aromas y fragancias",
+    "summary": "Elimina olores, aromas y fragancias."
+  },
+  "S1": {
+    "label": "No produce daños",
+    "summary": "Reduce los daños físicos y mentales durante la producción y el uso del producto."
+  },
+  "S2": {
+    "label": "Salud y seguridad",
+    "summary": "Mejora la salud y/o la seguridad de las personas."
+  },
+  "S3": {
+    "label": "Trabajo local",
+    "summary": "Incrementa la contratación de mano de obra local."
+  },
+  "SM1": {
+    "label": "Derechos humanos",
+    "summary": "Respeta y protege los derechos humanos universales."
+  },
+  "SM2": {
+    "label": "Corrupción",
+    "summary": "Mantiene altos estándares contra la corrupción y a favor de una gobernanza ética."
+  },
+  "SM3": {
+    "label": "Derechos de los trabajadores",
+    "summary": "Respeta y protege los derechos de los trabajadores."
+  },
+  "S10": {
+    "label": "Inteligencia artificial (IA)",
+    "summary": "Declara si las fuentes del diseño fueron creadas por personas o generadas mediante IA y se apega a lineamientos éticos."
+  },
+  "S6": {
+    "label": "Documentos electrónicos",
+    "summary": "Garantiza la accesibilidad de todos los documentos electrónicos, incluidas las páginas web."
+  },
+  "S6b": {
+    "label": "Documentos impresos y cumplimiento de accesibilidad",
+    "summary": "Garantiza la accesibilidad de todos los materiales impresos."
+  },
+  "S8": {
+    "label": "Principios de diseño universal",
+    "summary": "Cumple con los estándares de diseño universal."
+  },
+  "S9": {
+    "label": "Propiedad intelectual",
+    "summary": "Aplica un enfoque claro y responsable respecto a la propiedad intelectual."
+  },
+  "S11": {
+    "label": "Asequibilidad",
+    "summary": "Mantiene el producto o servicio asequible para todos los sectores del mercado."
+  },
+  "S12": {
+    "label": "Comercio justo",
+    "summary": "Promueve colaboraciones equitativas entre países de ingresos bajos, medios y altos."
+  },
+  "S13": {
+    "label": "Brechas sociales",
+    "summary": "Reduce las brechas de género, poder y riqueza."
+  },
+  "S14": {
+    "label": "Libertad de expresión",
+    "summary": "Promueve la libertad de expresión y/o la democracia."
+  },
+  "S15": {
+    "label": "Educación en diseño",
+    "summary": "Ofrece oportunidades de educación en diseño para estudiantes."
+  },
+  "S16": {
+    "label": "Componente educativo",
+    "summary": "Educa al usuario o consumidor sobre la sostenibilidad."
+  },
+  "C2": {
+    "label": "Lenguas en peligro de desaparición",
+    "summary": "Contribuye a la protección de lenguas en peligro de desaparición."
+  },
+  "C3": {
+    "label": "Cultura indígena",
+    "summary": "Preserva o fortalece las culturas indígenas."
+  },
+  "C4": {
+    "label": "Cultura local",
+    "summary": "Adapta el diseño a las culturas locales."
+  },
+  "C5": {
+    "label": "Diversidad cultural",
+    "summary": "Promueve o fortalece la diversidad cultural."
+  },
+  "CM9": {
+    "label": "Política cultural",
+    "summary": "Cuenta con una política cultural accesible al público."
+  },
+  "C6": {
+    "label": "Participación de las audiencias",
+    "summary": "Involucra a usuarios finales y audiencias."
+  },
+  "C7": {
+    "label": "Participación comunitaria",
+    "summary": "Apoya el desarrollo sostenible de la comunidad de la entidad de diseño."
+  },
+  "C8": {
+    "label": "Formación de profesionales del diseño",
+    "summary": "Forma profesionales del diseño."
+  },
+  "F1": {
+    "label": "Beneficios económicos",
+    "summary": "Genera valor que beneficia a la economía de una región."
+  },
+  "F2": {
+    "label": "Rentabilidad",
+    "summary": "Garantiza que la entidad de diseño reciba una remuneración por el trabajo realizado."
+  },
+  "FM3": {
+    "label": "Trabajo no remunerado",
+    "summary": "Garantiza la remuneración de todas las personas que realizan trabajo de diseño."
+  },
+  "F4": {
+    "label": "Objetivos SMART",
+    "summary": "Define los objetivos financieros en el brief de diseño (específicos, medibles, obtenibles, realistas, y en un período específico)."
+  },
+  "F5": {
+    "label": "Rendición de cuentas y transparencia",
+    "summary": "Aplica prácticas transparentes de gestión y documentación financiera."
+  },
+  "F6": {
+    "label": "Mejora de estándares",
+    "summary": "Mejora los estándares y procedimientos de la entidad de diseño."
+  },
+  "F7": {
+    "label": "Estrategia de diseño",
+    "summary": "Genera valor para el negocio mediante la estrategia de diseño (o design thinking)."
+  }
+}
