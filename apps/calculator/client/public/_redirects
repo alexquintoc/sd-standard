@@ -14,6 +14,15 @@
 /b/c/ /brief-generator?pillar=culture&lang=es 302
 /b/f /brief-generator?pillar=finance&lang=es 302
 /b/f/ /brief-generator?pillar=finance&lang=es 302
+# Permanent installation QR-code aliases: keep printed paths stable; update only destinations.
+/es/environment /es/criteria?pillar=environment 301
+/es/environment/ /es/criteria?pillar=environment 301
+/es/society /es/criteria?pillar=society 301
+/es/society/ /es/criteria?pillar=society 301
+/es/culture /es/criteria?pillar=culture 301
+/es/culture/ /es/criteria?pillar=culture 301
+/es/finance /es/criteria?pillar=finance 301
+/es/finance/ /es/criteria?pillar=finance 301
 # Permanent QR-code aliases: keep these short URLs stable; update only destinations.
 /environment /knowledge-base/generated/pillars/environment.html 301
 /society /knowledge-base/generated/pillars/society.html 301

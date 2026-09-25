@@ -72,6 +72,48 @@
   to = "/about/get-involved"
   status = 301
 
+# Permanent installation QR-code aliases. Keep these printed paths stable;
+# update only their destinations if the criteria URLs change again.
+[[redirects]]
+  from = "/es/environment"
+  to = "/es/criteria?pillar=environment"
+  status = 301
+
+[[redirects]]
+  from = "/es/environment/"
+  to = "/es/criteria?pillar=environment"
+  status = 301
+
+[[redirects]]
+  from = "/es/society"
+  to = "/es/criteria?pillar=society"
+  status = 301
+
+[[redirects]]
+  from = "/es/society/"
+  to = "/es/criteria?pillar=society"
+  status = 301
+
+[[redirects]]
+  from = "/es/culture"
+  to = "/es/criteria?pillar=culture"
+  status = 301
+
+[[redirects]]
+  from = "/es/culture/"
+  to = "/es/criteria?pillar=culture"
+  status = 301
+
+[[redirects]]
+  from = "/es/finance"
+  to = "/es/criteria?pillar=finance"
+  status = 301
+
+[[redirects]]
+  from = "/es/finance/"
+  to = "/es/criteria?pillar=finance"
+  status = 301
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
