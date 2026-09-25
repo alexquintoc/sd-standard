@@ -69,6 +69,18 @@ test("new content, preserved gallery and legacy routes", async ({ page }) => {
     await page.goto(from); await expect.poll(() => page.evaluate(() => `${location.pathname}${location.search}`)).toBe(to);
   }
 });
+test("Abierto passport links components and criteria without presenting a score", async ({ page }) => {
+  await page.goto("/projects/abierto");
+  await expect(page.locator("html")).toHaveAttribute("lang", "es");
+  await expect(page.getByRole("heading", { name: "Componentes del proyecto" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Componentes × criterios" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Resumen de evaluación" })).toBeVisible();
+  await expect(page.locator("#component-website")).toContainText("Experiencia web");
+  await expect(page.locator("#criterion-S6 a[href='#component-website']")).toBeVisible();
+  await expect(page.getByText("Aún no hay resultados medidos")).toBeVisible();
+  await expect(page.getByText(/no es una puntuación/i)).toBeVisible();
+  await expect(page.getByText(/certificación/i).first()).toBeVisible();
+});
 test("legacy migration, valid import, save failure and local deletion", async ({ page }) => {
   await page.goto("/");
   await page.evaluate(value => localStorage.setItem("sd-standard:project:v0.1", JSON.stringify(value)), fixture);

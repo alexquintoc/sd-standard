@@ -107,6 +107,8 @@ function Router() {
       <Route path="/workspace/components/" component={ProjectWorkspace} />
       <Route path="/workspace/criteria" component={ProjectWorkspace} />
       <Route path="/workspace/criteria/" component={ProjectWorkspace} />
+      <Route path="/workspace/passport" component={ProjectWorkspace} />
+      <Route path="/workspace/passport/" component={ProjectWorkspace} />
       <Route path="/workspace/project-file" component={ProjectWorkspace} />
       <Route path="/workspace/project-file/" component={ProjectWorkspace} />
       <Route path="/updates">{() => <Redirect to="/about/updates" />}</Route>

@@ -20,7 +20,19 @@ export interface ProjectMetadata {
   id: string; title: string; description: string; stage: ProjectStage; projectTypes: ProjectType[];
   createdAt: string; updatedAt: string; [key: string]: unknown;
 }
-export interface ProjectComponent { id: string; name: string; type: string; description: string; notes: string; [key: string]: unknown }
+export interface ProjectImage { src: string; alt: string; caption: string; credit: string; [key: string]: unknown }
+export interface ProjectCollaborator { id: string; name: string; role: string; credit: string; [key: string]: unknown }
+export type ProjectOutcomeKind = "measured" | "estimated" | "intended";
+export interface ProjectOutcome {
+  id: string; label: string; value: string; unit: string; kind: ProjectOutcomeKind;
+  source: string; date: string; evidenceNote: string; [key: string]: unknown;
+}
+export interface ProjectPassport {
+  purpose: string; location: string; event: string; locale: string;
+  heroImage: ProjectImage; collaborators: ProjectCollaborator[]; outcomes: ProjectOutcome[];
+  improvements: string; lastUpdated: string; [key: string]: unknown;
+}
+export interface ProjectComponent { id: string; name: string; type: string; description: string; notes: string; image?: ProjectImage; [key: string]: unknown }
 export type CriterionScope =
   | { level: "project"; componentIds: []; [key: string]: unknown }
   | { level: "component"; componentIds: string[]; [key: string]: unknown };
@@ -36,7 +48,7 @@ export interface ApplicationMetadata {
 export interface SDStandardProject {
   schema: ProjectSchemaMetadata; standard: StandardMetadata; project: ProjectMetadata;
   components: ProjectComponent[]; criteriaAssessments: CriterionAssessment[];
-  projectNotes: string; application: ApplicationMetadata; [key: string]: unknown;
+  projectNotes: string; passport: ProjectPassport; application: ApplicationMetadata; [key: string]: unknown;
 }
 export type ValidationSeverity = "error" | "warning";
 export interface ProjectValidationIssue { code: string; path: string; message: string; severity: ValidationSeverity }

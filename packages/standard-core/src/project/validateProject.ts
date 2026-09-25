@@ -46,6 +46,7 @@ export function validateProject(value: unknown): ProjectValidationResult {
     else componentIds.add(component.id);
     if (!isString(component.name) || !component.name.trim()) error("MISSING_COMPONENT_NAME", `${path}.name`, "Each component must have a name.");
     if (!isString(component.type) || !component.type.trim()) error("MISSING_COMPONENT_TYPE", `${path}.type`, "Each component must have a type.");
+    if (component.image !== undefined && !isRecord(component.image)) error("INVALID_IMAGE", `${path}.image`, "Component image metadata must be an object.");
   });
 
   const assessedCriterionIds = new Set<string>();
@@ -90,6 +91,15 @@ export function validateProject(value: unknown): ProjectValidationResult {
     }
   });
   if (!isString(value.projectNotes)) error("INVALID_PROJECT_NOTES", "projectNotes", "Project notes must be a string.");
+  if (!isRecord(value.passport)) error("MISSING_SECTION", "passport", "Passport metadata is required.");
+  else {
+    for (const field of ["purpose", "location", "event", "locale", "improvements", "lastUpdated"] as const) if (!isString(value.passport[field])) error("INVALID_PASSPORT_FIELD", `passport.${field}`, `${field} must be a string.`);
+    if (!isRecord(value.passport.heroImage)) error("INVALID_IMAGE", "passport.heroImage", "Hero image metadata must be an object.");
+    if (!Array.isArray(value.passport.collaborators)) error("INVALID_COLLABORATORS", "passport.collaborators", "Collaborators must be an array.");
+    else value.passport.collaborators.forEach((item, index) => { if (!isRecord(item) || !isString(item.id) || !isString(item.name) || !isString(item.role) || !isString(item.credit)) error("INVALID_COLLABORATOR", `passport.collaborators[${index}]`, "Each collaborator must have string id, name, role, and credit fields."); });
+    if (!Array.isArray(value.passport.outcomes)) error("INVALID_OUTCOMES", "passport.outcomes", "Outcomes must be an array.");
+    else value.passport.outcomes.forEach((item, index) => { if (!isRecord(item) || !isString(item.id) || !isString(item.label) || !isString(item.value) || !isString(item.unit) || !includes(["measured", "estimated", "intended"] as const, item.kind) || !isString(item.source) || !isString(item.date) || !isString(item.evidenceNote)) error("INVALID_OUTCOME", `passport.outcomes[${index}]`, "Each outcome must include its label, value, unit, kind, source, date, and evidence note."); });
+  }
   if (!isRecord(value.application)) error("MISSING_SECTION", "application", "Application metadata is required.");
   else {
     if (!Array.isArray(value.application.completedSections) || value.application.completedSections.some((item) => !isString(item))) error("INVALID_COMPLETED_SECTIONS", "application.completedSections", "Completed sections must be an array of strings.");

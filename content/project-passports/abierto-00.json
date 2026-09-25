@@ -1,0 +1,66 @@
+{
+  "schema": { "name": "sd-standard-project", "version": "0.1.0" },
+  "standard": { "criteriaVersion": "criteria-v2", "criteriaSource": "criteria.v2.json" },
+  "project": {
+    "id": "sd-standard-abierto-de-diseno",
+    "title": "SD Standard en Abierto de Diseño CDMX 2026",
+    "description": "Una instalación que presenta el SD Standard como herramienta de comunicación y experimento material.",
+    "stage": "production",
+    "projectTypes": ["exhibition", "installation", "print", "website"],
+    "createdAt": "2026-05-01T12:00:00.000Z",
+    "updatedAt": "2026-09-24T12:00:00.000Z"
+  },
+  "passport": {
+    "purpose": "Presentar el SD Standard a visitantes y poner a prueba decisiones de producción reutilizable en una instalación física, materiales impresos y una experiencia web.",
+    "location": "Ciudad de México",
+    "event": "Abierto de Diseño CDMX 2026 · Futuros · 25 de septiembre–4 de octubre de 2026",
+    "locale": "es",
+    "heroImage": {
+      "src": "/images/projects/exhibit-cover.svg",
+      "alt": "Ilustración abstracta de una instalación expositiva modular",
+      "caption": "Ilustración de referencia; sustituir por una fotografía de la instalación cuando esté disponible.",
+      "credit": "SD Standard"
+    },
+    "collaborators": [],
+    "outcomes": [],
+    "improvements": "Confirmar materiales, proveedores, cantidades finales y rutas de segunda vida; documentar el montaje; medir la participación de visitantes; y publicar evidencia verificable después del evento.",
+    "lastUpdated": "2026-09-24"
+  },
+  "components": [
+    { "id": "lamp-shade", "name": "Elemento suspendido", "type": "installation-component", "description": "Elemento ligero suspendido que define el espacio de la instalación.", "notes": "", "image": { "src": "", "alt": "", "caption": "", "credit": "" } },
+    { "id": "display-base", "name": "Base expositiva", "type": "exhibition", "description": "Base modular que sostiene los objetos de la exposición.", "notes": "", "image": { "src": "", "alt": "", "caption": "", "credit": "" } },
+    { "id": "printed-materials", "name": "Tarjetas y carteles impresos", "type": "print", "description": "Tarjetas para visitantes, preguntas de criterios y carteles del evento.", "notes": "", "image": { "src": "", "alt": "", "caption": "", "credit": "" } },
+    { "id": "website", "name": "Experiencia web", "type": "website", "description": "Página complementaria ligera para visitantes y audiencias remotas.", "notes": "", "image": { "src": "", "alt": "", "caption": "", "credit": "" } }
+  ],
+  "criteriaAssessments": [
+    {
+      "criterionId": "F4", "scope": { "level": "project", "componentIds": [] }, "relevance": "high", "status": "completed", "response": "improved",
+      "strategies": [{ "id": "define-event-goals", "title": "Definir objetivos medibles del evento", "description": "Establecer objetivos de participación y aprendizaje posterior.", "status": "completed", "notes": "" }],
+      "notes": ""
+    },
+    {
+      "criterionId": "E5", "scope": { "level": "component", "componentIds": ["printed-materials"] }, "relevance": "high", "status": "planned", "response": "baseline",
+      "strategies": [{ "id": "specify-recycled-paper", "title": "Especificar papel reciclado", "description": "Seleccionar un papel local con alto contenido reciclado.", "status": "selected", "notes": "" }],
+      "notes": ""
+    },
+    {
+      "criterionId": "E7", "scope": { "level": "component", "componentIds": ["lamp-shade", "display-base"] }, "relevance": "high", "status": "in-progress", "response": "improved",
+      "strategies": [
+        { "id": "design-for-disassembly", "title": "Diseñar para desmontaje", "description": "Usar conexiones reversibles para separar las piezas después de la exposición.", "status": "in-progress", "notes": "" },
+        { "id": "single-use-adhesive", "title": "Usar adhesivo permanente", "description": "Opción descartada porque impediría la reparación y separación de materiales.", "status": "rejected", "notes": "" }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "S6", "scope": { "level": "component", "componentIds": ["website"] }, "relevance": "medium", "status": "planned", "response": "modeled",
+      "strategies": [
+        { "id": "optimize-assets", "title": "Optimizar recursos web", "description": "Comprimir imágenes y evitar scripts innecesarios.", "status": "selected", "notes": "" },
+        { "id": "test-low-bandwidth", "title": "Probar con conectividad limitada", "description": "Verificar que la página siga siendo útil en conexiones móviles restringidas.", "status": "considering", "notes": "" }
+      ],
+      "notes": ""
+    },
+    { "criterionId": "E4", "scope": { "level": "component", "componentIds": ["website"] }, "relevance": "not-applicable", "status": "not-applicable", "response": "not-assessed", "strategies": [], "notes": "" }
+  ],
+  "projectNotes": "",
+  "application": { "lastView": "passport", "completedSections": ["project", "components"], "exportedAt": null, "generator": { "name": "SD Standard", "version": "" } }
+}

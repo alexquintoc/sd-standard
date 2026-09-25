@@ -1,0 +1,475 @@
+{
+  "schema": {
+    "name": "sd-standard-project",
+    "version": "0.1.0"
+  },
+  "standard": {
+    "criteriaVersion": "criteria-v2",
+    "criteriaSource": "criteria.v2.json"
+  },
+  "project": {
+    "id": "sd-standard-abierto-de-diseno",
+    "title": "SD Standard at Abierto de Diseño",
+    "description": "An exhibition installation introducing the SD Standard through physical objects, printed interpretation, and a supporting website.",
+    "stage": "production",
+    "projectTypes": [
+      "exhibition",
+      "installation",
+      "print",
+      "website"
+    ],
+    "createdAt": "2026-05-01T12:00:00.000Z",
+    "updatedAt": "2026-09-25T03:52:36.051Z"
+  },
+  "components": [
+    {
+      "id": "lamp-shade",
+      "name": "Suspended lamp shade",
+      "type": "installation-component",
+      "description": "A lightweight overhead element defining the exhibition space.",
+      "notes": "Confirm end-of-life route with fabricator.",
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": "",
+        "credit": ""
+      }
+    },
+    {
+      "id": "display-base",
+      "name": "Display base",
+      "type": "exhibition",
+      "description": "Modular base supporting the exhibition objects.",
+      "notes": "Designed for reuse after the event.",
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": "",
+        "credit": ""
+      }
+    },
+    {
+      "id": "printed-materials",
+      "name": "Printed cards ",
+      "type": "print",
+      "description": "Visitor postcards: Four sets of postcards with the list of all criteria: one postcard per pillar.",
+      "notes": "Print quantities will follow daily attendance estimates. ",
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": "",
+        "credit": ""
+      }
+    },
+    {
+      "id": "website",
+      "name": "Website",
+      "type": "website",
+      "description": "A lightweight companion page for visitors and remote audiences.",
+      "notes": "Website is being checked for accessibility\nAI is used to improve accessibility",
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": "",
+        "credit": ""
+      }
+    }
+  ],
+  "criteriaAssessments": [
+    {
+      "criterionId": "E5",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "printed-materials"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "improved",
+      "strategies": [
+        {
+          "id": "specify-recycled-paper",
+          "title": "Local left-over card stock picked",
+          "description": "Select a locally available high-recycled-content stock.",
+          "status": "completed",
+          "notes": "15 kg of 270gm card stock was picked to print on-demand during the exhibit"
+        }
+      ],
+      "notes": "Applies only to postcards"
+    },
+    {
+      "criterionId": "E7",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "lamp-shade",
+          "display-base"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "improved",
+      "strategies": [
+        {
+          "id": "design-for-disassembly",
+          "title": "Design for disassembly",
+          "description": "The table (display base) uses  detachable connections so parts can be separated after the exhibition.",
+          "status": "in-progress",
+          "notes": ""
+        },
+        {
+          "title": "Designed to be re-purposed",
+          "description": "The lamp and display base (or table) were designed to be re–used after the exhibit",
+          "status": "suggested",
+          "notes": "",
+          "id": "designed-to-be-re-purposed"
+        }
+      ],
+      "notes": "One shared assessment covers both fabricated components."
+    },
+    {
+      "criterionId": "S6",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "website"
+        ]
+      },
+      "relevance": "medium",
+      "status": "planned",
+      "response": "modeled",
+      "strategies": [
+        {
+          "id": "optimize-assets",
+          "title": "Optimize website assets",
+          "description": "Compress images and avoid unnecessary scripts.",
+          "status": "selected",
+          "notes": ""
+        },
+        {
+          "id": "test-low-bandwidth",
+          "title": "Test low-bandwidth access",
+          "description": "Verify the page remains useful on constrained mobile connections.",
+          "status": "considering",
+          "notes": ""
+        }
+      ],
+      "notes": "Performance budget to be confirmed before launch."
+    },
+    {
+      "criterionId": "E4",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "printed-materials"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "improved",
+      "strategies": [
+        {
+          "title": "Ink use reduction",
+          "description": "Two ink-reduction strategies were used: 1) Texts were edited down to reduce ink use. 2) The front-side of the postcards also used elements meant to reduce ink coverage.",
+          "status": "in-progress",
+          "notes": "",
+          "id": "ink-use-reduction"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "E6",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "printed-materials"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "improved",
+      "strategies": [
+        {
+          "title": "Print on-demand",
+          "description": "A low volume of paper was picked (15 kg). Postcards will be printed a few hundred copies every couple of days depending on the demand during the event.",
+          "status": "suggested",
+          "notes": "",
+          "id": "print-on-demand"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "E9",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "lamp-shade",
+          "display-base"
+        ]
+      },
+      "relevance": "high",
+      "status": "completed",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "title": "Low-VOC varnish used for wooden components",
+          "description": "A natural wood sealant was used by carpenter, to avoid more toxic chemicals.",
+          "status": "completed",
+          "notes": "",
+          "id": "low-voc-varnish-used-for-wooden-components"
+        }
+      ],
+      "notes": "No information about the product maker though, only shared comments by the supplier. The fabrics supplier did mention that they only use natural inks to die the fabrics that were used for the lamp shade"
+    },
+    {
+      "criterionId": "E14",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "lamp-shade",
+          "display-base",
+          "printed-materials"
+        ]
+      },
+      "relevance": "high",
+      "status": "completed",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "title": "Lamp shade and display table designed to be reused",
+          "description": "The installation invites visitors who want to participate in giving the installation a second life. The lamp shade and table can be reused, or sold after the exhibit. \nThe fabric used for the table can be recycled after removing the inks printed on it. ",
+          "status": "suggested",
+          "notes": "",
+          "id": "lamp-shade-and-display-table-designed-to-be-reused"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "E18",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "lamp-shade"
+        ]
+      },
+      "relevance": "high",
+      "status": "not-reviewed",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "title": "Uses a motion sensor to power lamp shade",
+          "description": "A motion sensor installed on the lamp shade reduces energy consumption",
+          "status": "completed",
+          "notes": "",
+          "id": "uses-a-motion-sensor-to-power-lamp-shade"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "S3",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "completed",
+      "response": "verified",
+      "strategies": [
+        {
+          "title": "Majority of suppliers were local",
+          "description": "All but one supplier of labor were local (carpenter, printer, electrician). The textile artisans were in Oaxaca.",
+          "status": "suggested",
+          "notes": "",
+          "id": "majority-of-suppliers-were-local"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "S10",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "medium",
+      "status": "completed",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "title": "Use of AI for website's code",
+          "description": "AI was used to help produce the various website tools and components",
+          "status": "completed",
+          "notes": "",
+          "id": "use-of-ai-for-website-s-code"
+        }
+      ],
+      "notes": "Need to verify the latest ethical standards involved with the use of artificial intelligence"
+    },
+    {
+      "criterionId": "S6b",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "printed-materials"
+        ]
+      },
+      "relevance": "high",
+      "status": "completed",
+      "response": "verified",
+      "strategies": [
+        {
+          "title": "High-contrast text",
+          "description": "Black text on white background",
+          "status": "completed",
+          "notes": "",
+          "id": "high-contrast-text"
+        },
+        {
+          "title": "Use of QR codes for people with visual disabilities",
+          "description": "A QR code provides a digital and mobile-friendly version of the same information on the postcard, letting people use their assistive technologies to read or hear the texts. ",
+          "status": "suggested",
+          "notes": "",
+          "id": "use-of-qr-codes-for-people-with-visual-disabilities"
+        }
+      ],
+      "notes": "The postcards use high-contrast (black ink on white card paper). There is also a QR code in all postcards for people with visual disabilities"
+    },
+    {
+      "criterionId": "S8",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "display-base"
+        ]
+      },
+      "relevance": "medium",
+      "status": "completed",
+      "response": "verified",
+      "strategies": [
+        {
+          "title": "Table height is accessible for people on wheelchair and kids",
+          "description": "The table display is at a low height, letting people on wheelcharis read the texts on the table.",
+          "status": "suggested",
+          "notes": "",
+          "id": "table-height-is-accessible-for-people-on-wheelchair-and-kids"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "S15",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "completed",
+      "response": "verified",
+      "strategies": [
+        {
+          "title": "Installation provides tools for design education",
+          "description": "The subject matter of the installation is related to design and sustainability, thus provides resources for design professionals or students",
+          "status": "suggested",
+          "notes": "",
+          "id": "installation-provides-tools-for-design-education"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "criterionId": "C4",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "lamp-shade"
+        ]
+      },
+      "relevance": "high",
+      "status": "completed",
+      "response": "verified",
+      "strategies": [
+        {
+          "title": "Translation to Spanish",
+          "description": "Texts were translated to Spanish",
+          "status": "completed",
+          "notes": "",
+          "id": "translation-to-spanish"
+        }
+      ],
+      "notes": "The lamp shade uses textile design that is culturally appropriate"
+    },
+    {
+      "criterionId": "C6",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "title": "Use of texts and QR codes prompting people to engage with the project",
+          "description": "The installation invites the audience to participate in the ongoing development of the SD Standard. It also invites them to get involved in designing the next phase of design for the lamp shade and table.",
+          "status": "suggested",
+          "notes": "",
+          "id": "use-of-texts-and-qr-codes-prompting-people-to-engage-with-th"
+        }
+      ],
+      "notes": ""
+    }
+  ],
+  "projectNotes": "The exhibition should work as both a public introduction to the SD Standard and a practical test of reusable exhibition production methods.",
+  "application": {
+    "lastView": "criteria",
+    "completedSections": [
+      "project",
+      "components"
+    ],
+    "exportedAt": "2026-09-25T03:53:11.557Z",
+    "generator": {
+      "name": "SD Standard",
+      "version": ""
+    }
+  },
+  "passport": {
+    "purpose": "",
+    "location": "Mexico City",
+    "event": "",
+    "locale": "en",
+    "heroImage": {
+      "src": "/images/project-passports/abierto/abierto-closeup-view-01.jpg",
+      "alt": "Table display with a graphic showing the SD Standard pillars",
+      "caption": "SD Standard exhibition installation closeup",
+      "credit": ""
+    },
+    "collaborators": [
+      {
+        "id": "collaborator-mugf0n3e-757l",
+        "name": "Arudeko",
+        "role": "Fabric design",
+        "credit": ""
+      },
+      {
+        "id": "collaborator-mugf12jf-ac7m",
+        "name": "Fausto y Luis",
+        "role": "carpintería",
+        "credit": ""
+      },
+      {
+        "id": "collaborator-mugf1ffe-zd27",
+        "name": "Encuadernados Tex",
+        "role": "impresión de postales y tela",
+        "credit": ""
+      }
+    ],
+    "outcomes": [],
+    "improvements": "Compensating the environmental impact of the piece through collaborations with local reforestation organizations",
+    "lastUpdated": "2026-09-24"
+  }
+}

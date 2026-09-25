@@ -1,7 +1,7 @@
 import type { CriterionAssessment, CriterionScope, ProjectComponent, ProjectStrategy, SDStandardProject } from "../types";
 import { PROJECT_CRITERION_IDS } from "../criteria";
 import { slugifyId, uniqueId } from "./ids";
-import type { AssessmentPatch, ComponentRemovalImpact, ComponentRemovalResolution, ProjectComponentInput, ProjectMetadataPatch, ProjectStrategyInput, WorkspaceMutationOptions } from "./types";
+import type { AssessmentPatch, ComponentRemovalImpact, ComponentRemovalResolution, ProjectComponentInput, ProjectMetadataPatch, ProjectPassportPatch, ProjectStrategyInput, WorkspaceMutationOptions } from "./types";
 
 function changed(project: SDStandardProject, next: SDStandardProject, options?: WorkspaceMutationOptions): SDStandardProject {
   if (JSON.stringify(project) === JSON.stringify(next)) return project;
@@ -9,9 +9,10 @@ function changed(project: SDStandardProject, next: SDStandardProject, options?: 
 }
 export function updateProjectMetadata(project: SDStandardProject, patch: ProjectMetadataPatch, options?: WorkspaceMutationOptions) { return changed(project, { ...project, project: { ...project.project, ...patch } }, options); }
 export function updateProjectNotes(project: SDStandardProject, projectNotes: string, options?: WorkspaceMutationOptions) { return changed(project, { ...project, projectNotes }, options); }
+export function updateProjectPassport(project: SDStandardProject, patch: ProjectPassportPatch, options?: WorkspaceMutationOptions) { return changed(project, { ...project, passport: { ...project.passport, ...patch } }, options); }
 export function addComponent(project: SDStandardProject, input: ProjectComponentInput, options?: WorkspaceMutationOptions): SDStandardProject {
   const base = slugifyId(input.id ?? input.name, "component");
-  const component: ProjectComponent = { ...input, id: uniqueId(base, project.components.map((item) => item.id)) };
+  const component: ProjectComponent = { ...input, image: input.image ?? { src: "", alt: "", caption: "", credit: "" }, id: uniqueId(base, project.components.map((item) => item.id)) };
   return changed(project, { ...project, components: [...project.components, component] }, options);
 }
 export function updateComponent(project: SDStandardProject, componentId: string, patch: Partial<Omit<ProjectComponent, "id">>, options?: WorkspaceMutationOptions) {
@@ -19,7 +20,7 @@ export function updateComponent(project: SDStandardProject, componentId: string,
 }
 export function duplicateComponent(project: SDStandardProject, componentId: string, options?: WorkspaceMutationOptions): SDStandardProject {
   const source = project.components.find((item) => item.id === componentId); if (!source) return project;
-  return addComponent(project, { name: `${source.name} Copy`, type: source.type, description: source.description, notes: source.notes, id: `${source.id}-copy` }, options);
+  return addComponent(project, { name: `${source.name} Copy`, type: source.type, description: source.description, notes: source.notes, image: source.image ? { ...source.image } : undefined, id: `${source.id}-copy` }, options);
 }
 export function getComponentRemovalImpact(project: SDStandardProject, componentId: string): ComponentRemovalImpact {
   const referenced = project.criteriaAssessments.filter((assessment) => assessment.scope.level === "component" && assessment.scope.componentIds.includes(componentId));

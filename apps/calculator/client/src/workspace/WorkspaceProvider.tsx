@@ -25,6 +25,7 @@ import {
   updateCriterionAssessment as updateCriterionAssessmentAction,
   updateProjectMetadata as updateProjectMetadataAction,
   updateProjectNotes as updateProjectNotesAction,
+  updateProjectPassport as updateProjectPassportAction,
   updateStrategy as updateStrategyAction,
   validateProject,
   type AssessmentPatch,
@@ -34,6 +35,7 @@ import {
   type ImportProjectResult,
   type ProjectComponentInput,
   type ProjectMetadataPatch,
+  type ProjectPassportPatch,
   type ProjectStrategyInput,
   type ProjectValidationIssue,
   type SaveState,
@@ -58,6 +60,7 @@ interface WorkspaceContextValue {
   loadAbiertoExample: () => void;
   updateProjectMetadata: (patch: ProjectMetadataPatch) => void;
   updateProjectNotes: (notes: string) => void;
+  updateProjectPassport: (patch: ProjectPassportPatch) => void;
   addComponent: (input: ProjectComponentInput) => void;
   updateComponent: (id: string, patch: Parameters<typeof updateComponentAction>[2]) => void;
   duplicateComponent: (id: string) => void;
@@ -156,6 +159,7 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     loadAbiertoExample: () => { const result = importProject(abiertoFixture); if (result.success) replace(result.project); },
     updateProjectMetadata: (patch) => mutate((current) => updateProjectMetadataAction(current, patch)),
     updateProjectNotes: (notes) => mutate((current) => updateProjectNotesAction(current, notes)),
+    updateProjectPassport: (patch) => mutate((current) => updateProjectPassportAction(current, patch)),
     addComponent: (input) => mutate((current) => addComponentAction(current, input)),
     updateComponent: (id, patch) => mutate((current) => updateComponentAction(current, id, patch)),
     duplicateComponent: (id) => mutate((current) => duplicateComponentAction(current, id)),
