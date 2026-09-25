@@ -3,6 +3,8 @@ import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
 
 const fixture = JSON.parse(readFileSync(new URL("../../../packages/standard-core/examples/abierto-project.v0.1.json", import.meta.url), "utf8"));
+const releaseAvailable = process.env.SD_UPDATES_INCLUDE_SCHEDULED === "1" || Date.now() >= Date.parse("2026-09-25T06:00:00.000Z");
+const releaseRoutes = releaseAvailable ? ["/about/updates/what-is-a-design-made-of-abierto-2026", "/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026"] : [];
 test("one active project, close confirmation, preserved copy and explicit reopen", async ({ page }) => {
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "Main navigation", exact: true });
@@ -56,7 +58,7 @@ test("seven design questions disclose current criterion links", async ({ page })
   }
 });
 test("new content, preserved gallery and legacy routes", async ({ page }) => {
-  for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/explore/project-types", "/explore/sdgs", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora"]) {
+  for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/explore/project-types", "/explore/sdgs", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.goto(route); await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /.+/);
     await expect(page.locator("html")).toHaveAttribute("lang", route.startsWith("/es/") ? "es" : "en");
@@ -80,6 +82,27 @@ test("Abierto passport links components and criteria without presenting a score"
   await expect(page.getByText("Aún no hay resultados medidos")).toBeVisible();
   await expect(page.getByText(/no es una puntuación/i)).toBeVisible();
   await expect(page.getByText(/certificación/i).first()).toBeVisible();
+});
+test("the Abierto press release has bilingual routes, metadata and dated cross-links", async ({ page }) => {
+  test.skip(!releaseAvailable, "The release is scheduled for September 25 in Mexico City.");
+  await page.goto("/about/updates");
+  await expect(page.getByRole("link", { name: /What Is a Design Made Of/ })).toHaveAttribute("href", "/about/updates/what-is-a-design-made-of-abierto-2026");
+
+  await page.goto("/about/updates/what-is-a-design-made-of-abierto-2026");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.getByRole("link", { name: "Leer esta publicación en español" })).toHaveAttribute("href", "/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026");
+  await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveAttribute("href", "https://sdstandard.org/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026");
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /What Is a Design Made Of/);
+  await expect(page.getByText("— Denisse, Co-founder. Arudeko", { exact: true })).toBeVisible();
+
+  await page.goto("/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026");
+  await expect(page.locator("html")).toHaveAttribute("lang", "es");
+  await expect(page.getByRole("link", { name: "Read this release in English" })).toHaveAttribute("href", "/about/updates/what-is-a-design-made-of-abierto-2026");
+  await expect(page.getByText("— Denisse Arnaiz, Co-fundadora. Arudeko", { exact: true })).toBeVisible();
+
+  await page.goto("/about/updates/abierto-de-diseno-cdmx-2026");
+  await expect(page.getByRole("link", { name: "Read the September 25 press release" })).toHaveAttribute("href", "/about/updates/what-is-a-design-made-of-abierto-2026");
+  await expect(page.getByText(/to be confirmed/i)).toHaveCount(0);
 });
 test("legacy migration, valid import, save failure and local deletion", async ({ page }) => {
   await page.goto("/");
@@ -105,7 +128,7 @@ test("legacy migration, valid import, save failure and local deletion", async ({
 });
 test("public pages have no automated WCAG A/AA violations and fit narrow screens", async ({ page }) => {
   test.setTimeout(120000);
-  for (const route of ["/", "/explore", "/explore/pillars", "/explore/criteria", "/es/criteria", "/explore/project-types", "/projects", "/projects/abierto", "/about", "/about/get-involved", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora"]) {
+  for (const route of ["/", "/explore", "/explore/pillars", "/explore/criteria", "/es/criteria", "/explore/project-types", "/projects", "/projects/abierto", "/about", "/about/get-involved", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.setViewportSize({ width: 390, height: 844 }); await page.goto(route);
     await expect(page.locator("main h1")).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), route).toBeTruthy();

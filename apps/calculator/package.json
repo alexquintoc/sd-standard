@@ -9,6 +9,7 @@
     "test:impact-snapshot": "tsx --test client/src/quick-project-scan/lib/impactSnapshotImport.test.ts",
     "test:workspace": "tsx --test client/src/workspace/persistence.test.ts",
     "test:brief-generator": "tsx --test ../brief-generator/tests/generateBrief.test.cts",
+    "test:updates": "tsx --test server/updates.test.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
     "db:push": "drizzle-kit push",

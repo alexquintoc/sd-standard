@@ -80,6 +80,11 @@ export default defineConfig({
           },
           { type: "datetime", name: "publishedDate", label: "Publication date", required: true },
           { type: "boolean", name: "published", label: "Published" },
+          { type: "string", name: "locale", label: "Language", options: ["en", "es"] },
+          { type: "string", name: "translationSlug", label: "Translation slug" },
+          { type: "string", name: "followUpSlug", label: "Follow-up update slug" },
+          { type: "string", name: "followUpTitle", label: "Follow-up link label" },
+          { type: "datetime", name: "followUpDate", label: "Follow-up publication date" },
           {
             type: "string",
             name: "category",

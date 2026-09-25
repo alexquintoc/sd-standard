@@ -10,7 +10,7 @@
     "dev": "cross-env TINA_PUBLIC_IS_LOCAL=true PORT=5000 tinacms dev -c \"npm run dev -w apps/calculator\"",
     "dev:app": "cross-env PORT=5000 npm run dev -w apps/calculator",
     "build": "npm run validate:public && node scripts/sync-tina-admin.js && npm run build -w apps/calculator",
-    "test": "npm test -w packages/standard-core && npm run test:workspace -w apps/calculator && node scripts/test-provider.mjs && node scripts/test-public.mjs && npm run test:impact-snapshot -w apps/calculator && npm run test:brief-generator -w apps/calculator",
+    "test": "npm test -w packages/standard-core && npm run test:workspace -w apps/calculator && node scripts/test-provider.mjs && node scripts/test-public.mjs && npm run test:updates -w apps/calculator && npm run test:impact-snapshot -w apps/calculator && npm run test:brief-generator -w apps/calculator",
     "check": "npm run check -w packages/standard-core && npm run check -w apps/calculator",
     "lint": "npm run lint -w apps/calculator",
     "validate:public": "node scripts/test-public.mjs"

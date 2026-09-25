@@ -12,6 +12,11 @@ function renderBlock(block: string, key: number) {
   if (block.startsWith("### ")) return <h3 className="pt-3 text-xl font-extrabold leading-tight text-[#1f241f]" key={key}>{renderInline(block.slice(4))}</h3>;
   if (/^#{1,2}\s/.test(block)) return <h2 className="pt-4 text-2xl font-extrabold leading-tight text-[#1f241f]" key={key}>{renderInline(block.replace(/^#{1,2}\s+/, ""))}</h2>;
   if (/^-\s+/m.test(block)) return <ul className="list-disc space-y-2 pl-6" key={key}>{block.split(/\r?\n/).map((item) => <li key={item}>{renderInline(item.replace(/^-\s+/, ""))}</li>)}</ul>;
+  if (/^>\s?/m.test(block)) {
+    const lines = block.split(/\r?\n/).map((line) => line.replace(/^>\s?/, "")).filter(Boolean);
+    const attribution = lines.at(-1)?.startsWith("— ") ? lines.pop() : undefined;
+    return <blockquote className="border-l-4 border-[#85bba8] py-1 pl-5 text-lg leading-8 text-[#1f241f]" key={key}><p>{renderInline(lines.join(" "))}</p>{attribution ? <cite className="mt-3 block text-sm font-bold not-italic text-[#5f5a50]">{renderInline(attribution)}</cite> : null}</blockquote>;
+  }
   return <p key={key}>{renderInline(block)}</p>;
 }
 

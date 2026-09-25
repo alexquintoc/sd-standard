@@ -59,8 +59,10 @@ function Router() {
       <Route path="/explore/criteria">{() => <CriteriaIndex />}</Route>
       <Route path="/es/criteria">{() => <CriteriaIndex spanish />}</Route>
       <Route path="/explore/sdgs" component={TheStandardAndTheSdgs} />
-      <Route path="/about/updates" component={Updates} />
+      <Route path="/about/updates">{() => <Updates />}</Route>
       <Route path="/about/updates/:slug">{params => <UpdateDetail params={params} />}</Route>
+      <Route path="/es/about/updates">{() => <Updates spanish />}</Route>
+      <Route path="/es/about/updates/:slug">{params => <UpdateDetail params={params} />}</Route>
       <Route path="/about" component={About} />
       <Route path="/about/" component={About} />
       <Route path="/brief-generator" component={BriefGenerator} />
