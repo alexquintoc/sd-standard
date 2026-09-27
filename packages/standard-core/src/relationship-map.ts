@@ -100,7 +100,10 @@ function normalizePillarLabel(label: string) {
   return label.replace(/\s+Criteria$/i, "");
 }
 
-function criterionUrl(criterion: RelationshipCriterion, basePath: string) {
+export function getCriterionKnowledgeBaseUrl(
+  criterion: Pick<RelationshipCriterion, "slug">,
+  basePath = "/knowledge-base",
+) {
   if (!criterion.slug) {
     return null;
   }
@@ -202,7 +205,7 @@ export function transformCriteriaToSankey(
         pillarLabel,
         sdgs,
         mandatory: sourceCriterion.mandatory === true,
-        url: criterionUrl(sourceCriterion, knowledgeBaseBasePath),
+        url: getCriterionKnowledgeBaseUrl(sourceCriterion, knowledgeBaseBasePath),
       };
 
       criteria.push(criterion);

@@ -1,0 +1,600 @@
+.connections-page {
+  min-height: 100dvh;
+  background: #f7f5ef;
+  color: #1f241f;
+}
+
+.connections-intro,
+.connections-page__explorer {
+  width: min(100% - 2.5rem, 80rem);
+  margin-inline: auto;
+}
+
+.connections-intro {
+  padding-block: 3rem 2rem;
+}
+
+.connections-eyebrow {
+  margin: 0;
+  color: #5f5a50;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.connections-intro h1 {
+  max-width: 14ch;
+  margin: 0.75rem 0 1.25rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.04;
+}
+
+.connections-intro > p:not(.connections-eyebrow) {
+  max-width: 48rem;
+  margin: 0 0 1rem;
+  color: #5f5a50;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.65;
+}
+
+.connections-text-link {
+  color: #205f4b;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+}
+
+.connections-text-link:hover {
+  color: #163f33;
+}
+
+.connections-text-link:focus-visible,
+.connections-explorer button:focus-visible,
+.connections-explorer select:focus-visible {
+  outline: 3px solid #1f241f;
+  outline-offset: 3px;
+}
+
+.connections-page__explorer {
+  padding-bottom: 5rem;
+}
+
+.connections-explorer {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.connections-controls,
+.connections-network-panel,
+.connections-detail,
+.connections-list {
+  border: 1px solid #d9d4c8;
+  border-radius: 0.75rem;
+  background: #fffefa;
+}
+
+.connections-controls {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.85fr) minmax(20rem, 1.15fr);
+  gap: 2rem;
+  padding: 1.25rem;
+}
+
+.connections-controls h2,
+.connections-list h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.connections-controls label {
+  display: block;
+  margin-top: 0.4rem;
+  color: #5f5a50;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.connections-controls select {
+  width: 100%;
+  min-height: 3rem;
+  margin-top: 0.75rem;
+  padding: 0.65rem 2.5rem 0.65rem 0.8rem;
+  border: 1px solid #a9a398;
+  border-radius: 0.55rem;
+  background: #fff;
+  color: #1f241f;
+  font: inherit;
+  font-weight: 700;
+}
+
+.connections-guides > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+
+.connections-guides button {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #bdb7aa;
+  border-radius: 0.55rem;
+  background: #fff;
+  color: #1f241f;
+  font-weight: 750;
+  text-align: left;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.connections-guides button:hover,
+.connections-guides button[aria-pressed="true"] {
+  border-color: #28775e;
+  background: #e7f1ec;
+}
+
+.connections-guides button:active,
+.connections-radial__node:active,
+.connections-list button:active {
+  transform: translateY(1px);
+}
+
+.connections-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.85fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.connections-network-panel {
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+.connections-network-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.connections-network-heading p {
+  margin: 0 0 0.2rem;
+  color: #5f5a50;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.connections-network-heading h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+}
+
+.connections-network-heading > span {
+  flex: none;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.45rem;
+  background: #eeece5;
+  color: #4e4a43;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.connections-chord-wrap {
+  width: min(100%, 47rem);
+  margin: 0.5rem auto 0;
+}
+
+.connections-chord {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.connections-chord__arcs path {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+.connections-chord__arcs text {
+  fill: #5f5a50;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.connections-chord__path {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.42;
+  transition: opacity 160ms ease, stroke-width 160ms ease;
+}
+
+.connections-chord__path--context {
+  stroke-width: 1.2;
+  opacity: 0.08;
+}
+
+.connections-chord__path--enables {
+  stroke-width: 2;
+}
+
+.connections-chord__path--potential-tension {
+  stroke-dasharray: 6 7;
+}
+
+.connections-chord__active-paths g {
+  cursor: pointer;
+}
+
+.connections-chord__active-paths g:hover .connections-chord__path,
+.connections-chord__active-paths g:focus-visible .connections-chord__path,
+.connections-chord__path.is-active {
+  stroke-width: 5;
+  opacity: 0.92;
+}
+
+.connections-chord__active-paths g:focus-visible,
+.connections-chord__nodes g:focus-visible {
+  outline: none;
+}
+
+.connections-chord__active-paths g:focus-visible .connections-chord__hit-path,
+.connections-chord__nodes g:focus-visible circle {
+  stroke: #1f241f;
+  stroke-width: 4;
+}
+
+.connections-chord__hit-path {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+}
+
+.connections-chord__nodes g {
+  cursor: pointer;
+}
+
+.connections-chord__nodes g[aria-disabled="true"] {
+  cursor: default;
+}
+
+.connections-chord__nodes circle {
+  stroke: #fffefa;
+  stroke-width: 2;
+  transition: r 160ms ease, stroke-width 160ms ease;
+}
+
+.connections-chord__nodes g:hover circle,
+.connections-chord__nodes .is-related circle,
+.connections-chord__nodes .is-selected circle {
+  stroke: #1f241f;
+}
+
+.connections-chord__nodes .is-selected circle {
+  stroke-width: 4;
+}
+
+.connections-chord__nodes text {
+  fill: #6b665d;
+  font-size: 10px;
+  font-weight: 700;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+.connections-chord__nodes .is-related text,
+.connections-chord__nodes .is-selected text {
+  fill: #1f241f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.connections-chord__center-label text:first-child {
+  fill: #1f241f;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.connections-chord__center-label text:nth-child(2) {
+  fill: #1f241f;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.connections-chord__center-label text:last-child {
+  fill: #5f5a50;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.connections-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.2rem;
+  margin-top: 0.75rem;
+  color: #5f5a50;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.connections-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.connections-legend i {
+  display: inline-block;
+  width: 1.75rem;
+  border-top: 3px solid #28775e;
+}
+
+.connections-legend__enables i {
+  border-top-width: 2px;
+}
+
+.connections-legend__potential-tension i {
+  border-top-style: dashed;
+  border-top-color: #b24d32;
+}
+
+.connections-detail {
+  padding: 1.35rem;
+}
+
+.connections-detail__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.connections-type,
+.connections-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.connections-type {
+  padding: 0.32rem 0.48rem;
+  background: #e7f1ec;
+  color: #205f4b;
+}
+
+.connections-type--potential-tension {
+  background: #f8e8e2;
+  color: #8a3926;
+}
+
+.connections-type--enables {
+  background: #e8edf8;
+  color: #244f9f;
+}
+
+.connections-status {
+  color: #5f5a50;
+}
+
+.connections-pair {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.connections-pair > div {
+  padding: 0.9rem;
+  border-left: 5px solid #28775e;
+  background: #f3f1ea;
+}
+
+.connections-pair .connections-text-link {
+  display: inline-block;
+  margin-top: 0.55rem;
+  font-size: 0.76rem;
+}
+
+.connections-detail__copy {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.25rem;
+}
+
+.connections-detail h3,
+.connections-empty h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.connections-detail p,
+.connections-empty p {
+  margin: 0;
+  color: #5f5a50;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.connections-meaning {
+  padding: 0.85rem;
+  background: #f3f1ea;
+}
+
+.connections-sources {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d9d4c8;
+}
+
+.connections-sources ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.connections-sources a {
+  font-size: 0.78rem;
+}
+
+.connections-detail--empty,
+.connections-empty {
+  display: grid;
+  place-content: center;
+  min-height: 18rem;
+  text-align: center;
+}
+
+.connections-empty {
+  min-height: 30rem;
+  padding: 2rem;
+}
+
+.connections-empty p {
+  max-width: 33rem;
+}
+
+.connections-list {
+  padding: 1.25rem;
+}
+
+.connections-list > div > p {
+  margin: 0.35rem 0 0;
+  color: #5f5a50;
+  font-size: 0.88rem;
+}
+
+.connections-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.connections-list button {
+  display: grid;
+  gap: 0.55rem;
+  width: 100%;
+  min-height: 100%;
+  padding: 1rem;
+  border: 1px solid #c9c3b7;
+  border-radius: 0.6rem;
+  background: #fff;
+  color: #1f241f;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.connections-list button:hover,
+.connections-list button[aria-pressed="true"] {
+  border-color: #28775e;
+  background: #f1f7f4;
+}
+
+.connections-list button > strong {
+  font-size: 0.98rem;
+}
+
+.connections-list button > span:last-child {
+  color: #5f5a50;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .connections-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .connections-detail {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .connections-intro,
+  .connections-page__explorer {
+    width: min(100% - 2rem, 80rem);
+  }
+
+  .connections-intro {
+    padding-top: 2rem;
+  }
+
+  .connections-controls {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .connections-guides > div {
+    display: grid;
+  }
+
+  .connections-network-heading {
+    display: grid;
+  }
+
+  .connections-network-heading > span {
+    justify-self: start;
+  }
+
+  .connections-chord__nodes .is-context text {
+    display: none;
+  }
+
+  .connections-chord__nodes .is-related text,
+  .connections-chord__nodes .is-selected text {
+    font-size: 15px;
+  }
+
+  .connections-chord__arcs text {
+    font-size: 15px;
+  }
+
+  .connections-chord__center-label text:first-child {
+    font-size: 34px;
+  }
+
+  .connections-chord__center-label text:nth-child(2) {
+    font-size: 18px;
+  }
+
+  .connections-chord__center-label text:last-child {
+    font-size: 14px;
+  }
+
+  .connections-list ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .connections-explorer button {
+    transition: none;
+  }
+}

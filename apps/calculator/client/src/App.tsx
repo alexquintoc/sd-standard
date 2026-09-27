@@ -28,6 +28,7 @@ import Projects from "@/pages/Projects";
 const QuickProjectScan = lazy(() => import("@/pages/QuickProjectScan"));
 const QuickProjectScanEmbed = lazy(() => import("@/pages/QuickProjectScanEmbed"));
 const TheStandardAndTheSdgs = lazy(() => import("@/pages/TheStandardAndTheSdgs"));
+const ConnectionsBetweenCriteria = lazy(() => import("@/pages/ConnectionsBetweenCriteria"));
 import SiteChrome from "@/components/SiteChrome";
 import Updates from "@/pages/Updates";
 import UpdateDetail from "@/pages/UpdateDetail";
@@ -59,6 +60,7 @@ function Router() {
       <Route path="/explore/criteria">{() => <CriteriaIndex />}</Route>
       <Route path="/es/criteria">{() => <CriteriaIndex spanish />}</Route>
       <Route path="/explore/sdgs" component={TheStandardAndTheSdgs} />
+      <Route path="/explore/connections" component={ConnectionsBetweenCriteria} />
       <Route path="/about/updates">{() => <Updates />}</Route>
       <Route path="/about/updates/:slug">{params => <UpdateDetail params={params} />}</Route>
       <Route path="/es/about/updates">{() => <Updates spanish />}</Route>

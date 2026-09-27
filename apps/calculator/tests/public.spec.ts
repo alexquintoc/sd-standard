@@ -58,7 +58,7 @@ test("seven design questions disclose current criterion links", async ({ page })
   }
 });
 test("new content, preserved gallery and legacy routes", async ({ page }) => {
-  for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/explore/project-types", "/explore/sdgs", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
+  for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/explore/project-types", "/explore/sdgs", "/explore/connections", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.goto(route); await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /.+/);
     await expect(page.locator("html")).toHaveAttribute("lang", route.startsWith("/es/") ? "es" : "en");
@@ -128,7 +128,7 @@ test("legacy migration, valid import, save failure and local deletion", async ({
 });
 test("public pages have no automated WCAG A/AA violations and fit narrow screens", async ({ page }) => {
   test.setTimeout(120000);
-  for (const route of ["/", "/explore", "/explore/pillars", "/explore/criteria", "/es/criteria", "/explore/project-types", "/projects", "/projects/abierto", "/about", "/about/get-involved", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
+  for (const route of ["/", "/explore", "/explore/pillars", "/explore/criteria", "/es/criteria", "/explore/project-types", "/explore/connections", "/projects", "/projects/abierto", "/about", "/about/get-involved", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.setViewportSize({ width: 390, height: 844 }); await page.goto(route);
     await expect(page.locator("main h1")).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), route).toBeTruthy();
@@ -171,6 +171,44 @@ test("initial public routes and mobile keyboard navigation", async ({ page }) =>
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
   await page.screenshot({ path: "../../.local/home-mobile.png", fullPage: true });
   await page.setViewportSize({ width: 1440, height: 1000 }); await page.screenshot({ path: "../../.local/home-desktop.png", fullPage: true });
+});
+test("criterion connections are circular, focused, keyboard-operable and linked to the Knowledge Base", async ({ page }) => {
+  await page.goto("/explore/connections");
+  await expect(page.getByRole("heading", { name: "Connections between criteria" })).toBeVisible();
+  await expect(page.locator(".connections-chord")).toBeVisible();
+  await expect(page.locator(".connections-chord__center-label")).toContainText("C1");
+  await expect(page.locator(".connections-chord__center-label")).toContainText("Endangered Languages");
+  await expect(page.locator(".connections-chord__nodes .is-related").filter({ hasText: "EM10" })).toContainText("Ecosystems Conservation");
+  await expect(page.getByRole("article")).toContainText("This is a possible pathway, not proof of an environmental outcome.");
+  await expect(page.getByRole("link", { name: /Open C1 in the Knowledge Base/ })).toHaveAttribute("href", /endangered-languages\.html$/);
+  await expect(page.getByRole("link", { name: /Open EM10 in the Knowledge Base/ })).toHaveAttribute("href", /ecosystems-conservation\.html$/);
+
+  const chordConnection = page.getByRole("button", {
+    name: /Reinforces connection between C1 Endangered Languages and C2 Indigenous Culture/,
+  });
+  await chordConnection.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("article")).toContainText("Language preservation may support the continuity");
+
+  const tensionGuide = page.getByRole("button", { name: "Affordability and fair compensation" });
+  await tensionGuide.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByText("Potential tension", { exact: true }).first()).toBeVisible();
+  await expect(page.locator(".connections-chord__center-label")).toContainText("S12");
+  await expect(page.locator(".connections-chord__center-label")).toContainText("Affordable");
+  await expect(page.locator(".connections-chord__nodes .is-related").filter({ hasText: "F2" })).toContainText("Profitability");
+
+  const criterionSelect = page.getByLabel("Search by typing a code or name after opening the list.");
+  await criterionSelect.selectOption("E14");
+  await expect(page.locator(".connections-chord__center-label")).toContainText("E11");
+  await expect(page.getByRole("article")).toContainText("Recyclability or Reusability");
+  await expect(page.getByRole("article")).toContainText("Profitability");
+
+  await criterionSelect.selectOption("S6");
+  await expect(page.locator(".connections-chord__center-label")).toContainText("S8");
+  const connectionList = page.getByRole("region", { name: "Connections as a list" });
+  await expect(connectionList).toContainText("F2 Profitability");
+  await expect(connectionList).not.toContainText("F7");
 });
 test("desktop dropdowns, mobile groups and Knowledge Base links use the shared navigation", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });

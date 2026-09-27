@@ -26,6 +26,7 @@ export const siteNavigation: readonly SiteNavigationSection[] = [
       { label: "Tools and resources", href: "/explore#tools-and-resources" },
       { label: "Knowledge Base", href: "/knowledge-base", opensInNewTab: true },
       { label: "SDGs", href: "/explore/sdgs" },
+      { label: "Criteria connections", href: "/explore/connections" },
     ],
   },
   {

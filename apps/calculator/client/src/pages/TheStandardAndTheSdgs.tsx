@@ -2,6 +2,7 @@ import { PageMeta } from "@/public-site/PageIntro";
 import { useEffect } from "react";
 import criteriaV2 from "../../../../../packages/standard-core/src/criteria.v2.json";
 import { RelationshipSankey } from "@/components/RelationshipSankey";
+import { Link } from "wouter";
 
 const pageTitle = "The SD Standard and the Sustainable Development Goals";
 
@@ -33,6 +34,9 @@ export default function TheStandardAndTheSdgs() {
               individual criteria can contribute to broader sustainable development outcomes.
             </p>
           </div>
+          <Link className="mt-5 inline-block font-extrabold text-[#205f4b] underline decoration-2 underline-offset-4" href="/explore/connections">
+            Explore connections between criteria <span aria-hidden="true">↗</span>
+          </Link>
         </div>
 
         <div className="mt-8">

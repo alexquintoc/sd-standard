@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "test": "tsx --test src/project/project.test.ts src/project/storage.test.ts src/project/workspace/workspace.test.ts",
+    "test": "tsx --test src/project/project.test.ts src/project/storage.test.ts src/project/workspace/workspace.test.ts src/criteria-relationships.test.ts",
     "check": "tsc --noEmit"
   }
 }

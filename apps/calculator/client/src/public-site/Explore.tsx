@@ -11,7 +11,7 @@ export default function Explore() {
     <PageIntro title="A wider view of design." description="Start with the framework, or follow a question from your own practice. These are different ways into the same body of knowledge." />
     <section className="public-section">
       <h2>Understand the Standard</h2>
-      <div className="public-discovery">{[["Four Pillars", "/explore/pillars"], ["Criteria", "/explore/criteria"], ["Project Types", "/explore/project-types"], ["The Standard and the SDGs", "/explore/sdgs"]].map(([label, href]) => <Link href={href} key={href}>{label}<span aria-hidden="true">↗</span></Link>)}</div>
+      <div className="public-discovery">{[["Four Pillars", "/explore/pillars"], ["Criteria", "/explore/criteria"], ["Project Types", "/explore/project-types"], ["The Standard and the SDGs", "/explore/sdgs"], ["Connections between criteria", "/explore/connections"]].map(([label, href]) => <Link href={href} key={href}>{label}<span aria-hidden="true">↗</span></Link>)}</div>
       <p className="mt-8">The Knowledge Base brings together detailed criterion guidance, terminology and references.</p>
       <a className="public-link" href="/knowledge-base" target="_blank" rel="noopener noreferrer" aria-label="Visit the Knowledge Base (opens in a new tab)">Visit the Knowledge Base ↗</a>
     </section>
