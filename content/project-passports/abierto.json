@@ -19,7 +19,7 @@
       "website"
     ],
     "createdAt": "2026-05-01T12:00:00.000Z",
-    "updatedAt": "2026-09-29T01:24:02.828Z"
+    "updatedAt": "2026-09-29T01:30:34.945Z"
   },
   "components": [
     {
@@ -424,7 +424,7 @@
       "project",
       "components"
     ],
-    "exportedAt": "2026-09-29T01:24:23.610Z",
+    "exportedAt": "2026-09-29T01:31:47.829Z",
     "generator": {
       "name": "SD Standard",
       "version": ""
@@ -451,13 +451,19 @@
       {
         "id": "collaborator-mugf12jf-ac7m",
         "name": "Fausto y Luis",
-        "role": "carpintería",
+        "role": "Carpenters",
         "credit": ""
       },
       {
         "id": "collaborator-mugf1ffe-zd27",
         "name": "Encuadernados Tex",
-        "role": "impresión de postales y tela",
+        "role": "Printer of postcards and fabric",
+        "credit": ""
+      },
+      {
+        "id": "collaborator-mum00zdl-vwfn",
+        "name": "Texterra",
+        "role": "Recycled canvas fabric supplier",
         "credit": ""
       }
     ],
