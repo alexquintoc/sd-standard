@@ -19,7 +19,7 @@
       "website"
     ],
     "createdAt": "2026-05-01T12:00:00.000Z",
-    "updatedAt": "2026-09-25T03:52:36.051Z"
+    "updatedAt": "2026-09-29T01:24:02.828Z"
   },
   "components": [
     {
@@ -114,7 +114,7 @@
         {
           "id": "design-for-disassembly",
           "title": "Design for disassembly",
-          "description": "The table (display base) uses  detachable connections so parts can be separated after the exhibition.",
+          "description": "The table (display base) uses  detachable connections so parts can be separated after the exhibition. The table graphics invite people to engage with the SD Standard team to give the installation a second life after the exhibit.",
           "status": "in-progress",
           "notes": ""
         },
@@ -141,18 +141,11 @@
       "response": "modeled",
       "strategies": [
         {
-          "id": "optimize-assets",
-          "title": "Optimize website assets",
-          "description": "Compress images and avoid unnecessary scripts.",
-          "status": "selected",
-          "notes": ""
-        },
-        {
-          "id": "test-low-bandwidth",
-          "title": "Test low-bandwidth access",
-          "description": "Verify the page remains useful on constrained mobile connections.",
-          "status": "considering",
-          "notes": ""
+          "title": "Accessible website",
+          "description": "The website is being prepared to be accessible for people with visual disabilities (not yet enough evidence for a site-wide WCAG conformance claim)",
+          "status": "suggested",
+          "notes": "Tests remaining to comply with WCAG:\n\nAudit every public template and Workspace workflow.\nPerform keyboard-only and visible-focus testing.\nTest with NVDA/Chrome and preferably VoiceOver/Safari.\nCheck 200% and 400% zoom, reflow, text spacing, and mobile orientation.\nManually review headings, landmarks, forms, errors, status messages, alternative text, and language changes.\nTest complete processes such as creating, importing, editing, previewing, and exporting a project.\nFix the mixed-language content on the English Abierto passport or mark Spanish passages with lang=\"es\".\nRecord the evaluated scope, WCAG version, level, date, browsers, and assistive technologies using a methodology such as WCAG-EM.",
+          "id": "accessible-website"
         }
       ],
       "notes": "Performance budget to be confirmed before launch."
@@ -257,7 +250,7 @@
         ]
       },
       "relevance": "high",
-      "status": "not-reviewed",
+      "status": "completed",
       "response": "not-assessed",
       "strategies": [
         {
@@ -431,7 +424,7 @@
       "project",
       "components"
     ],
-    "exportedAt": "2026-09-25T03:53:11.557Z",
+    "exportedAt": "2026-09-29T01:24:23.610Z",
     "generator": {
       "name": "SD Standard",
       "version": ""
