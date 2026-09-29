@@ -143,7 +143,7 @@
         {
           "title": "Accessible website",
           "description": "The website is being prepared to be accessible for people with visual disabilities (not yet enough evidence for a site-wide WCAG conformance claim)",
-          "status": "suggested",
+          "status": "in-progress",
           "notes": "Tests remaining to comply with WCAG:\n\nAudit every public template and Workspace workflow.\nPerform keyboard-only and visible-focus testing.\nTest with NVDA/Chrome and preferably VoiceOver/Safari.\nCheck 200% and 400% zoom, reflow, text spacing, and mobile orientation.\nManually review headings, landmarks, forms, errors, status messages, alternative text, and language changes.\nTest complete processes such as creating, importing, editing, previewing, and exporting a project.\nFix the mixed-language content on the English Abierto passport or mark Spanish passages with lang=\"es\".\nRecord the evaluated scope, WCAG version, level, date, browsers, and assistive technologies using a methodology such as WCAG-EM.",
           "id": "accessible-website"
         }
