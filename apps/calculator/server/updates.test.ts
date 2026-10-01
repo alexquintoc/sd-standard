@@ -25,10 +25,10 @@ test("both language versions publish together and retain reciprocal metadata", (
   assert.equal(spanish.locale, "es");
   assert.equal(english.translationSlug, spanishSlug);
   assert.equal(spanish.translationSlug, englishSlug);
-  assert.match(english.body, /Denisse, Co-founder\. Arudeko/);
-  assert.match(spanish.body, /Denisse Arnaiz, Co-fundadora\. Arudeko/);
-  assert.match(english.body, /\/projects\/abierto/);
-  assert.match(spanish.body, /\/projects\/abierto/);
+  assert.match(english.body, /Denisse Arnaiz, Co-founder of Arudeko design studio/);
+  assert.match(spanish.body, /Denisse Arnaiz, cofundadora del estudio de diseño Arudeko/);
+  assert.match(english.body, /https:\/\/sdstandard\.org\/impact-snapshot/);
+  assert.match(spanish.body, /https:\/\/sdstandard\.org\/impact-snapshot/);
 });
 
 test("the July announcement exposes its dated follow-up metadata", () => {
