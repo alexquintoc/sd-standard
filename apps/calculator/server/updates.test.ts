@@ -25,6 +25,10 @@ test("both language versions publish together and retain reciprocal metadata", (
   assert.equal(spanish.locale, "es");
   assert.equal(english.translationSlug, spanishSlug);
   assert.equal(spanish.translationSlug, englishSlug);
+  assert.equal(english.featuredImage, "/images/project-passports/abierto/abierto-installation-overview.jpg");
+  assert.equal(spanish.featuredImage, english.featuredImage);
+  assert.match(english.imageAlt ?? "", /illuminated woven textile/);
+  assert.match(spanish.imageAlt ?? "", /textil tejido e iluminado/);
   assert.match(english.body, /Denisse Arnaiz, Co-founder of Arudeko design studio/);
   assert.match(spanish.body, /Denisse Arnaiz, cofundadora del estudio de diseño Arudeko/);
   assert.match(english.body, /https:\/\/sdstandard\.org\/impact-snapshot/);

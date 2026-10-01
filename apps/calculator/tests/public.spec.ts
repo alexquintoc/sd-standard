@@ -93,11 +93,13 @@ test("the Abierto press release has bilingual routes, metadata and dated cross-l
   await expect(page.getByRole("link", { name: "Leer esta publicación en español" })).toHaveAttribute("href", "/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026");
   await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveAttribute("href", "https://sdstandard.org/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /What Is a Design Made Of/);
+  await expect(page.getByRole("img", { name: /illuminated woven textile/ })).toHaveAttribute("src", "/images/project-passports/abierto/abierto-installation-overview.jpg");
   await expect(page.getByText(/says Denisse Arnaiz, Co-founder of Arudeko design studio/)).toBeVisible();
 
   await page.goto("/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026");
   await expect(page.locator("html")).toHaveAttribute("lang", "es");
   await expect(page.getByRole("link", { name: "Read this release in English" })).toHaveAttribute("href", "/about/updates/what-is-a-design-made-of-abierto-2026");
+  await expect(page.getByRole("img", { name: /textil tejido e iluminado/ })).toHaveAttribute("src", "/images/project-passports/abierto/abierto-installation-overview.jpg");
   await expect(page.getByText(/afirma Denisse Arnaiz, cofundadora del estudio de diseño Arudeko/)).toBeVisible();
 
   await page.goto("/about/updates/abierto-de-diseno-cdmx-2026");
