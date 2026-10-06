@@ -277,6 +277,26 @@ function normalizeApplicabilityLabels(content) {
     .replace(/(^|\r?\n)C:\s+/g, "$1Design Entity: ");
 }
 
+function escapeHtml(value) {
+  return `${value}`
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function formatResources(resources) {
+  if (!Array.isArray(resources) || resources.length === 0) return "";
+
+  return resources
+    .map((resource) => [
+      `- **${resource.title}** — ${resource.description}  `,
+      `  <a href="${escapeHtml(resource.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(resource.url)}</a>`
+    ].join("\n"))
+    .join("\n");
+}
+
 function getCriterionManualFileName(criterion) {
   return `${criterion.id}-guidance.md`;
 }
@@ -539,6 +559,41 @@ function validateLinks(criteriaData, termsData) {
           );
         }
       }
+
+      if (typeof criterion.resourcesNote !== "undefined" &&
+          typeof criterion.resourcesNote !== "string") {
+        throw new Error(`Criterion "${criterion.id}" resourcesNote must be a string`);
+      }
+
+      if (typeof criterion.resources !== "undefined" &&
+          !Array.isArray(criterion.resources)) {
+        throw new Error(`Criterion "${criterion.id}" resources must be an array`);
+      }
+
+      for (const [index, resource] of (criterion.resources || []).entries()) {
+        const resourcePath = `Criterion "${criterion.id}" resource ${index + 1}`;
+
+        if (!resource || typeof resource !== "object") {
+          throw new Error(`${resourcePath} must be an object`);
+        }
+
+        for (const field of ["title", "description", "url"]) {
+          if (typeof resource[field] !== "string" || !resource[field].trim()) {
+            throw new Error(`${resourcePath} must have a non-empty ${field}`);
+          }
+        }
+
+        let parsedUrl;
+        try {
+          parsedUrl = new URL(resource.url);
+        } catch {
+          throw new Error(`${resourcePath} has an invalid URL: ${resource.url}`);
+        }
+
+        if (!new Set(["http:", "https:"]).has(parsedUrl.protocol)) {
+          throw new Error(`${resourcePath} URL must use HTTP or HTTPS: ${resource.url}`);
+        }
+      }
     }
   }
 }
@@ -631,6 +686,8 @@ function generateCriteriaDocs(criteriaData) {
         .map((termId) => `- [${slugToTitle(termId)}](../terms/${termId}.md)`)
         .join("\n");
 
+      const resources = formatResources(criterion.resources);
+
       const contentParts = [
         GENERATED_WARNING,
         `# ${visibleId}: ${criterion.label}`,
@@ -682,6 +739,16 @@ function generateCriteriaDocs(criteriaData) {
 
       if (relatedTerms) {
         contentParts.push("## Related terms", relatedTerms, "");
+      }
+
+      if (resources) {
+        contentParts.push("## Resources");
+
+        if (criterion.resourcesNote) {
+          contentParts.push(criterion.resourcesNote, "");
+        }
+
+        contentParts.push(resources, "");
       }
 
       const manualGuidance = readManualGuidance(criterion);
