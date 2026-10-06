@@ -4,6 +4,20 @@ import { getAllUpdates, getUpdate } from "./updates";
 
 const englishSlug = "what-is-a-design-made-of-abierto-2026";
 const spanishSlug = "de-que-esta-hecho-un-diseno-abierto-2026";
+const bidSlug = "sd-standard-selected-bienal-iberoamericana-diseno-2026";
+
+test("the BID selection is the latest English update and retains its related links", () => {
+  const updates = getAllUpdates({ now: new Date("2026-10-06T06:00:00.000Z") });
+  const bid = getUpdate(bidSlug, { now: new Date("2026-10-06T06:00:00.000Z") });
+
+  assert.equal(updates.filter((update) => update.locale === "en")[0]?.slug, bidSlug);
+  assert.ok(bid);
+  assert.equal(bid.featuredImage, undefined);
+  assert.match(bid.summary, /2026 Bienal Iberoamericana de Diseño/);
+  assert.match(bid.body, /https:\/\/bid-dimad\.com\//);
+  assert.match(bid.body, /\/explore\/pillars/);
+  assert.match(bid.body, /\/projects\/abierto/);
+});
 
 test("the September press release stays unavailable before its Mexico City publication date", () => {
   const beforeRelease = new Date("2026-09-25T05:59:59.000Z");
