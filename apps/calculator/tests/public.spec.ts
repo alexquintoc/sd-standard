@@ -5,6 +5,38 @@ import { readFileSync } from "node:fs";
 const fixture = JSON.parse(readFileSync(new URL("../../../packages/standard-core/examples/abierto-project.v0.1.json", import.meta.url), "utf8"));
 const releaseAvailable = process.env.SD_UPDATES_INCLUDE_SCHEDULED === "1" || Date.now() >= Date.parse("2026-09-25T06:00:00.000Z");
 const releaseRoutes = releaseAvailable ? ["/about/updates/what-is-a-design-made-of-abierto-2026", "/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026"] : [];
+const bidRoute = "/about/updates/sd-standard-selected-bienal-iberoamericana-diseno-2026";
+
+test("BID announcement uses the supplied graphic and replaces the Abierto banner", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/");
+
+  const banner = page.locator(".public-announcement");
+  await expect(banner).toContainText("SD Standard selected for BID 2026.");
+  await expect(banner.getByRole("link", { name: "Learn more" })).toHaveAttribute("href", bidRoute);
+  await expect(banner.locator('a[href*="abierto-de-diseno-cdmx-2026"]')).toHaveCount(0);
+
+  await page.goto("/about/updates");
+  const listingImage = page.getByRole("img", { name: "SD Standard selected for BID 2026" });
+  await expect(listingImage).toHaveAttribute("src", "/images/updates/sd-standard-bid-2026.png");
+  expect(await listingImage.evaluate((image: HTMLImageElement) => Math.abs(image.clientWidth / image.clientHeight - image.naturalWidth / image.naturalHeight))).toBeLessThan(0.01);
+
+  await page.goto(bidRoute);
+  const detailImage = page.getByRole("img", { name: "SD Standard selected for BID 2026" });
+  await expect(detailImage).toBeVisible();
+  await expect(detailImage).toHaveAttribute("src", "/images/updates/sd-standard-bid-2026.png");
+  expect(await detailImage.evaluate((image: HTMLImageElement) => Math.abs(image.clientWidth / image.clientHeight - image.naturalWidth / image.naturalHeight))).toBeLessThan(0.01);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  expect((await banner.boundingBox())?.height ?? Infinity).toBeLessThan(90);
+  await banner.getByRole("button", { name: "Dismiss announcement" }).click();
+  await expect(banner).toHaveCount(0);
+  await page.reload();
+  await expect(page.locator(".public-announcement")).toHaveCount(0);
+});
+
 test("one active project, close confirmation, preserved copy and explicit reopen", async ({ page }) => {
   await page.goto("/");
   const nav = page.getByRole("navigation", { name: "Main navigation", exact: true });

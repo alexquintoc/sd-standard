@@ -12,7 +12,12 @@ test("the BID selection is the latest English update and retains its related lin
 
   assert.equal(updates.filter((update) => update.locale === "en")[0]?.slug, bidSlug);
   assert.ok(bid);
-  assert.equal(bid.featuredImage, undefined);
+  assert.equal(bid.featuredImage, "/images/updates/sd-standard-bid-2026.png");
+  assert.equal(bid.imageAlt, "SD Standard selected for BID 2026");
+  assert.equal(bid.showInAnnouncementBar, true);
+  assert.equal(bid.announcementText, "SD Standard selected for BID 2026.");
+  assert.equal(bid.announcementLinkLabel, "Learn more");
+  assert.equal(bid.announcementPriority, 2);
   assert.match(bid.summary, /2026 Bienal Iberoamericana de Diseño/);
   assert.match(bid.body, /https:\/\/bid-dimad\.com\//);
   assert.match(bid.body, /\/explore\/pillars/);
@@ -53,6 +58,7 @@ test("the July announcement exposes its dated follow-up metadata", () => {
   const july = getUpdate("abierto-de-diseno-cdmx-2026", { includeScheduled: true });
 
   assert.ok(july);
+  assert.equal(july.showInAnnouncementBar, false);
   assert.equal(july.followUpSlug, englishSlug);
   assert.equal(july.followUpDate, "2026-09-25T06:00:00.000Z");
   assert.doesNotMatch(july.body, /to be confirmed/i);
