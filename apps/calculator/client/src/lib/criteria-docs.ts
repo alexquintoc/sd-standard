@@ -12,7 +12,7 @@ export type CriterionDocMeta = {
   url: string;
 };
 
-const docsBaseUrl = "https://alexquintoc.github.io/sd-standard";
+const docsBaseUrl = "/knowledge-base";
 
 const meta = criteriaMeta as Record<string, CriterionDocMeta>;
 

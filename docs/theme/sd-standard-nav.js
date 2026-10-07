@@ -20,7 +20,7 @@
 
     const website = document.createElement("a");
     website.href = "https://sdstandard.org/";
-    website.textContent = "SD Standard website →";
+    website.textContent = "← Back to SD Standard";
 
     inner.append(brand, website);
     header.appendChild(inner);

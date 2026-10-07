@@ -959,7 +959,7 @@ function buildCriteriaRedirects(criteriaData) {
       for (const compatibilitySlug of getCompatibilityDocSlugs(criterion)) {
         redirects.push({
           from: `/generated/criteria/${compatibilitySlug}.html`,
-          to: `/generated/criteria/${docSlug}.html`
+          to: `/knowledge-base/generated/criteria/${docSlug}.html`
         });
       }
     }

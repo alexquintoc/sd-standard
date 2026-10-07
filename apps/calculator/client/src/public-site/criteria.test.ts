@@ -10,9 +10,8 @@ test("public index contains all canonical criteria with valid scopes and generat
   assert.equal(new Set(publicCriteria.map(item => item.id)).size, publicCriteria.length);
   for (const item of publicCriteria) {
     assert.ok(item.displayId); assert.ok(scopeLabel(item.appliesTo));
-    const url = new URL(item.url);
-    assert.equal(url.hostname, "alexquintoc.github.io");
-    const generatedPath = url.pathname.replace("/sd-standard/", "docs/src/").replace(/\.html$/, ".md");
+    assert.match(item.url, /^\/knowledge-base\/generated\/criteria\/.+\.html$/);
+    const generatedPath = item.url.replace("/knowledge-base/", "docs/src/").replace(/\.html$/, ".md");
     assert.ok(existsSync(generatedPath), `Missing generated KB page: ${item.id}`);
   }
 });

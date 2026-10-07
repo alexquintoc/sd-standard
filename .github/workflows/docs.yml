@@ -1,10 +1,9 @@
-name: Build and Deploy Docs
+name: Redirect legacy Knowledge Base URLs
 
 on:
   push:
     branches:
       - main
-      - repo-restructure
   workflow_dispatch:
 
 permissions:
@@ -30,16 +29,16 @@ jobs:
         with:
           mdbook-version: latest
 
-      - name: Generate docs
-        run: node scripts/generate-docs.js
+      - name: Build canonical Knowledge Base URLs
+        run: npm run docs:build
 
-      - name: Build book
-        run: mdbook build docs
+      - name: Build GitHub Pages redirect layer
+        run: npm run docs:legacy-redirects
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/book
+          path: docs/legacy-pages
 
   deploy:
     needs: build
