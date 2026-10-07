@@ -25,3 +25,7 @@ Sustainable products are affordable for all market sectors.
 ### Why is affordability important?
 
 Affordability ensures that sustainable design does not reinforce inequality. If a product, service, campaign, tool, or communication system is environmentally responsible but only accessible to higher-income audiences, its social impact is limited. Within the SD Standard, affordability asks designers to consider whether the benefits of a sustainable solution can reach people with limited financial resources, smaller organizations, or underserved communities. It encourages design decisions that reduce barriers to access while still respecting quality, durability, fair labour, and long-term value.
+
+## Related Knowledge Base guides
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

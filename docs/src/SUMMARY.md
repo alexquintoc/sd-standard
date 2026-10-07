@@ -8,6 +8,16 @@
 - [Contributing](standard/contributing.md)
 
 <!-- GENERATED_SUMMARY:START -->
+# Guides & Resources
+- [Guides & Resources](guides/README.md)
+  - [From Attention to Action](guides/from-attention-to-action.md)
+  - [Designing for Sufficiency and Circularity](guides/designing-for-sufficiency-and-circularity.md)
+  - [Making Sustainability Trade-offs](guides/making-sustainability-trade-offs.md)
+  - [Working With Communities](guides/working-with-communities.md)
+  - [Cultural Sustainability in Practice](guides/cultural-sustainability-in-practice.md)
+  - [AI and Sustainable Communication Design](guides/ai-and-sustainable-communication-design.md)
+  - [Evidence, Measurement, and Claims](guides/evidence-measurement-and-claims.md)
+
 # Reference
 - [Pillars](generated/pillars/README.md)
   - [Environmental Criteria](generated/pillars/environment.md)

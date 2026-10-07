@@ -33,3 +33,7 @@ The 7 Principles of Universal Design were developed in 1997 by a working group o
 * Principle 5: Tolerance for Error
 * Principle 6: Low Physical Effort
 * Principle 7: Size and Space for Approach and Use
+
+## Related Knowledge Base guides
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.

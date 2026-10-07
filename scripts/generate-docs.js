@@ -25,6 +25,9 @@ const docsTermsDir = path.join(docsGeneratedDir, "terms");
 const docsPillarsDir = path.join(docsGeneratedDir, "pillars");
 const docsManualDir = path.join(root, "docs", "src", "manual");
 const docsManualCriteriaDir = path.join(docsManualDir, "criteria");
+const docsGuidesSourceDir = path.join(root, "docs", "guides");
+const docsGuidesManifestPath = path.join(docsGuidesSourceDir, "guides.json");
+const docsGuidesDir = path.join(root, "docs", "src", "guides");
 const docsBookDir = path.join(root, "docs", "book");
 const distKnowledgeBaseDir = path.join(root, "dist", "knowledge-base");
 const docsSummaryPath = path.join(root, "docs", "src", "SUMMARY.md");
@@ -134,12 +137,18 @@ function removeInvalidGeneratedFilenames(dir) {
 }
 
 
-function buildGeneratedSummary(criteriaData, termsData) {
+function buildGeneratedSummary(criteriaData, termsData, guidesData) {
   const lines = [
     "<!-- GENERATED_SUMMARY:START -->",
-    "# Reference",
-    "- [Pillars](generated/pillars/README.md)"
+    "# Guides & Resources",
+    "- [Guides & Resources](guides/README.md)"
   ];
+
+  for (const guide of guidesData.guides) {
+    lines.push(`  - [${guide.title}](guides/${guide.slug}.md)`);
+  }
+
+  lines.push("", "# Reference", "- [Pillars](generated/pillars/README.md)");
 
   for (const pillar of criteriaData.pillars) {
     lines.push(`  - [${pillar.label}](generated/pillars/${getPillarDocSlug(pillar)}.md)`);
@@ -183,11 +192,11 @@ function buildGeneratedSummary(criteriaData, termsData) {
   return lines.join("\n");
 }
 
-function updateGeneratedSummary(criteriaData, termsData) {
+function updateGeneratedSummary(criteriaData, termsData, guidesData) {
   if (!fs.existsSync(docsSummaryPath)) return;
 
   const summary = fs.readFileSync(docsSummaryPath, "utf8");
-  const generatedSummary = buildGeneratedSummary(criteriaData, termsData);
+  const generatedSummary = buildGeneratedSummary(criteriaData, termsData, guidesData);
   const generatedBlockPattern =
     /<!-- GENERATED_SUMMARY:START -->[\s\S]*<!-- GENERATED_SUMMARY:END -->/;
 
@@ -617,9 +626,136 @@ function buildCompatibilityPage(criterion) {
   ].join("\n");
 }
 
-function generateCriteriaDocs(criteriaData) {
+function validateGuides(guidesData, criteriaData) {
+  if (!guidesData || !Array.isArray(guidesData.guides)) {
+    throw new Error("docs/guides/guides.json must contain a guides array");
+  }
+
+  const criteriaByReference = getCriteriaByReference(criteriaData);
+  const slugs = new Set();
+
+  for (const guide of guidesData.guides) {
+    for (const field of ["slug", "title", "description"]) {
+      if (typeof guide[field] !== "string" || !guide[field].trim()) {
+        throw new Error(`Guide must have a non-empty ${field}`);
+      }
+    }
+
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(guide.slug)) {
+      throw new Error(`Guide has an invalid slug: ${guide.slug}`);
+    }
+    if (slugs.has(guide.slug)) throw new Error(`Duplicate guide slug: ${guide.slug}`);
+    slugs.add(guide.slug);
+
+    const sourcePath = path.join(docsGuidesSourceDir, `${guide.slug}.md`);
+    if (!fs.existsSync(sourcePath)) {
+      throw new Error(`Missing guide source: ${path.relative(root, sourcePath)}`);
+    }
+
+    if (!Array.isArray(guide.criteria) || guide.criteria.length === 0) {
+      throw new Error(`Guide "${guide.slug}" must reference at least one criterion`);
+    }
+    for (const reference of guide.criteria) {
+      if (!criteriaByReference.has(`${reference}`.toLowerCase())) {
+        throw new Error(`Guide "${guide.slug}" references missing criterion "${reference}"`);
+      }
+    }
+  }
+
+  for (const guide of guidesData.guides) {
+    for (const relatedSlug of guide.relatedGuides || []) {
+      if (!slugs.has(relatedSlug)) {
+        throw new Error(`Guide "${guide.slug}" references missing guide "${relatedSlug}"`);
+      }
+      if (relatedSlug === guide.slug) {
+        throw new Error(`Guide "${guide.slug}" cannot relate to itself`);
+      }
+    }
+  }
+}
+
+function getGuidesByCriterion(guidesData, criteriaData) {
+  const criteriaByReference = getCriteriaByReference(criteriaData);
+  const guidesByCriterion = new Map();
+
+  for (const guide of guidesData.guides) {
+    for (const reference of guide.criteria) {
+      const criterion = criteriaByReference.get(`${reference}`.toLowerCase());
+      const guides = guidesByCriterion.get(criterion.id) || [];
+      guides.push(guide);
+      guidesByCriterion.set(criterion.id, guides);
+    }
+  }
+
+  return guidesByCriterion;
+}
+
+function generateGuideDocs(guidesData, criteriaData) {
+  ensureDir(docsGuidesDir);
+  cleanGeneratedMarkdown(docsGuidesDir);
+
+  const criteriaByReference = getCriteriaByReference(criteriaData);
+  const guidesBySlug = new Map(guidesData.guides.map((guide) => [guide.slug, guide]));
+  const warning = "<!-- AUTO-GENERATED FILE. Edit docs/guides sources and guides.json instead. -->";
+  const cards = guidesData.guides.map((guide) => [
+    '<article class="guide-card">',
+    `<p class="guide-card__pillars">${guide.pillars.join(" · ")}</p>`,
+    `<h2><a href="${guide.slug}.md">${escapeHtml(guide.title)}</a></h2>`,
+    `<p>${escapeHtml(guide.description)}</p>`,
+    `<p class="guide-card__tags">${guide.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join(" ")}</p>`,
+    `<p><a href="${guide.slug}.md">Read guide →</a></p>`,
+    "</article>"
+  ].join("\n"));
+
+  writeFile(path.join(docsGuidesDir, "README.md"), [
+    warning,
+    "# Guides & Resources",
+    "",
+    "Research-informed guides for applying the SD Standard to communication-design decisions. These guides extend the knowledge layer; they do not change criterion wording, scoring, or certification requirements.",
+    "",
+    '<div class="guide-grid">',
+    ...cards,
+    "</div>"
+  ].join("\n"));
+
+  for (const guide of guidesData.guides) {
+    const source = stripFirstHeading(fs.readFileSync(path.join(docsGuidesSourceDir, `${guide.slug}.md`), "utf8"));
+    const relatedCriteria = guide.criteria.map((reference) => {
+      const criterion = criteriaByReference.get(`${reference}`.toLowerCase());
+      return getCriterionLinkByReference(criteriaByReference, criterion.id, "../generated/criteria");
+    });
+    const relatedGuides = (guide.relatedGuides || []).map((slug) => {
+      const related = guidesBySlug.get(slug);
+      return `- [${related.title}](${related.slug}.md) — ${related.description}`;
+    });
+    const parts = [
+      warning,
+      `# ${guide.title}`,
+      "",
+      `**Pillars:** ${guide.pillars.join(", ")}  `,
+      `**Topics:** ${guide.tags.join(", ")}`,
+      "",
+      guide.description,
+      "",
+      source,
+      "",
+      "## Related SD Standard criteria",
+      "",
+      "These links connect the research-informed guidance to the existing Standard; they do not alter the criteria or their scoring.",
+      "",
+      ...relatedCriteria
+    ];
+    if (relatedGuides.length > 0) {
+      parts.push("", "## Related guides", "", ...relatedGuides);
+    }
+    writeFile(path.join(docsGuidesDir, `${guide.slug}.md`), parts.join("\n"));
+  }
+}
+
+function generateCriteriaDocs(criteriaData, guidesData) {
   ensureDir(docsCriteriaDir);
   cleanGeneratedMarkdown(docsCriteriaDir);
+  const guidesByCriterion = getGuidesByCriterion(guidesData, criteriaData);
 
   const missingCategories = [];
 
@@ -757,6 +893,17 @@ function generateCriteriaDocs(criteriaData) {
         contentParts.push(
           "## Extended guidance",
           normalizeApplicabilityLabels(manualGuidance),
+          ""
+        );
+      }
+
+      const relatedGuides = guidesByCriterion.get(criterion.id) || [];
+      if (relatedGuides.length > 0) {
+        contentParts.push(
+          "## Related Knowledge Base guides",
+          relatedGuides
+            .map((guide) => `- [${guide.title}](../../guides/${guide.slug}.md) — ${guide.description}`)
+            .join("\n"),
           ""
         );
       }
@@ -1037,21 +1184,29 @@ function main() {
     throw new Error(`Missing terms file: ${termsPath}`);
   }
 
+  if (!fs.existsSync(docsGuidesManifestPath)) {
+    throw new Error(`Missing guides manifest: ${docsGuidesManifestPath}`);
+  }
+
   ensureDir(docsGeneratedDir);
   ensureDir(docsCriteriaDir);
   ensureDir(docsTermsDir);
   ensureDir(docsPillarsDir);
+  ensureDir(docsGuidesDir);
 
   const criteriaData = JSON.parse(fs.readFileSync(criteriaPath, "utf8"));
   const termsData = JSON.parse(fs.readFileSync(termsPath, "utf8"));
+  const guidesData = JSON.parse(fs.readFileSync(docsGuidesManifestPath, "utf8"));
 
   validateLinks(criteriaData, termsData);
+  validateGuides(guidesData, criteriaData);
   ensureManualGuidanceDocs(criteriaData);
-  generateCriteriaDocs(criteriaData);
+  generateGuideDocs(guidesData, criteriaData);
+  generateCriteriaDocs(criteriaData, guidesData);
   generateTermsDocs(termsData, criteriaData);
   generatePillarDocs(criteriaData);
   generateCriteriaMeta(criteriaData);
-  updateGeneratedSummary(criteriaData, termsData);
+  updateGeneratedSummary(criteriaData, termsData, guidesData);
   updateBookRedirects(criteriaData);
   removeInvalidGeneratedFilenames(docsGeneratedDir);
   assertNoInvalidGeneratedFilenames(docsGeneratedDir);

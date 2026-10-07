@@ -44,3 +44,7 @@ The improvement is based on something learned during the project: a measured res
 
 5. The procedure is accessible to the team
 The updated process is stored somewhere the team can realistically use it, such as a shared folder, project management system, internal wiki, onboarding guide, design system, or operations manual.
+
+## Related Knowledge Base guides
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.

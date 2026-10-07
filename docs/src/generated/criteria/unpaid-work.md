@@ -27,3 +27,7 @@ All design work is financially compensated.
 Unpaid work, also known as “spec work” refers to speculative work, meaning working without compensation on a project, in a tender process or competition, for example. Ico-D, the International Council of Design, explains "Spec work is providing unpaid work in the hopes to obtain a paid contract. Though this practice is common in some industries it is considered unethical in design. Spec work diminishes the value of design services and it encourages poor practice.
 
 For more details, see their [Professional Code of Conduct](https://www.theicod.org/resources/professional-code-of-conduct).
+
+## Related Knowledge Base guides
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.

@@ -16,3 +16,7 @@ Maximizes the product or the system's energy efficiency.
 
 ## Criteria
 The product or system used by the consumer is energy efficient or uses renewable energy.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

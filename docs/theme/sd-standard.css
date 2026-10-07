@@ -229,8 +229,67 @@ html.sidebar-visible #mdbook-menu-bar {
   border-radius: 4px;
 }
 
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.guide-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid var(--sd-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  background: var(--sd-surface);
+}
+
+.guide-card h2 {
+  margin: 0.35rem 0 0.65rem;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.guide-card p {
+  margin: 0.35rem 0;
+}
+
+.guide-card > p:last-child {
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+.guide-card__pillars {
+  color: var(--sd-accent) !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.guide-card__tags span {
+  display: inline-block;
+  margin: 0.2rem 0.2rem 0 0;
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  background: var(--sd-surface-alt);
+  color: var(--sd-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 @media (max-width: 620px) {
   .sidebar {
     top: var(--sd-site-nav-height);
+  }
+
+  .content h1 {
+    font-size: 2.25rem;
+  }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -23,3 +23,6 @@ Zero waste products.
 
 ## Extended guidance
 Zero Waste certifications are available for both projects and entities. For example, [TRUE certification](https://true.gbci.org/true-certification-zero-waste) and the [SCS Zero Waste](https://www.scsglobalservices.com/services/zero-waste-certification) program.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.

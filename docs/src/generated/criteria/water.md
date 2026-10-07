@@ -39,3 +39,8 @@ Water pollution may be described as the degradation of water quality caused by d
 ‘Cradle-to-cradle’ refers to a framework by which products are evaluated, including design and a variety of life cycle steps. The process encourages continuous improvement and the certification provides a means of publicly communicating progress. The water certification component of Cradle to Cradle requires that a water audit be performed. See the [Cradle to Cradle standard](https://c2ccertified.org/the-standard).
 
 See also the Alliance for Water Stewardship ([AWS Standard](https://a4ws.org/aws-standard/aws-standard-certification/)) for organisations an businesses.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

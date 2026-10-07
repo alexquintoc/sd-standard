@@ -27,3 +27,7 @@ Design does not contribute to the violation of human rights.
 ### What are the universal human rights?
 
 Proclaimed on the [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights), and promoted through 30 articles, are the rights concerning to equality and freedom for all human beings.
+
+## Related Knowledge Base guides
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

@@ -64,3 +64,6 @@ See the related [SDG Indicators] (http://unstats.un.org/sdgs/metadata/files/Meta
 Discrimination is defined as: ” …treatment or consideration of, or making a distinction in favor of or against, a person or thing based on the group, class, or category to which the person or thing is perceived to belong rather than on individual attributes. This includes treatment of an individual or group, based on their actual or perceived membership in a certain group or social category, ‘in a way that is worse than the way people are usually treated’.”
 
 Source: Cambridge Dictionaries Online. Cambridge University. Retrieved 29 March 2013.
+
+## Related Knowledge Base guides
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

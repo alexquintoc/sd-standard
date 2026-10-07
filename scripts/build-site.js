@@ -181,7 +181,7 @@ function writeIndexPage() {
           <span>
             <span class="resource-card__accent"></span>
             <h2>Knowledge Base</h2>
-            <p>Explore the SD Standard criteria, terms, and guidance notes.</p>
+            <p>Explore the SD Standard criteria, research-informed guides, terms, and guidance notes.</p>
           </span>
           <strong>Open Knowledge Base -&gt;</strong>
         </a>

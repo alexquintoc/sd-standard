@@ -40,3 +40,6 @@ One example is the International Finance Corporation’s Overview of Performance
 #### What constitutes a “publicly-visible policy”?
 
 The policy should be posted on a publicly-accessible website or could be distributed on the project itself.
+
+## Related Knowledge Base guides
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.

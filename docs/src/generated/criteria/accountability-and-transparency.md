@@ -53,3 +53,10 @@ Important project decisions, approvals, changes, and responsibilities are record
 A pass condition could be:
 
 This criterion is met when the designing entity uses accountable financial and project management procedures, maintains clear documentation, and communicates project status, responsibilities, and changes transparently with relevant parties.
+
+## Related Knowledge Base guides
+- [From Attention to Action](../../guides/from-attention-to-action.md) — Understand how communication can move beyond reach and awareness to support agency, action, and sustained outcomes.
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.

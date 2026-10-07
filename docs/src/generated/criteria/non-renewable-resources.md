@@ -30,3 +30,7 @@ A non-renewable resource (also called a finite resource) is a natural resource t
 * platinum-group metals (PGMs)
 * radioisotopes (uranium and thorium)
 * precious metals (gold, silver, and tantalum)
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.

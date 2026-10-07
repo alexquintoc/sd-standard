@@ -29,3 +29,6 @@ Reproduction quantity is directly related to material consumption, as well as wa
 #### How do I know how much is enough?
 
 An evaluation of the product’s demand was carried out beforehand, to avoid excessive units that might end up in landfill.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.

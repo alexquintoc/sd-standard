@@ -30,3 +30,10 @@ These tools provide indicative website-impact estimates. They do not provide for
   <a href="https://ecograder.com/" target="_blank" rel="noopener noreferrer">https://ecograder.com/</a>
 - **Website Carbon Calculator** — A simple tool for estimating the carbon emissions associated with loading a web page. Useful as an accessible first-pass estimate of the environmental impact of websites and for comparing design or development alternatives.  
   <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer">https://www.websitecarbon.com/</a>
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.

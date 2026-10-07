@@ -31,3 +31,8 @@ Designing products or services may require the communication design team to lear
 * designing interventions around '[Placemaking](https://en.wikipedia.org/wiki/Placemaking)' efforts.
 
 * designing [cultural probes](https://en.wikipedia.org/wiki/Cultural_probe) or similar strategies to engage a local culture.
+
+## Related Knowledge Base guides
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.

@@ -25,3 +25,6 @@ Project educates others to support sustainable design education.
 ### What forms of educational practices could be included?
 
 Internships, temporary work, fellowships, summer programs, curriculum development.
+
+## Related Knowledge Base guides
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.

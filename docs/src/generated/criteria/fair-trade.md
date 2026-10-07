@@ -37,3 +37,6 @@ A related Fair Trade concept applied to Creative professions is the definition o
 6. Digital equity and ethics
 7. Respect for the environment
 8. Public and consumer awareness
+
+## Related Knowledge Base guides
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.

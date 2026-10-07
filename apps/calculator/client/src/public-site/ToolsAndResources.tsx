@@ -1,6 +1,17 @@
 import { Link } from "wouter";
 
-const resources = [
+type Resource = {
+  stage: string;
+  title: string;
+  description: string;
+  bestFor: string;
+  cta: string;
+  href: string;
+  primary?: boolean;
+  external?: boolean;
+};
+
+const resources: Resource[] = [
   {
     stage: "Ideate / Start",
     title: "Brief Generator",
@@ -10,6 +21,16 @@ const resources = [
     cta: "Generate a brief",
     href: "/brief-generator",
     primary: true,
+  },
+  {
+    stage: "Explore / Research",
+    title: "Guides & Resources",
+    description:
+      "Use research-informed guidance on behavior, circularity, trade-offs, participation, culture, AI, evidence and claims.",
+    bestFor: "Framing decisions, asking better questions and connecting research to relevant SD Standard criteria.",
+    cta: "Read the guides",
+    href: "/knowledge-base/guides/",
+    external: true,
   },
   {
     stage: "Explore / Research",
@@ -72,10 +93,15 @@ export function ToolsAndResources() {
               <h4>Best for</h4>
               <p>{resource.bestFor}</p>
             </div>
-            <Link className="public-resource-link" href={resource.href}>
-              <span>{resource.cta}</span>
-              <span aria-hidden="true">→</span>
-            </Link>
+            {resource.external ? (
+              <a className="public-resource-link" href={resource.href} target="_blank" rel="noopener noreferrer" aria-label={`${resource.cta} (opens in a new tab)`}>
+                <span>{resource.cta}</span><span aria-hidden="true">↗</span>
+              </a>
+            ) : (
+              <Link className="public-resource-link" href={resource.href}>
+                <span>{resource.cta}</span><span aria-hidden="true">→</span>
+              </Link>
+            )}
           </article>
         ))}
       </div>

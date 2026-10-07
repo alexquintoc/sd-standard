@@ -53,3 +53,8 @@ The project included deposits, milestones, or scheduled payments that reduced fi
 A pass condition could be:
 
 This criterion is met when the project budget or contract does not assume financial loss by the designing entity, and when final project records show that the project generated profit or maintained a sustainable effective hourly rate after all labour and direct costs were considered.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

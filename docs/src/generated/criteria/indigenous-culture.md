@@ -33,3 +33,9 @@ The Working Definition of Indigenous People Proposed by the UN Working Group on 
 #### What are some examples of a design aimed at preserving or nurturing an aboriginal or indigenous culture?
 
 For example, designing the communication materials for a cultural center; organizing or designing materials for an exhibition aimed at promoting a local tradition, or form of art.
+
+## Related Knowledge Base guides
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

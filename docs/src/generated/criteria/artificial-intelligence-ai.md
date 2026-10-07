@@ -20,3 +20,6 @@ The project discloses the sources of design whether human made or AI generated. 
 
 ## Why it matters
 Authentically created design by a person.
+
+## Related Knowledge Base guides
+- [AI and Sustainable Communication Design](../../guides/ai-and-sustainable-communication-design.md) — Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.

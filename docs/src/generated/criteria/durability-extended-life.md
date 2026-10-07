@@ -20,3 +20,6 @@ The product or system is physically durable and has a longer life than the indus
 
 ## Why it matters
 Product design for longer life than the industry average.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.

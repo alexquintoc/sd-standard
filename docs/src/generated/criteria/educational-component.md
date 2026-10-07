@@ -25,3 +25,7 @@ Educates the user or consumer on sustainability.
 ### What is meant by 'educating about sustainability'?
 
 The project educates on sustainability, meaning, content that refers directly or indirectly to a current definition of sustainability.
+
+## Related Knowledge Base guides
+- [From Attention to Action](../../guides/from-attention-to-action.md) — Understand how communication can move beyond reach and awareness to support agency, action, and sustained outcomes.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.

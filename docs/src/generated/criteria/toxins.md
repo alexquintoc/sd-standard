@@ -33,3 +33,6 @@ Both the US Environmental Protection Agency and the UN Environment Programme mai
 #### How do I learn if there are toxins potentially present in the product I am designing?
 
 A life cycle study will list potential toxins. An understanding of the supply chain will indicate potential areas where toxins may be present.
+
+## Related Knowledge Base guides
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.

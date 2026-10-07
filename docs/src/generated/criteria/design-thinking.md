@@ -41,3 +41,7 @@ Wikipedia's definition: https://en.wikipedia.org/wiki/Design_thinking
 For this criterion, design thinking is referred to as a strategy to deliver financial value to a product, or service. Whether in the form of adding value to a business model, creating a new market, re-defining a product’s value-proposition.
 
 Some examples of a design strategy adding value to the production chain include: On-demand services, like Spotify (music), Uber (logistics), or Airbnb (hospitality) re-defining their previously established production chains. In the case of Airbnb, re-defining the need for owning hotel buildings and related production chains; or Uber, operating fleets without owning the fleets.
+
+## Related Knowledge Base guides
+- [Designing for Sufficiency and Circularity](../../guides/designing-for-sufficiency-and-circularity.md) — Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.
+- [Making Sustainability Trade-offs](../../guides/making-sustainability-trade-offs.md) — Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.

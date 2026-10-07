@@ -29,3 +29,9 @@ For example, the designing entity has a program in place to support local events
 The designing entity shares content, code, or other intellectual property to an organization in the local community.
 
 These activities are explained or documented by the designing entity and are included in its publicly-visible policy on cultural sustainability.
+
+## Related Knowledge Base guides
+- [From Attention to Action](../../guides/from-attention-to-action.md) — Understand how communication can move beyond reach and awareness to support agency, action, and sustained outcomes.
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.
+- [Cultural Sustainability in Practice](../../guides/cultural-sustainability-in-practice.md) — Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.

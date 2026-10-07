@@ -25,3 +25,8 @@ Design process engages with end user.
 ### What are some methods for engaging audiences to participate in the design process?
 
 See Wikipedia’s [Participatory Design](https://en.wikipedia.org/wiki/Participatory_design) page.
+
+## Related Knowledge Base guides
+- [From Attention to Action](../../guides/from-attention-to-action.md) — Understand how communication can move beyond reach and awareness to support agency, action, and sustained outcomes.
+- [Working With Communities](../../guides/working-with-communities.md) — Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.

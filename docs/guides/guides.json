@@ -1,0 +1,67 @@
+{
+  "guides": [
+    {
+      "slug": "from-attention-to-action",
+      "title": "From Attention to Action",
+      "description": "Understand how communication can move beyond reach and awareness to support agency, action, and sustained outcomes.",
+      "pillars": ["Society", "Culture", "Finance"],
+      "tags": ["behavior", "communication", "evaluation"],
+      "criteria": ["C6", "C7", "S17", "F4", "F5"],
+      "relatedGuides": ["working-with-communities", "evidence-measurement-and-claims", "making-sustainability-trade-offs"]
+    },
+    {
+      "slug": "designing-for-sufficiency-and-circularity",
+      "title": "Designing for Sufficiency and Circularity",
+      "description": "Start with necessity, reduction, longevity, and reuse before adding materials, features, or computation.",
+      "pillars": ["Environment", "Finance"],
+      "tags": ["sufficiency", "lifecycle", "circularity"],
+      "criteria": ["E1", "E5", "E6", "E11", "E12", "E14", "E17", "E19", "E22", "F2", "F7"],
+      "relatedGuides": ["making-sustainability-trade-offs", "ai-and-sustainable-communication-design", "evidence-measurement-and-claims"]
+    },
+    {
+      "slug": "making-sustainability-trade-offs",
+      "title": "Making Sustainability Trade-offs",
+      "description": "Compare environmental, social, cultural, and financial consequences without hiding uncertainty or displaced burdens.",
+      "pillars": ["Environment", "Society", "Culture", "Finance"],
+      "tags": ["trade-offs", "values", "decision-making"],
+      "criteria": ["E1", "E7", "E12", "E19", "E22", "S3", "SM4", "S10", "C2", "C3", "C4", "F1", "F2", "F5", "F7"],
+      "relatedGuides": ["designing-for-sufficiency-and-circularity", "working-with-communities", "cultural-sustainability-in-practice", "evidence-measurement-and-claims"]
+    },
+    {
+      "slug": "working-with-communities",
+      "title": "Working With Communities",
+      "description": "Plan participation around real influence, inclusion, fair recognition, shared decisions, and accountable follow-through.",
+      "pillars": ["Society", "Culture", "Finance"],
+      "tags": ["participation", "co-design", "governance"],
+      "criteria": ["C1", "C2", "C3", "C4", "C6", "C7", "S10", "S12", "S14", "FM3", "F5"],
+      "relatedGuides": ["from-attention-to-action", "cultural-sustainability-in-practice", "making-sustainability-trade-offs", "evidence-measurement-and-claims"]
+    },
+    {
+      "slug": "cultural-sustainability-in-practice",
+      "title": "Cultural Sustainability in Practice",
+      "description": "Support cultural agency, living knowledge, language, rights, continuity, and fair livelihoods—not representation alone.",
+      "pillars": ["Culture", "Society", "Finance"],
+      "tags": ["cultural rights", "living heritage", "localization"],
+      "criteria": ["C1", "C2", "C3", "C4", "CM5", "C7", "C8", "S11", "S13", "FM3", "F1"],
+      "relatedGuides": ["working-with-communities", "making-sustainability-trade-offs", "ai-and-sustainable-communication-design"]
+    },
+    {
+      "slug": "ai-and-sustainable-communication-design",
+      "title": "AI and Sustainable Communication Design",
+      "description": "Evaluate AI across environmental, labor, cultural, rights, accuracy, governance, and financial dimensions.",
+      "pillars": ["Environment", "Society", "Culture", "Finance"],
+      "tags": ["AI", "ethics", "governance"],
+      "criteria": ["S7", "E1", "E17", "E19", "E22", "SM4", "SM6", "S11", "C1", "C2", "C4", "F2", "F5", "F6"],
+      "relatedGuides": ["designing-for-sufficiency-and-circularity", "cultural-sustainability-in-practice", "evidence-measurement-and-claims", "making-sustainability-trade-offs"]
+    },
+    {
+      "slug": "evidence-measurement-and-claims",
+      "title": "Evidence, Measurement, and Claims",
+      "description": "Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.",
+      "pillars": ["Environment", "Society", "Culture", "Finance"],
+      "tags": ["evidence", "measurement", "claims"],
+      "criteria": ["F4", "F5", "F6", "E1", "E19", "S17", "C6", "C7"],
+      "relatedGuides": ["from-attention-to-action", "making-sustainability-trade-offs", "designing-for-sufficiency-and-circularity", "ai-and-sustainable-communication-design"]
+    }
+  ]
+}

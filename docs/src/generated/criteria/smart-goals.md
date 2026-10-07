@@ -33,3 +33,7 @@ They stand for…
 * Time-related – specify when the result(s) can be achieved.
 
 See Wikipedia's [SMART criteria](https://en.wikipedia.org/wiki/SMART_criteria) page.
+
+## Related Knowledge Base guides
+- [From Attention to Action](../../guides/from-attention-to-action.md) — Understand how communication can move beyond reach and awareness to support agency, action, and sustained outcomes.
+- [Evidence, Measurement, and Claims](../../guides/evidence-measurement-and-claims.md) — Separate project performance from evidence confidence and communicate impacts, limitations, and uncertainty responsibly.
