@@ -116,7 +116,7 @@ export const team = [
   },
   {
     name: "Tuuli Sauren",
-    role: "Founder/Creative Director, INSPIRIT Creatives UG / NGO",
+    role: "Art Director/Creative lead, Creativity meets Humanity",
     bio: "Tuuli Sauren is a multidisciplinary Art Director and activist working across borders worldwide with more than two decades of experience in communication design, sustainability, and human rights advocacy. She has worked extensively with NGOs and United Nations agencies since 2001. She brings a rare combination of strategic design expertise, systems thinking, and social justice commitment to the evaluation of sustainable design projects. Tuuli served as an International Council of Design (ico-D) sustainability juror from 2012 to 2015 and founded the Sustainable Designers Initiative (SDI), an initiative to expand equitable access to design education globally. Her work focuses on human-centred design, ethical impact, and the long-term societal consequences of organizational and design decisions, approaching sustainability not as compliance or perceived optics, but as a responsibility to human dignity, cultural integrity, and future generations.",
   },
   {
