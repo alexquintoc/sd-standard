@@ -19,7 +19,7 @@
       "website"
     ],
     "createdAt": "2026-05-01T12:00:00.000Z",
-    "updatedAt": "2026-10-24T00:00:00.000Z"
+    "updatedAt": "2026-10-24T20:32:42.880Z"
   },
   "components": [
     {
@@ -372,13 +372,14 @@
           "id": "installation-provides-tools-for-design-education"
         }
       ],
-      "notes": ""
+      "notes": "1,330 postcards were picked by gallery visitors. The postcards displayed information about sustainability since they included the list of criteria used for assessing the project's sustainability using the SD Standard"
     },
     {
       "criterionId": "C4",
       "scope": {
         "level": "component",
         "componentIds": [
+          "printed-materials",
           "lamp-shade"
         ]
       },
@@ -394,7 +395,7 @@
           "id": "translation-to-spanish"
         }
       ],
-      "notes": "The lamp shade uses textile design that is culturally appropriate"
+      "notes": "The lamp shade uses textile design that is culturally appropriate. A local textile tradition (telar vertical) from the state of Oaxaca was used, engaging artisans who have passed on that tradition across generations."
     },
     {
       "criterionId": "C6",
@@ -424,7 +425,7 @@
       "project",
       "components"
     ],
-    "exportedAt": "2026-09-29T01:31:47.829Z",
+    "exportedAt": "2026-10-24T20:33:40.820Z",
     "generator": {
       "name": "SD Standard",
       "version": ""
@@ -529,12 +530,60 @@
         }
       ],
       "emissionSources": [
-        { "id": "transport", "label": "Transport", "value": 41.8, "unit": "kg CO2e", "kind": "estimated", "source": "UK Government GHG Conversion Factors 2026 applied to provisional and reported route data", "evidenceNote": "Estimated as 0.13 kg CO2e for 9.5 kg of pine allocated across 226 km from provisional origin Morelia in a fully loaded articulated timber truck, plus 40.88 kg CO2e for the dedicated 50 km Toluca leg in a 50%-laden rigid truck, plus 0.77 kg CO2e for the dedicated 3 km pickup leg represented by an average diesel van." },
-        { "id": "textiles", "label": "Textiles", "value": 30.0, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
-        { "id": "paper", "label": "Paper", "value": 14.8, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
-        { "id": "lighting-manufacture", "label": "Lighting manufacture", "value": 13.0, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
-        { "id": "pine", "label": "Pine", "value": 1.9, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
-        { "id": "exhibition-electricity", "label": "Exhibition electricity", "value": 1.6, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." }
+        {
+          "id": "transport",
+          "label": "Transport",
+          "value": 41.8,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "source": "UK Government GHG Conversion Factors 2026 applied to provisional and reported route data",
+          "evidenceNote": "Estimated as 0.13 kg CO2e for 9.5 kg of pine allocated across 226 km from provisional origin Morelia in a fully loaded articulated timber truck, plus 40.88 kg CO2e for the dedicated 50 km Toluca leg in a 50%-laden rigid truck, plus 0.77 kg CO2e for the dedicated 3 km pickup leg represented by an average diesel van."
+        },
+        {
+          "id": "textiles",
+          "label": "Textiles",
+          "value": 30,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "source": "Abierto environmental impact screening",
+          "evidenceNote": "Illustrative midpoint contribution."
+        },
+        {
+          "id": "paper",
+          "label": "Paper",
+          "value": 14.8,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "source": "Abierto environmental impact screening",
+          "evidenceNote": "Illustrative midpoint contribution."
+        },
+        {
+          "id": "lighting-manufacture",
+          "label": "Lighting manufacture",
+          "value": 13,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "source": "Abierto environmental impact screening",
+          "evidenceNote": "Illustrative midpoint contribution."
+        },
+        {
+          "id": "pine",
+          "label": "Pine",
+          "value": 1.9,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "source": "Abierto environmental impact screening",
+          "evidenceNote": "Illustrative midpoint contribution."
+        },
+        {
+          "id": "exhibition-electricity",
+          "label": "Exhibition electricity",
+          "value": 1.6,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "source": "Abierto environmental impact screening",
+          "evidenceNote": "Illustrative midpoint contribution."
+        }
       ]
     },
     "attachments": [],
