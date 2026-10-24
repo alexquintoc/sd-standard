@@ -1,11 +1,16 @@
 import { ASSESSMENT_RESPONSE_VALUES, CRITERIA_SOURCE, CRITERIA_VERSION, CRITERION_RELEVANCE_VALUES, CRITERION_STATUS_VALUES, PROJECT_SCHEMA_NAME, PROJECT_STAGES, STRATEGY_STATUS_VALUES, SUPPORTED_PROJECT_SCHEMA_VERSIONS } from "./constants";
 import { PROJECT_CRITERION_IDS } from "./criteria";
+import { isSafePublicAttachmentHref } from "./attachments";
 import type { ProjectValidationIssue, ProjectValidationResult, SDStandardProject } from "./types";
 
 const isRecord = (value: unknown): value is Record<string, unknown> => typeof value === "object" && value !== null && !Array.isArray(value);
 const isString = (value: unknown): value is string => typeof value === "string";
 const isIsoDate = (value: unknown): value is string => isString(value) && !Number.isNaN(Date.parse(value)) && /^\d{4}-\d{2}-\d{2}T/.test(value);
 const includes = <T extends string>(values: readonly T[], value: unknown): value is T => isString(value) && values.includes(value as T);
+const PILLAR_IDS = ["environment", "society", "culture", "finance"] as const;
+const METRIC_TYPES = ["engagement", "reach", "collaboration", "environmental", "financial", "other"] as const;
+const isDateOnly = (value: unknown): value is string => isString(value) && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`));
+const isFiniteNonNegative = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value) && value >= 0;
 
 export function validateProject(value: unknown): ProjectValidationResult {
   const errors: ProjectValidationIssue[] = [];
@@ -98,7 +103,18 @@ export function validateProject(value: unknown): ProjectValidationResult {
     if (!Array.isArray(value.passport.collaborators)) error("INVALID_COLLABORATORS", "passport.collaborators", "Collaborators must be an array.");
     else value.passport.collaborators.forEach((item, index) => { if (!isRecord(item) || !isString(item.id) || !isString(item.name) || !isString(item.role) || !isString(item.credit)) error("INVALID_COLLABORATOR", `passport.collaborators[${index}]`, "Each collaborator must have string id, name, role, and credit fields."); });
     if (!Array.isArray(value.passport.outcomes)) error("INVALID_OUTCOMES", "passport.outcomes", "Outcomes must be an array.");
-    else value.passport.outcomes.forEach((item, index) => { if (!isRecord(item) || !isString(item.id) || !isString(item.label) || !isString(item.value) || !isString(item.unit) || !includes(["measured", "estimated", "intended"] as const, item.kind) || !isString(item.source) || !isString(item.date) || !isString(item.evidenceNote)) error("INVALID_OUTCOME", `passport.outcomes[${index}]`, "Each outcome must include its label, value, unit, kind, source, date, and evidence note."); });
+    else value.passport.outcomes.forEach((item, index) => { if (!isRecord(item) || !isString(item.id) || !isString(item.label) || !isString(item.value) || !isString(item.unit) || !includes(["measured", "estimated", "intended"] as const, item.kind) || !isString(item.source) || !isString(item.date) || !isString(item.evidenceNote)) error("INVALID_OUTCOME", `passport.outcomes[${index}]`, "Each outcome must include its label, value, unit, kind, source, date, and evidence note."); else { if (item.pillarId !== undefined && !includes(PILLAR_IDS, item.pillarId)) error("INVALID_OUTCOME_PILLAR", `passport.outcomes[${index}].pillarId`, "Outcome pillar is not recognized."); if (item.featured !== undefined && typeof item.featured !== "boolean") error("INVALID_OUTCOME_FEATURED", `passport.outcomes[${index}].featured`, "Outcome featured must be a boolean."); if (item.metricType !== undefined && !includes(METRIC_TYPES, item.metricType)) error("INVALID_OUTCOME_METRIC_TYPE", `passport.outcomes[${index}].metricType`, "Outcome metric type is not recognized."); } });
+    if (!isRecord(value.passport.impactSummary)) error("INVALID_IMPACT_SUMMARY", "passport.impactSummary", "Impact summary must be an object.");
+    else {
+      const scenarios = value.passport.impactSummary.emissionsScenarios;
+      if (!Array.isArray(scenarios)) error("INVALID_EMISSIONS_SCENARIOS", "passport.impactSummary.emissionsScenarios", "Emissions scenarios must be an array.");
+      else scenarios.forEach((item, index) => { const path = `passport.impactSummary.emissionsScenarios[${index}]`; if (!isRecord(item) || !isString(item.id) || !item.id.trim() || !isString(item.label) || !item.label.trim() || !isFiniteNonNegative(item.low) || !isFiniteNonNegative(item.high) || item.low > item.high || item.unit !== "kg CO2e" || item.kind !== "estimated" || !isString(item.scope) || !isString(item.source) || !isString(item.evidenceNote) || typeof item.featured !== "boolean") error("INVALID_EMISSIONS_SCENARIO", path, "Each scenario needs a valid range, kg CO2e unit, estimated kind, scope, source, evidence note, and featured state."); });
+      const sources = value.passport.impactSummary.emissionSources;
+      if (!Array.isArray(sources)) error("INVALID_EMISSION_SOURCES", "passport.impactSummary.emissionSources", "Emission sources must be an array.");
+      else sources.forEach((item, index) => { const path = `passport.impactSummary.emissionSources[${index}]`; if (!isRecord(item) || !isString(item.id) || !item.id.trim() || !isString(item.label) || !item.label.trim() || !isFiniteNonNegative(item.value) || item.unit !== "kg CO2e" || !includes(["estimated", "measured"] as const, item.kind) || !isString(item.source) || !isString(item.evidenceNote)) error("INVALID_EMISSION_SOURCE", path, "Each emission source needs a numeric value, kg CO2e unit, evidence kind, source, and evidence note."); });
+    }
+    if (!Array.isArray(value.passport.attachments)) error("INVALID_ATTACHMENTS", "passport.attachments", "Attachments must be an array.");
+    else value.passport.attachments.forEach((item, index) => { const path = `passport.attachments[${index}]`; if (!isRecord(item) || !isString(item.id) || !item.id.trim() || !isString(item.title) || !item.title.trim() || !isString(item.description) || !item.description.trim() || !isString(item.href) || !isSafePublicAttachmentHref(item.href) || !isString(item.mediaType) || !item.mediaType.trim() || !isString(item.language) || !item.language.trim() || !isDateOnly(item.date) || !isString(item.sizeLabel)) error("INVALID_ATTACHMENT", path, "Each attachment needs complete metadata and a public relative path or HTTPS URL."); });
   }
   if (!isRecord(value.application)) error("MISSING_SECTION", "application", "Application metadata is required.");
   else {

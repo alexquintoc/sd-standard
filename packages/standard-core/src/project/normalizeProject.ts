@@ -3,6 +3,7 @@ import type { SDStandardProject } from "./types";
 function isRecord(value: unknown): value is Record<string, unknown> { return typeof value === "object" && value !== null && !Array.isArray(value); }
 function uniqueStrings(value: unknown): string[] { return Array.isArray(value) ? Array.from(new Set(value.filter((item): item is string => typeof item === "string"))) : []; }
 const text = (value: unknown) => typeof value === "string" ? value : "";
+const number = (value: unknown) => typeof value === "number" && Number.isFinite(value) ? value : 0;
 function image(value: unknown) { const item = isRecord(value) ? value : {}; return { ...item, src: text(item.src), alt: text(item.alt), caption: text(item.caption), credit: text(item.credit) }; }
 
 export function normalizeProject(value: unknown, now = new Date()): unknown {
@@ -19,14 +20,18 @@ export function normalizeProject(value: unknown, now = new Date()): unknown {
   const normalizedProject: Record<string, unknown> = { ...project, description: typeof project.description === "string" ? project.description : "", projectTypes: uniqueStrings(project.projectTypes) };
   const passport = isRecord(value.passport) ? value.passport : {};
   const collaborators = Array.isArray(passport.collaborators) ? passport.collaborators.map((item) => isRecord(item) ? { ...item, id: text(item.id), name: text(item.name), role: text(item.role), credit: text(item.credit) } : item) : [];
-  const outcomes = Array.isArray(passport.outcomes) ? passport.outcomes.map((item) => isRecord(item) ? { ...item, id: text(item.id), label: text(item.label), value: text(item.value), unit: text(item.unit), kind: ["measured", "estimated", "intended"].includes(text(item.kind)) ? item.kind : "intended", source: text(item.source), date: text(item.date), evidenceNote: text(item.evidenceNote) } : item) : [];
+  const outcomes = Array.isArray(passport.outcomes) ? passport.outcomes.map((item) => isRecord(item) ? { ...item, id: text(item.id), label: text(item.label), value: text(item.value), unit: text(item.unit), kind: ["measured", "estimated", "intended"].includes(text(item.kind)) ? item.kind : "intended", source: text(item.source), date: text(item.date), evidenceNote: text(item.evidenceNote), ...(typeof item.pillarId === "string" ? { pillarId: item.pillarId } : {}), ...(typeof item.featured === "boolean" ? { featured: item.featured } : {}), ...(typeof item.metricType === "string" ? { metricType: item.metricType } : {}) } : item) : [];
+  const rawImpact = isRecord(passport.impactSummary) ? passport.impactSummary : {};
+  const emissionsScenarios = Array.isArray(rawImpact.emissionsScenarios) ? rawImpact.emissionsScenarios.map((item) => isRecord(item) ? { ...item, id: text(item.id), label: text(item.label), low: number(item.low), high: number(item.high), unit: text(item.unit) || "kg CO2e", kind: "estimated", scope: text(item.scope), source: text(item.source), evidenceNote: text(item.evidenceNote), featured: item.featured === true } : item) : [];
+  const emissionSources = Array.isArray(rawImpact.emissionSources) ? rawImpact.emissionSources.map((item) => isRecord(item) ? { ...item, id: text(item.id), label: text(item.label), value: number(item.value), unit: text(item.unit) || "kg CO2e", kind: text(item.kind) === "measured" ? "measured" : "estimated", source: text(item.source), evidenceNote: text(item.evidenceNote) } : item) : [];
+  const attachments = Array.isArray(passport.attachments) ? passport.attachments.map((item) => isRecord(item) ? { ...item, id: text(item.id), title: text(item.title), description: text(item.description), href: text(item.href), mediaType: text(item.mediaType), language: text(item.language), date: text(item.date), sizeLabel: text(item.sizeLabel) } : item) : [];
   const normalized = {
     ...value,
     project: normalizedProject,
     components,
     criteriaAssessments: assessments,
     projectNotes: typeof value.projectNotes === "string" ? value.projectNotes : "",
-    passport: { ...passport, purpose: text(passport.purpose), location: text(passport.location), event: text(passport.event), locale: text(passport.locale) || "en", heroImage: image(passport.heroImage), collaborators, outcomes, improvements: text(passport.improvements), lastUpdated: text(passport.lastUpdated) },
+    passport: { ...passport, purpose: text(passport.purpose), location: text(passport.location), event: text(passport.event), locale: text(passport.locale) || "en", heroImage: image(passport.heroImage), collaborators, outcomes, impactSummary: { ...rawImpact, emissionsScenarios, emissionSources }, attachments, improvements: text(passport.improvements), lastUpdated: text(passport.lastUpdated) },
     application: { ...application, lastView: typeof application.lastView === "string" ? application.lastView : "overview", completedSections: uniqueStrings(application.completedSections), exportedAt: typeof application.exportedAt === "string" ? application.exportedAt : null, generator: { ...generator, name: typeof generator.name === "string" ? generator.name : "SD Standard", version: typeof generator.version === "string" ? generator.version : "" } },
   };
   const comparable = (candidate: Record<string, unknown>) => {

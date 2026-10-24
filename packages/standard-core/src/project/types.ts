@@ -25,11 +25,29 @@ export interface ProjectCollaborator { id: string; name: string; role: string; c
 export type ProjectOutcomeKind = "measured" | "estimated" | "intended";
 export interface ProjectOutcome {
   id: string; label: string; value: string; unit: string; kind: ProjectOutcomeKind;
-  source: string; date: string; evidenceNote: string; [key: string]: unknown;
+  source: string; date: string; evidenceNote: string;
+  pillarId?: import("./criteria").CriterionPillarId;
+  featured?: boolean;
+  metricType?: "engagement" | "reach" | "collaboration" | "environmental" | "financial" | "other";
+  [key: string]: unknown;
+}
+export interface PassportEmissionsScenario {
+  id: string; label: string; low: number; high: number; unit: "kg CO2e"; kind: "estimated";
+  scope: string; source: string; evidenceNote: string; featured: boolean; [key: string]: unknown;
+}
+export interface PassportEmissionSource {
+  id: string; label: string; value: number; unit: "kg CO2e"; kind: "estimated" | "measured";
+  source: string; evidenceNote: string; [key: string]: unknown;
+}
+export interface PassportImpactSummary { emissionsScenarios: PassportEmissionsScenario[]; emissionSources: PassportEmissionSource[]; [key: string]: unknown }
+export interface PassportAttachment {
+  id: string; title: string; description: string; href: string; mediaType: string;
+  language: string; date: string; sizeLabel: string; [key: string]: unknown;
 }
 export interface ProjectPassport {
   purpose: string; location: string; event: string; locale: string;
   heroImage: ProjectImage; collaborators: ProjectCollaborator[]; outcomes: ProjectOutcome[];
+  impactSummary?: PassportImpactSummary; attachments?: PassportAttachment[];
   improvements: string; lastUpdated: string; [key: string]: unknown;
 }
 export interface ProjectComponent { id: string; name: string; type: string; description: string; notes: string; image?: ProjectImage; [key: string]: unknown }

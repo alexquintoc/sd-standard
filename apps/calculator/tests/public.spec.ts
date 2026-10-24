@@ -93,7 +93,7 @@ test("new content, preserved gallery and legacy routes", async ({ page }) => {
   for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/explore/project-types", "/explore/sdgs", "/explore/connections", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.goto(route); await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /.+/);
-    await expect(page.locator("html")).toHaveAttribute("lang", route.startsWith("/es/") ? "es" : "en");
+    await expect(page.locator("html")).toHaveAttribute("lang", route.startsWith("/es/") || route === "/projects/abierto" ? "es" : "en");
     if (route.startsWith("/es/abierto")) { await expect(page.locator(".public-nav")).toHaveCount(0); await expect(page.locator("main .public-button")).toHaveCount(1); }
   }
   await page.goto("/projects"); await expect(page.locator(".public-project-card")).toHaveCount(6);
@@ -105,15 +105,60 @@ test("new content, preserved gallery and legacy routes", async ({ page }) => {
 });
 test("Abierto passport links components and criteria without presenting a score", async ({ page }) => {
   await page.goto("/projects/abierto");
-  await expect(page.locator("html")).toHaveAttribute("lang", "es");
-  await expect(page.getByRole("heading", { name: "Componentes del proyecto" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Componentes × criterios" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Resumen de evaluación" })).toBeVisible();
-  await expect(page.locator("#component-website")).toContainText("Experiencia web");
-  await expect(page.locator("#criterion-S6 a[href='#component-website']")).toBeVisible();
-  await expect(page.getByText("Aún no hay resultados medidos")).toBeVisible();
-  await expect(page.getByText(/no es una puntuación/i)).toBeVisible();
-  await expect(page.getByText(/certificación/i).first()).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.getByRole("heading", { name: "Four-pillar impact summary" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Impact overview" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Components and criteria" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Criteria coverage snapshot" })).toBeVisible();
+  const sectionHeadings = await page.locator(".passport-document h2").allTextContents();
+  expect(sectionHeadings.indexOf("Four-pillar impact summary")).toBeLessThan(sectionHeadings.indexOf("Impact overview"));
+  await expect(page.locator(".passport-emissions-total > strong")).toContainText("85-135");
+  await expect(page.locator(".passport-scenarios")).toContainText("130-180 kg CO2e");
+  await expect(page.locator(".passport-emissions-breakdown")).toContainText("41.8 kg CO2e");
+  await expect(page.locator(".passport-emissions-breakdown")).toContainText("Morelia");
+  await expect(page.locator(".passport-impact-pillars .is-society")).toContainText("5 credited contributors");
+  await expect(page.locator(".passport-impact-pillars .is-culture")).toContainText("1 local textile tradition promoted in a local community");
+  await expect(page.locator(".passport-impact-pillars .is-finance")).toContainText("4 businesses");
+  await expect(page.getByRole("heading", { name: "Project author" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Alex Quinto Studio" })).toBeVisible();
+  await expect(page.getByText(/Illustrative midpoint of the screening range/)).toBeVisible();
+  await expect(page.getByText("Website visitors")).toHaveCount(0);
+  await expect(page.locator("#component-website")).toContainText("Website");
+  await expect(page.locator("#criterion-S6 a[href='#component-website']")).toHaveCount(1);
+  await expect(page.getByText(/not a score/i)).toBeVisible();
+  await expect(page.getByText(/does not represent certification/i)).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator(".passport-matrix-wrap")).toBeHidden();
+  await expect(page.locator(".passport-mobile-criteria")).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.evaluate(() => { document.documentElement.style.zoom = "2"; });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBeTruthy();
+  await page.evaluate(() => { document.documentElement.style.zoom = ""; });
+});
+test("Workspace passport impact edits persist in browser storage", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Start a blank project" }).click();
+  await page.getByLabel("Project title", { exact: true }).fill("Impact editing test");
+  await page.getByRole("button", { name: "Create project", exact: true }).click();
+  await page.goto("/workspace/passport");
+  await expect(page.locator(".passport-preview #impact-overview")).toHaveCount(0);
+  await page.getByRole("button", { name: "Add scenario" }).click();
+  await page.getByLabel("Scenario label").fill("Documented outbound scenario");
+  await page.getByLabel("Low estimate").fill("85");
+  await page.getByLabel("High estimate").fill("135");
+  await page.getByLabel("Feature as headline").check();
+  await expect(page.locator(".passport-preview #impact-overview")).toBeVisible();
+  await expect(page.locator(".passport-preview .passport-emissions-breakdown")).toHaveCount(0);
+  await page.getByRole("button", { name: "Add outcome" }).click();
+  await page.getByLabel("Outcome").fill("Website visitors");
+  await page.getByLabel("Value").last().fill("240");
+  await page.getByLabel("Metric type").selectOption("reach");
+  await page.getByLabel("Feature in impact overview").check();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem("sd-standard:projects:v1") ?? "")).toContain("Documented outbound scenario");
+  await page.reload();
+  await expect(page.getByLabel("Scenario label")).toHaveValue("Documented outbound scenario");
+  await expect(page.getByLabel("Metric type")).toHaveValue("reach");
 });
 test("the Abierto press release has bilingual routes, metadata and dated cross-links", async ({ page }) => {
   test.skip(!releaseAvailable, "The release is scheduled for September 25 in Mexico City.");
@@ -170,6 +215,7 @@ test("public pages have no automated WCAG A/AA violations and fit narrow screens
     expect(result.violations, `${route}: ${JSON.stringify(result.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) })))}`).toEqual([]);
     const name = route === "/" ? "home" : route.slice(1).replaceAll("/", "-");
     await page.screenshot({ path: `../../.local/review-${name}-mobile.png`, fullPage: true });
+    if (route === "/projects/abierto") { await page.setViewportSize({ width: 900, height: 1000 }); await page.screenshot({ path: `../../.local/review-${name}-tablet.png`, fullPage: true }); }
     await page.setViewportSize({ width: 1440, height: 1000 }); await page.screenshot({ path: `../../.local/review-${name}-desktop.png`, fullPage: true });
   }
 });

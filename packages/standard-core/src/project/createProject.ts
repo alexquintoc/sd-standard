@@ -16,7 +16,7 @@ export function createBlankProject(options: CreateBlankProjectOptions): SDStanda
     standard: { criteriaVersion: CRITERIA_VERSION, criteriaSource: CRITERIA_SOURCE },
     project: { id: options.id ?? createId(), title: options.title, description: options.description ?? "", stage: options.stage ?? "planning", projectTypes: [...(options.projectTypes ?? [])], createdAt: timestamp, updatedAt: timestamp },
     components: [], criteriaAssessments: [], projectNotes: "",
-    passport: { purpose: "", location: "", event: "", locale: "en", heroImage: { src: "", alt: "", caption: "", credit: "" }, collaborators: [], outcomes: [], improvements: "", lastUpdated: "" },
+    passport: { purpose: "", location: "", event: "", locale: "en", heroImage: { src: "", alt: "", caption: "", credit: "" }, collaborators: [], outcomes: [], impactSummary: { emissionsScenarios: [], emissionSources: [] }, attachments: [], improvements: "", lastUpdated: "" },
     application: { lastView: "overview", completedSections: [], exportedAt: null, generator: { name: "SD Standard", version: "" } },
   };
 }

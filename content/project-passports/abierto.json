@@ -19,15 +19,15 @@
       "website"
     ],
     "createdAt": "2026-05-01T12:00:00.000Z",
-    "updatedAt": "2026-09-29T01:30:34.945Z"
+    "updatedAt": "2026-10-24T00:00:00.000Z"
   },
   "components": [
     {
       "id": "lamp-shade",
       "name": "Suspended lamp shade",
       "type": "installation-component",
-      "description": "A lightweight overhead element defining the exhibition space.",
-      "notes": "Confirm end-of-life route with fabricator.",
+      "description": "A lightweight overhead element defining the exhibition space. Its wooden structure used approximately 6 kg of pine reported as sourced from the state of Michoacan.",
+      "notes": "The wood mass and state-level source are user-reported, not independently measured or documented here. Morelia is used as a provisional transport origin until the municipality or supplier is confirmed. Forest-management certification, moisture content, processing, and end-of-life route remain unverified. Confirm the end-of-life route with the fabricator.",
       "image": {
         "src": "",
         "alt": "",
@@ -39,8 +39,8 @@
       "id": "display-base",
       "name": "Display base",
       "type": "exhibition",
-      "description": "Modular base supporting the exhibition objects.",
-      "notes": "Designed for reuse after the event.",
+      "description": "Modular base supporting the exhibition objects. It used approximately 3.5 kg of pine reported as sourced from the state of Michoacan.",
+      "notes": "Designed for reuse after the event. The wood mass and state-level source are user-reported, not independently measured or documented here. Together, the lamp shade and display base account for approximately 9.5 kg of pine. Morelia is used as a provisional transport origin until the municipality or supplier is confirmed. Forest-management certification, moisture content, processing, and end-of-life route remain unverified.",
       "image": {
         "src": "",
         "alt": "",
@@ -53,7 +53,7 @@
       "name": "Printed cards ",
       "type": "print",
       "description": "Visitor postcards: Four sets of postcards with the list of all criteria: one postcard per pillar.",
-      "notes": "Print quantities will follow daily attendance estimates. ",
+      "notes": "Completed run reported as 1,330 postcards on Secante stock rated at 275 g/m2, with a finished size of 10 x 15 cm and two postcards imposed per 8.5 x 11 inch (US Letter) sheet. This requires 665 sheets. At 275 g/m2, one US Letter sheet has an estimated mass of 16.59 g and 665 sheets have an estimated mass of 11.03 kg. Theoretical finished-postcard mass is 5.49 kg, leaving approximately 5.55 kg as estimated trim waste. The project purchased 15 kg of stock; if the basis weight and format are consistent, approximately 3.97 kg of the purchased stock was not consumed by this run. These are arithmetic estimates from reported quantities and dimensions, not measured weights. Actual spoilage, setup sheets, bleed, and printer inventory were not reported.",
       "image": {
         "src": "",
         "alt": "",
@@ -91,9 +91,9 @@
         {
           "id": "specify-recycled-paper",
           "title": "Local left-over card stock picked",
-          "description": "Select a locally available high-recycled-content stock.",
+          "description": "Use the locally available Secante stock selected for the postcards. The completed print run is reported as 1,330 postcards on 275 g/m2 stock; recycled content and certification have not been documented.",
           "status": "completed",
-          "notes": "15 kg of 270gm card stock was picked to print on-demand during the exhibit"
+          "notes": "New evidence corrects the previously recorded 270 g/m2 to 275 g/m2. The 15 kg figure is confirmed as stock purchased, not stock consumed. Based on 665 US Letter sheets at 275 g/m2, estimated paper used for the run is approximately 11.03 kg. Approximately 3.97 kg of purchased stock therefore remained unconsumed, subject to actual sheet counts, setup spoilage, and inventory verification. No claim is made here about recycled content or avoided emissions."
         }
       ],
       "notes": "Applies only to postcards"
@@ -120,13 +120,13 @@
         },
         {
           "title": "Designed to be re-purposed",
-          "description": "The lamp and display base (or table) were designed to be re–used after the exhibit",
+          "description": "The lamp and display base (or table) were designed to be reused after the exhibit",
           "status": "suggested",
           "notes": "",
           "id": "designed-to-be-re-purposed"
         }
       ],
-      "notes": "One shared assessment covers both fabricated components."
+      "notes": "One shared assessment covers both fabricated components. New evidence records approximately 6 kg of pine in the lamp shade and 3.5 kg in the display base (approximately 9.5 kg total), reported as sourced from Michoacan. These are approximate user-reported masses; no supplier invoice, forestry certification, exact origin, or measured embodied-carbon factor is available, so no CO2e estimate is made."
     },
     {
       "criterionId": "S6",
@@ -185,10 +185,10 @@
       "response": "improved",
       "strategies": [
         {
-          "title": "Print on-demand",
-          "description": "A low volume of paper was picked (15 kg). Postcards will be printed a few hundred copies every couple of days depending on the demand during the event.",
-          "status": "suggested",
-          "notes": "",
+          "title": "Recorded print run and sheet-use estimate",
+          "description": "The completed run is reported as 1,330 postcards. At two postcards per sheet, this requires 665 US Letter sheets. At 275 g/m2, this corresponds to an estimated 11.03 kg of input paper; the 1,330 finished 10 x 15 cm cards have a theoretical mass of 5.49 kg.",
+          "status": "completed",
+          "notes": "Estimated trim waste is approximately 5.55 kg, or about 50.3% of the input sheet mass, before any additional setup spoilage. The 15 kg figure is confirmed as stock purchased rather than consumed; the arithmetic difference between purchased stock and the estimated 11.03 kg used is approximately 3.97 kg. These are area-and-basis-weight calculations, not measurements. Actual sheet count, printer spoilage, bleed, and remaining inventory should be verified.",
           "id": "print-on-demand"
         }
       ],
@@ -254,14 +254,14 @@
       "response": "not-assessed",
       "strategies": [
         {
-          "title": "Uses a motion sensor to power lamp shade",
-          "description": "A motion sensor installed on the lamp shade reduces energy consumption",
+          "title": "Document actual operating schedule and rated lighting load",
+          "description": "The lamp used a 9 W Berlin lamp plus dimmable COB strips rated at 54 W for a nine-day exhibition. It appeared to remain illuminated throughout the reported 10-12 operating hours per day because gallery traffic was constant. The prior setup recommendation was approximately 40-60% intensity for the COB strips. If electrical draw scaled linearly with that setting, the modeled combined load would be 30.6-41.4 W, equivalent to approximately 0.306-0.497 kWh/day and 2.75-4.47 kWh across nine days. As a conservative rating-based maximum, 63 W for 10-12 hours per day would equal 0.63-0.756 kWh/day and 5.67-6.80 kWh over nine days.",
           "status": "completed",
-          "notes": "",
+          "notes": "Rated wattages, nine days, operating hours, and observed continuous illumination are reported evidence, not meter readings. The 40-60% COB scenario comes from the prior recommendation, not a recorded final dimmer position, and LED dimming percentage may not equal power percentage; 2.75-4.47 kWh is therefore a modeled estimate. The earlier sensor configuration recommendation was 50% detection range, one-minute delay, and 24H operation. Because visitors appear to have kept the lamp activated, no sensor savings are credited. No electricity emissions factor or CO2e claim is applied.",
           "id": "uses-a-motion-sensor-to-power-lamp-shade"
         }
       ],
-      "notes": ""
+      "notes": "The modeled energy range uses the recommended 40-60% COB intensity, reported 10-12 hours per day, and nine exhibition days. Verify the actual dimmer position or measured wattage and whether both light sources were energized continuously."
     },
     {
       "criterionId": "S3",
@@ -275,13 +275,13 @@
       "strategies": [
         {
           "title": "Majority of suppliers were local",
-          "description": "All but one supplier of labor were local (carpenter, printer, electrician). The textile artisans were in Oaxaca.",
+          "description": "Most labor suppliers were described as local or regional (carpenter, printer, electrician), while the textile artisans were in Oaxaca. The pine was reported as sourced from Michoacan, but no supplier documentation is available. For transport screening, Morelia is used as a provisional pine origin, with approximately 226 km to Toluca in a fully loaded timber truck. The lamp was then transported approximately 50 km from the carpenter's workshop in Toluca to an apartment in Mexico City in a partially loaded household-moving-style truck, followed by approximately 3 km to the Centro Nacional de las Artes in a pickup truck.",
           "status": "suggested",
           "notes": "",
           "id": "majority-of-suppliers-were-local"
         }
       ],
-      "notes": ""
+      "notes": "The transport screening estimate is approximately 41.8 kg CO2e. It combines: (1) 9.5 kg of pine allocated over a provisional 226 km Morelia-to-Toluca route using the 2026 UK Government factor for a 100%-laden, non-refrigerated articulated HGV over 33 tonnes: 0.0095 t x 226 km x 0.06030 kg CO2e/t-km = 0.13 kg CO2e; (2) a dedicated 50 km Toluca-to-Mexico City trip using the factor for a 50%-laden average non-refrigerated rigid HGV: 50 km x 0.81764 kg CO2e/km = 40.88 kg CO2e; and (3) a dedicated 3 km pickup leg represented by an average diesel van up to 3.5 tonnes: 3 km x 0.25716 kg CO2e/km = 0.77 kg CO2e. Morelia, vehicle classes, diesel fuel, 50% loading, and dedicated final trips are modeling assumptions, not verified activity data. Return journeys and the display base's separate movements remain unknown. The term 'local' should be read as regional and does not establish a quantified impact benefit."
     },
     {
       "criterionId": "S10",
@@ -465,10 +465,80 @@
         "name": "Texterra",
         "role": "Recycled canvas fabric supplier",
         "credit": ""
+      },
+      {
+        "id": "project-author-alex-quinto-studio",
+        "name": "Alex Quinto Studio",
+        "role": "Project author and design studio",
+        "credit": ""
       }
     ],
-    "outcomes": [],
+    "outcomes": [
+      {
+        "id": "local-textile-tradition-promoted",
+        "label": "Local textile tradition promoted",
+        "value": "1",
+        "unit": "local textile tradition promoted in a local community",
+        "kind": "estimated",
+        "source": "Project team statement and public collaborator record reviewed 2026-10-24",
+        "date": "2026-10-24",
+        "evidenceNote": "The project promoted one local textile tradition through its work with a local artisan community. This is a qualitative cultural-engagement indicator, not a measurement of audience reach, community benefit, or economic impact.",
+        "pillarId": "culture",
+        "featured": true,
+        "metricType": "engagement"
+      },
+      {
+        "id": "businesses-engaged",
+        "label": "Businesses engaged",
+        "value": "4",
+        "unit": "businesses",
+        "kind": "estimated",
+        "source": "Public collaborator and supplier records reviewed 2026-10-24",
+        "date": "2026-10-24",
+        "evidenceNote": "Four external businesses or supplier groups are represented in the public credits. This is an engagement count, not a financial return, procurement value, or profitability measure.",
+        "pillarId": "finance",
+        "featured": true,
+        "metricType": "engagement"
+      }
+    ],
+    "impactSummary": {
+      "emissionsScenarios": [
+        {
+          "id": "documented-outbound",
+          "label": "Outbound transport screening scenario",
+          "low": 85,
+          "high": 135,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "scope": "Screening estimate covering provisionally modeled pine freight from Morelia, the reported outbound installation trips, textiles, paper, lighting manufacture, pine, and exhibition electricity.",
+          "source": "Abierto environmental impact screening updated 2026-10-24; transport factors from the UK Government GHG Conversion Factors 2026",
+          "evidenceNote": "This is a screening range based on reported quantities, a provisional Morelia pine origin, modeled vehicle loading, reported installation transport legs, operating assumptions, and secondary emissions factors. It is not a direct measurement. The broad range remains unchanged because the added allocated timber freight is approximately 0.13 kg CO2e and other uncertainties are materially larger. Supplier, return-trip, vehicle, and exact material-origin gaps remain.",
+          "featured": true
+        },
+        {
+          "id": "possible-return-trips",
+          "label": "Scenario including possible matching vehicle return trips",
+          "low": 130,
+          "high": 180,
+          "unit": "kg CO2e",
+          "kind": "estimated",
+          "scope": "Screening estimate that adds possible matching return journeys for the documented vehicle trips.",
+          "source": "Abierto environmental impact screening updated 2026-10-24; transport factors from the UK Government GHG Conversion Factors 2026",
+          "evidenceNote": "Return journeys were not documented. This scenario is shown as a sensitivity range and must not be read as measured travel activity.",
+          "featured": false
+        }
+      ],
+      "emissionSources": [
+        { "id": "transport", "label": "Transport", "value": 41.8, "unit": "kg CO2e", "kind": "estimated", "source": "UK Government GHG Conversion Factors 2026 applied to provisional and reported route data", "evidenceNote": "Estimated as 0.13 kg CO2e for 9.5 kg of pine allocated across 226 km from provisional origin Morelia in a fully loaded articulated timber truck, plus 40.88 kg CO2e for the dedicated 50 km Toluca leg in a 50%-laden rigid truck, plus 0.77 kg CO2e for the dedicated 3 km pickup leg represented by an average diesel van." },
+        { "id": "textiles", "label": "Textiles", "value": 30.0, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
+        { "id": "paper", "label": "Paper", "value": 14.8, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
+        { "id": "lighting-manufacture", "label": "Lighting manufacture", "value": 13.0, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
+        { "id": "pine", "label": "Pine", "value": 1.9, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." },
+        { "id": "exhibition-electricity", "label": "Exhibition electricity", "value": 1.6, "unit": "kg CO2e", "kind": "estimated", "source": "Abierto environmental impact screening", "evidenceNote": "Illustrative midpoint contribution." }
+      ]
+    },
+    "attachments": [],
     "improvements": "Compensating the environmental impact of the piece through collaborations with local reforestation organizations",
-    "lastUpdated": "2026-09-24"
+    "lastUpdated": "2026-10-24"
   }
 }

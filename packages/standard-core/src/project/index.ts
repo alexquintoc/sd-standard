@@ -1,4 +1,5 @@
 export * from "./constants";
+export * from "./attachments";
 export * from "./createProject";
 export * from "./criteria";
 export * from "./exportProject";
