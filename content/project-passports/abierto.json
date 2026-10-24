@@ -19,7 +19,7 @@
       "website"
     ],
     "createdAt": "2026-05-01T12:00:00.000Z",
-    "updatedAt": "2026-10-24T20:32:42.880Z"
+    "updatedAt": "2026-10-24T20:41:00.554Z"
   },
   "components": [
     {
@@ -85,7 +85,7 @@
         ]
       },
       "relevance": "high",
-      "status": "in-progress",
+      "status": "completed",
       "response": "improved",
       "strategies": [
         {
@@ -108,7 +108,7 @@
         ]
       },
       "relevance": "high",
-      "status": "in-progress",
+      "status": "completed",
       "response": "improved",
       "strategies": [
         {
@@ -137,7 +137,7 @@
         ]
       },
       "relevance": "medium",
-      "status": "in-progress",
+      "status": "completed",
       "response": "modeled",
       "strategies": [
         {
@@ -159,7 +159,7 @@
         ]
       },
       "relevance": "high",
-      "status": "in-progress",
+      "status": "completed",
       "response": "improved",
       "strategies": [
         {
@@ -181,7 +181,7 @@
         ]
       },
       "relevance": "high",
-      "status": "in-progress",
+      "status": "completed",
       "response": "improved",
       "strategies": [
         {
@@ -352,7 +352,7 @@
           "id": "table-height-is-accessible-for-people-on-wheelchair-and-kids"
         }
       ],
-      "notes": ""
+      "notes": "The height of the table was considered for people using wheelchairs and children, so they could read the texts on the table. The printed fabric used texts that used high-contrast colors."
     },
     {
       "criterionId": "S15",
@@ -425,7 +425,7 @@
       "project",
       "components"
     ],
-    "exportedAt": "2026-10-24T20:33:40.820Z",
+    "exportedAt": "2026-10-24T20:41:11.217Z",
     "generator": {
       "name": "SD Standard",
       "version": ""
