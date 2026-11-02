@@ -14,6 +14,7 @@ export default function UpdateDetail({ params }: { params: { slug: string } }) {
   const basePath = spanish ? "/es/about/updates" : "/about/updates";
   const alternatePath = item.translationSlug ? `${spanish ? "" : "/es"}/about/updates/${item.translationSlug}` : undefined;
   const showFollowUp = Boolean(item.followUpSlug && item.followUpDate && (Date.parse(item.followUpDate) <= Date.now() || import.meta.env.VITE_INCLUDE_SCHEDULED_UPDATES === "1"));
+  const bodyUsesFeaturedImage = Boolean(item.featuredImage && item.body.includes(`](${item.featuredImage}`));
 
   return (
     <main lang={item.locale} className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
@@ -27,7 +28,7 @@ export default function UpdateDetail({ params }: { params: { slug: string } }) {
         {item.summary ? <p className="mt-5 text-xl leading-8 text-[#5f5a50]">{item.summary}</p> : null}
         {alternatePath ? <p className="mt-5 text-sm font-bold"><a className="text-[#28775e] underline underline-offset-4 focus:outline-none focus:ring-4 focus:ring-[#85bba8]" href={alternatePath} hrefLang={spanish ? "en" : "es"}>{spanish ? "Read this release in English" : "Leer esta publicación en español"}</a></p> : null}
         {showFollowUp ? <p className="mt-6 border-l-4 border-[#85bba8] py-2 pl-4 text-sm font-bold"><time dateTime={item.followUpDate}>{new Date(item.followUpDate!).toLocaleDateString("en", { dateStyle:"long", timeZone:"UTC" })}</time>: <a className="text-[#28775e] underline underline-offset-4 focus:outline-none focus:ring-4 focus:ring-[#85bba8]" href={`/about/updates/${item.followUpSlug}`}>{item.followUpTitle}</a>.</p> : null}
-        {item.featuredImage ? <img className="mt-8 w-full rounded-lg" src={item.featuredImage} alt={item.imageAlt ?? ""} /> : null}
+        {item.featuredImage && !bodyUsesFeaturedImage ? <img className="mt-8 h-auto w-full rounded-lg" decoding="async" src={item.featuredImage} alt={item.imageAlt ?? ""} /> : null}
         <div className="mt-10">
           <MarkdownContent markdown={item.body} />
         </div>

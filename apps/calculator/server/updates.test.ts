@@ -5,6 +5,19 @@ import { getAllUpdates, getUpdate } from "./updates";
 const englishSlug = "what-is-a-design-made-of-abierto-2026";
 const spanishSlug = "de-que-esta-hecho-un-diseno-abierto-2026";
 const bidSlug = "sd-standard-selected-bienal-iberoamericana-diseno-2026";
+const journalismSlug = "design-truth-accountability";
+
+test("the journalism feature publishes with eight original images and current criterion links", () => {
+  const article = getUpdate(journalismSlug, { now: new Date("2026-11-02T06:00:00.000Z") });
+
+  assert.ok(article);
+  assert.equal(article.category, "Research");
+  assert.equal(article.featuredImage, "/images/updates/design-truth-accountability/forced-labour-coffee-supply-chains.png");
+  assert.equal((article.body.match(/^!\[/gm) ?? []).length, 8);
+  assert.match(article.body, /C2 — Indigenous Culture/);
+  assert.match(article.body, /knowledge-base\/generated\/criteria\/indigenous-culture\.html/);
+  assert.doesNotMatch(article.body, /CM9/);
+});
 
 test("the BID selection is the latest English update and retains its related links", () => {
   const updates = getAllUpdates({ now: new Date("2026-10-06T06:00:00.000Z") });
