@@ -15,6 +15,12 @@ test.describe("research pilot landing page", () => {
     await expect(page.locator("#why-heading").locator("..")).toHaveClass(/pilot-heading-stacked/);
     await expect(page.locator("#principles-heading").locator("..")).toHaveClass(/pilot-heading-stacked/);
     await expect(page.locator(".pilot-output").filter({ hasText: "Project documentation using the Standard's framework" })).toBeVisible();
+    await expect(page.getByText("Expression-of-interest deadline", { exact: true })).toBeVisible();
+    await expect(page.getByText("December 6, 2026", { exact: true })).toBeVisible();
+    await expect(page.getByText("Selected participants announced", { exact: true })).toBeVisible();
+    await expect(page.getByText("December 18, 2026", { exact: true })).toBeVisible();
+    await expect(page.locator(".pilot-facts > div")).toHaveCount(6);
+    await expect(page.getByText("Expressions of interest close December 6, 2026.", { exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "Explore an example Project Passport" })).toHaveAttribute("href", "/projects/abierto");
     const passportImage = page.getByAltText("Abierto de Diseño installation documented in the existing Project Passport");
     await passportImage.scrollIntoViewIfNeeded();

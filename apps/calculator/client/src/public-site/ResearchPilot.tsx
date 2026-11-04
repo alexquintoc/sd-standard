@@ -72,12 +72,16 @@ export default function ResearchPilot() {
           <p>From January to March 2027, a small cohort will use the Standard to identify opportunities, test decisions, and document what changes in practice—including the limits, trade-offs, and questions that remain.</p>
           <div className="pilot-actions"><a className="public-button" href="#apply">Express your interest</a><a className="pilot-secondary" href="#timeline">How the pilot works <span aria-hidden="true">↓</span></a></div>
         </div>
-        <dl className="pilot-facts" aria-label="Pilot at a glance">
-          <div><dt>When</dt><dd>January–March 2027</dd></div>
-          <div><dt>Cohort</dt><dd>3–5 projects</dd></div>
-          <div><dt>Research time</dt><dd>Approximately 12 hours<small>Additional to normal project development.</small></dd></div>
-          <div><dt>Cost</dt><dd>Free participation</dd></div>
-        </dl>
+        <div className="pilot-fact-panel">
+          <dl className="pilot-facts" aria-label="Pilot at a glance">
+            <div><dt>Pilot period</dt><dd>January–March 2027</dd></div>
+            <div><dt>Cohort</dt><dd>3–5 projects</dd></div>
+            <div><dt>Research time</dt><dd>Approximately 12 hours<small>Additional to normal project development.</small></dd></div>
+            <div><dt>Cost</dt><dd>Free participation</dd></div>
+            <div><dt>Expression-of-interest deadline</dt><dd><time dateTime="2026-12-06">December 6, 2026</time></dd></div>
+            <div><dt>Selected participants announced</dt><dd><time dateTime="2026-12-18">December 18, 2026</time></dd></div>
+          </dl>
+        </div>
       </div>
     </header>
 
@@ -125,7 +129,7 @@ export default function ResearchPilot() {
     <section className="pilot-section pilot-wrap pilot-principles" aria-labelledby="principles-heading"><div className="pilot-heading pilot-heading-stacked"><p className="pilot-kicker">An open, collaborative research initiative</p><h2 id="principles-heading">Clear conditions for working together.</h2><p>The pilot is designed to learn from real practice while respecting each participant’s work and choices.</p></div><ul>{principles.map(item => <li key={item}>{item}</li>)}</ul></section>
 
     <section className="pilot-apply" id="apply" aria-labelledby="apply-heading"><div className="pilot-wrap pilot-apply-grid">
-      <div className="pilot-apply-intro"><p className="pilot-kicker">Expression of interest</p><h2 id="apply-heading">Join the first SD Standard Research Pilot</h2><p className="pilot-apply-lede">Help us explore what responsible design can become.</p><p>You do not need a finished proposal. A project idea and an interest in learning through the process are enough to express your interest.</p></div>
+      <div className="pilot-apply-intro"><p className="pilot-kicker">Expression of interest</p><h2 id="apply-heading">Join the first SD Standard Research Pilot</h2><p className="pilot-apply-lede">Help us explore what responsible design can become.</p><p className="pilot-deadline-reminder"><strong>Expressions of interest close December 6, 2026.</strong></p><p>You do not need a finished proposal. A project idea and an interest in learning through the process are enough to express your interest.</p></div>
       {status === "success" ? <section className="pilot-confirmation" id="thank-you" tabIndex={-1} aria-live="polite"><p className="pilot-kicker">Form submitted</p><h3>Thank you for your interest!</h3><p>We’ve received your expression of interest in the SD Standard Research Pilot 2027.</p><p>We’ll review submissions and contact potential participants to discuss the next steps.</p><p>In the meantime, you’re welcome to explore the SD Standard and its tools.</p><Link className="public-button" href="/explore">Explore the SD Standard</Link></section> : <form ref={formRef} className="pilot-form" name="research-pilot-2027" method="POST" data-netlify="true" netlify-honeypot="company-website" onSubmit={submit} noValidate={false}>
         <input type="hidden" name="form-name" value="research-pilot-2027" />
         <p className="pilot-honeypot" aria-hidden="true"><label>Do not fill this out if you are human: <input name="company-website" tabIndex={-1} autoComplete="off" /></label></p>

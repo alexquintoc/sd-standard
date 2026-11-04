@@ -6,21 +6,22 @@ import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, A
 import { useWorkspace } from "@/workspace/WorkspaceProvider";
 import { useProjectActions } from "@/public-site/ProjectActions";
 import { SiteFooter } from "@/public-site/SiteFooter";
-import { fetchUpdates, selectAnnouncement, type Update } from "@/lib/updates";
 import { translateBriefChrome } from "@/lib/briefChromeLocale";
 import { knowledgeBaseLinkProps, siteNavigation, type SiteNavigationItem } from "@/public-site/siteNavigation";
+
+const researchPilotAnnouncementKey = "sd-standard:announcement:research-pilot-2027-open-call";
 
 export default function SiteChrome({ children }: { children: ReactNode }) {
   const workspace = useWorkspace(); const actions = useProjectActions(); const [location, navigate] = useLocation(); const search = useSearch();
   const [mobile, setMobile] = useState(false); const [closing, setClosing] = useState(false); const [error, setError] = useState("");
-  const [announcement, setAnnouncement] = useState<Update | null>(null);
+  const [showResearchPilotAnnouncement, setShowResearchPilotAnnouncement] = useState(false);
   const mobileButton = useRef<HTMLButtonElement>(null); const projectButton = useRef<HTMLButtonElement>(null);
   const spanish = location.startsWith("/es/") || (location.replace(/\/$/, "") === "/brief-generator" && new URLSearchParams(search).get("lang") === "es");
   const qr = location.startsWith("/es/abierto/");
   const t = (value: string) => translateBriefChrome(value, spanish);
   useEffect(() => { setMobile(false); }, [location]);
   useEffect(() => { if (!mobile) return; const escape = (event: KeyboardEvent) => { if (event.key === "Escape") { setMobile(false); mobileButton.current?.focus(); } }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [mobile]);
-  useEffect(() => { fetchUpdates().then(items => { const selected = selectAnnouncement(items); if (!selected) return; let dismissed = false; try { dismissed = localStorage.getItem(`sd-standard:announcement:${selected.slug}`) === "dismissed"; } catch { /* Optional preference. */ } if (!dismissed) setAnnouncement(selected); }).catch(() => undefined); }, []);
+  useEffect(() => { let dismissed = false; try { dismissed = localStorage.getItem(researchPilotAnnouncementKey) === "dismissed"; } catch { /* Optional preference. */ } if (!dismissed) setShowResearchPilotAnnouncement(true); }, []);
   const title = workspace.project?.project.title.trim() || "Untitled project";
   const menuItem = (item: SiteNavigationItem) => item.opensInNewTab ? (
     <DropdownMenuItem asChild key={item.href} className="public-site-menu-item">
@@ -31,7 +32,7 @@ export default function SiteChrome({ children }: { children: ReactNode }) {
   );
   return <div className="public-site">
     <a className="public-skip" href="#main-content">Skip to content</a>
-    {announcement && !spanish && <aside className="public-announcement" aria-label="Announcement"><p>{announcement.announcementText || announcement.title} <Link href={`/about/updates/${announcement.slug}`}>{announcement.announcementLinkLabel || "Learn more"}</Link></p><button aria-label="Dismiss announcement" onClick={() => { try { localStorage.setItem(`sd-standard:announcement:${announcement.slug}`, "dismissed"); } catch { /* Optional preference. */ } setAnnouncement(null); }}><X size={18} /></button></aside>}
+    {showResearchPilotAnnouncement && !spanish && <aside className="public-announcement" aria-label="Announcement"><p><strong>Open Call: SD Standard Research Pilot 2027</strong> — Applications close December 6. <Link href="/research-pilot">Express your interest →</Link></p><button aria-label="Dismiss announcement" onClick={() => { try { localStorage.setItem(researchPilotAnnouncementKey, "dismissed"); } catch { /* Optional preference. */ } setShowResearchPilotAnnouncement(false); }}><X size={18} /></button></aside>}
     <header className="public-header">
       <div className="public-header-inner">
         <Link href="/" className="public-logo">SD Standard</Link>
