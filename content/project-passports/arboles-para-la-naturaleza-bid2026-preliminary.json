@@ -1,0 +1,441 @@
+{
+  "schema": {
+    "name": "sd-standard-project",
+    "version": "0.1.0"
+  },
+  "standard": {
+    "criteriaVersion": "criteria-v2",
+    "criteriaSource": "criteria.v2.json"
+  },
+  "project": {
+    "id": "arboles-para-la-naturaleza-bid2026-preliminary",
+    "title": "Árboles para la naturaleza — Preliminary Sustainability Assessment",
+    "description": "An exploratory sustainability assessment of Árboles para la naturaleza: Conoce las especies, a digital environmental education project developed by TEMBOL for Para la Naturaleza in Puerto Rico. Prepared for a collaborative evaluation at the Bienal Iberoamericana de Diseño 2026.",
+    "stage": "active-use",
+    "projectTypes": [
+      "Digital",
+      "Website",
+      "Interactive communication",
+      "Environmental education"
+    ],
+    "createdAt": "2026-11-04T12:00:00.000Z",
+    "updatedAt": "2026-11-04T12:00:00.000Z",
+    "designer": "TEMBOL",
+    "leadDesigner": "Ramdwin González",
+    "client": "Para la Naturaleza",
+    "country": "Puerto Rico",
+    "referenceUrl": "https://bid-dimad.com/bid/trabajo_pr/arboles-para-la-naturaleza-conoce-las-especies/?filtropais=Puerto%20Rico",
+    "assessmentDate": "2026-11-04",
+    "assessmentPurpose": "Live collaborative preliminary assessment at BID26; distinguish published information, learning, decisions, and measurable ecological outcomes without implying certification.",
+    "assessmentStatus": "Preliminary — awaiting designer verification"
+  },
+  "components": [
+    {
+      "id": "digital-platform",
+      "name": "Plataforma digital / sitio web",
+      "type": "website",
+      "description": "Interfaz web de Para la Naturaleza para explorar y buscar especies. La revisión preliminar confirmó búsqueda, filtros, navegación por teclado expuesta semánticamente, diseño en español, experiencia de especie y una opción de contenido offline ligero; no se verificaron el proveedor de alojamiento, consumo energético, analítica de rendimiento ni compatibilidad completa con tecnologías de asistencia.",
+      "notes": "Revisar rendimiento, peso transferido, alojamiento, dispositivos, navegadores, datos móviles, mantenimiento y accesibilidad mediante una auditoría formal. La observación de DOM del 04-11-2026 no equivale a una auditoría WCAG."
+    },
+    {
+      "id": "species-content",
+      "name": "Información de especies y contenido educativo",
+      "type": "digital",
+      "description": "Fichas en español sobre árboles y arbustos con nombres comunes y científicos, características, distribución, espacio, crecimiento, tolerancias, servicios ecológicos y, cuando corresponde, estado de conservación. La plataforma explica categorías como endémica, nativa, naturalizada e introducida en relación con Puerto Rico.",
+      "notes": "Confirmar autoría, revisión científica, fecha de actualización, fuentes por campo, proceso editorial, pruebas de comprensión y participación de conocimiento ecológico local o tradicional; no inferir este último sin evidencia."
+    },
+    {
+      "id": "visual-audiovisual",
+      "name": "Recursos visuales y audiovisuales",
+      "type": "digital",
+      "description": "Fotografías, ilustraciones de escala y audio integrados en las fichas. En la ficha revisada, las fotografías mostraban créditos de iNaturalist y las imágenes del DOM tenían atributo alt; se encontró un elemento de audio sin pista de texto asociada en el DOM.",
+      "notes": "Confirmar licencias y permisos de cada recurso, calidad del texto alternativo, transcripciones, controles de audio, derechos de ilustraciones y optimización de medios. Un atributo alt presente no demuestra por sí solo que la alternativa sea adecuada."
+    },
+    {
+      "id": "external-data",
+      "name": "Datos y sistemas de información externos",
+      "type": "digital",
+      "description": "La experiencia muestra créditos de fotografías de iNaturalist y enlaza evaluaciones de especies a la Lista Roja de la UICN con versión y cita. La página oficial de BID26 también describe conexiones con iNaturalist y la Lista Roja.",
+      "notes": "Confirmar si existe integración técnica o si los datos se incorporan editorialmente, así como API, frecuencia de actualización, control de versiones, licencias, atribución, validación, fallos y continuidad de servicio."
+    },
+    {
+      "id": "engagement-outcomes",
+      "name": "Participación de usuarios y resultados ambientales",
+      "type": "other",
+      "description": "Relación entre el recurso digital, la selección de especies, los viveros y las acciones de reforestación de Para la Naturaleza. La plataforma ofrece orientación y un enlace a los esfuerzos de reforestación, pero no se encontró atribución pública entre su uso y árboles sembrados, supervivencia, decisiones mejoradas o restauración ecológica.",
+      "notes": "Componente analítico para la conversación en vivo. Separar alcance y uso, aprendizaje, cambio de decisión o conducta, y resultados ecológicos medidos."
+    }
+  ],
+  "criteriaAssessments": [
+    {
+      "criterionId": "E1",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e1-impact-chain-and-footprint",
+          "title": "Definir una cadena de impacto y una línea base de la plataforma",
+          "description": "Separar y medir, cuando sea viable, el impacto operativo del sitio, el aprendizaje, los cambios de decisión o conducta y los resultados ecológicos; usar un estudio de ciclo de vida cualificado antes de afirmar reducción de impacto conforme al criterio.",
+          "status": "considering",
+          "notes": "Oportunidad preliminar; no existe evidencia pública de que se haya acordado o implementado."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: El propósito ambiental y la información sobre especies no demuestran por sí solos una reducción ambiental conforme a E1, que exige una acción respaldada por un estudio de ciclo de vida cualificado o una evaluación cuantitativa. Evidencia disponible: sitio activo de Para la Naturaleza y descripción oficial BID26. Fuente: https://www.paralanaturaleza.org/reforestacion/arboles y https://bid-dimad.com/evento/pon-tu-proyecto-a-prueba/. Información faltante: línea base, límites, LCS/LCA, huella digital, uso, decisiones y resultados ecológicos atribuibles. Pregunta: ¿Qué decisiones de diseño tomaron para reducir el impacto ambiental de la propia plataforma digital y cómo las verificaron?"
+    },
+    {
+      "criterionId": "E18",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "digital-platform",
+          "visual-audiovisual"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "id": "e18-digital-efficiency-budget",
+          "title": "Establecer presupuestos de rendimiento y datos",
+          "description": "Medir rutas y fichas representativas en móvil, fijar presupuestos para JavaScript, imágenes, audio y fuentes, documentar caché y alojamiento, y repetir las mediciones después de cada versión.",
+          "status": "considering",
+          "notes": "Las métricas de rendimiento web son indicadores operativos; no deben presentarse como emisiones directas sin un método adecuado."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: La experiencia incluye un modo offline que anuncia un paquete de texto, datos y mapa de aproximadamente 1.7 MB en español, sin fotos ni ilustraciones, lo que puede reducir solicitudes repetidas y ampliar uso con conectividad limitada. Esto no demuestra eficiencia energética general. Evidencia disponible: interfaz activa revisada el 04-11-2026. Fuente: https://www.paralanaturaleza.org/reforestacion/arboles. Información faltante: peso real por ruta, Core Web Vitals, caché, compresión, optimización de imágenes/audio, alojamiento, tráfico, dispositivos y consumo. Pregunta: ¿Midieron el peso, la velocidad o el consumo de datos de la plataforma y qué decisiones tomaron para hacerla más ligera?"
+    },
+    {
+      "criterionId": "E11",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e11-public-measurement-note",
+          "title": "Publicar una nota de medición con alcances separados",
+          "description": "Documentar indicadores de infraestructura digital y, por separado, aprendizaje, uso para reforestación y resultados ecológicos, con método, periodo, límites, incertidumbre y responsable de actualización.",
+          "status": "considering",
+          "notes": "No publicar equivalencias de carbono no verificadas como certificación o inventario de GEI."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: No se encontró un informe público cuantificado de reducciones de GEI, energía, materiales o residuos del proyecto. La información de conservación y el estado UICN de una especie no constituyen reporte de la huella operativa ni prueba de resultados atribuibles al sitio. Evidencia disponible: revisión de las páginas públicas citadas. Información faltante: método, alcance, periodo, métricas, analítica, resultados y verificación. Pregunta: ¿Qué indicadores usan para reportar el impacto de la herramienta, tanto de su infraestructura digital como de las decisiones o acciones que facilita?"
+    },
+    {
+      "criterionId": "EM6",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "em6-ecological-safeguards",
+          "title": "Documentar salvaguardas para recomendaciones de especies",
+          "description": "Registrar revisión científica, procedencia, condiciones locales, riesgos de especies introducidas, mensajes de uso responsable y un proceso para corregir información que pudiera producir daño ecológico.",
+          "status": "considering",
+          "notes": "Criterio obligatorio; la intención de conservación no sustituye la verificación."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado, cumplimiento no verificado. Observación preliminar: La herramienta distingue distribución, tolerancia, espacio, servicios y estado de conservación para orientar decisiones, y el cliente declara una misión de conservación. EM6 es obligatorio y exige verificar que el proyecto, la entidad de diseño y las actividades del cliente no apoyan la destrucción de ecosistemas; el propósito temático no basta. Evidencia disponible: sitio de Para la Naturaleza y BID26. Información faltante: gobernanza científica, salvaguardas, errores y correcciones, efectos de recomendaciones, actividades relevantes de TEMBOL y del cliente. Pregunta: ¿Cómo verifican que la información y las recomendaciones de especies eviten daños ecológicos y apoyen la conservación en cada contexto de siembra?"
+    },
+    {
+      "criterionId": "S6",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "digital-platform",
+          "species-content",
+          "visual-audiovisual"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "id": "s6-accessibility-audit",
+          "title": "Completar una auditoría de accesibilidad con usuarios",
+          "description": "Evaluar WCAG con pruebas manuales de teclado y lector de pantalla, contraste, ampliación, alternativas de imágenes, transcripciones de audio, formularios y estados dinámicos; priorizar correcciones con personas con discapacidad.",
+          "status": "considering",
+          "notes": "La inspección automatizada preliminar no sustituye pruebas manuales ni con usuarios."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar automatizada del 04-11-2026: el documento declara idioma español, expone encabezados, búsqueda, botones y enlaces semánticos; las 118 imágenes presentes tenían atributo alt, una vacío. Se detectó un elemento de audio sin pista de texto y 29 controles sin nombre detectable mediante la comprobación DOM simplificada. Estos conteos requieren revisión de visibilidad, contexto y falsos positivos. Evidencia disponible: experiencia activa. Fuente: https://www.paralanaturaleza.org/reforestacion/arboles?arbol=goetzea-elegans. Información faltante: auditoría WCAG, teclado, lector de pantalla, contraste, foco, transcripciones, dispositivos y pruebas con usuarios. Pregunta: ¿Cómo consideraron la accesibilidad para personas con distintas capacidades o niveles de acceso a tecnología?"
+    },
+    {
+      "criterionId": "S9",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "species-content",
+          "visual-audiovisual",
+          "external-data"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "id": "s9-rights-register",
+          "title": "Crear un registro público de fuentes, créditos y licencias",
+          "description": "Mantener por recurso y campo de datos la autoría, fuente, permiso o licencia, versión, modificaciones permitidas y texto de atribución; indicar con claridad qué puede reutilizar el público.",
+          "status": "considering",
+          "notes": "Acceso público no equivale a licencia abierta."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: La ficha Matabuey mostró créditos de fotografías a colaboradores de iNaturalist y una cita/enlace a la Lista Roja UICN 2026. No se encontró en la revisión rápida una licencia general que permita reutilizar textos, fotografías, ilustraciones o audio. Evidencia disponible: ficha pública Matabuey. Información faltante: contratos, licencias por recurso, autoría de textos/ilustraciones/audio, términos de API y política de reutilización. Pregunta: ¿Cómo gestionaron la autoría, los permisos y las licencias de fotografías, ilustraciones, audios y datos externos?"
+    },
+    {
+      "criterionId": "S16",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "species-content",
+          "visual-audiovisual",
+          "engagement-outcomes"
+        ]
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "verified",
+      "strategies": [
+        {
+          "id": "s16-learning-evaluation",
+          "title": "Evaluar comprensión y decisiones, no solo visitas",
+          "description": "Definir objetivos de aprendizaje y probar con usuarios si distinguen especies y condiciones, comprenden riesgos y eligen opciones adecuadas; combinar tareas, preguntas breves y seguimiento voluntario.",
+          "status": "considering",
+          "notes": "La existencia del contenido educativo está verificada; su eficacia todavía no."
+        }
+      ],
+      "notes": "Estado de evidencia: Verificado para la existencia del componente educativo; eficacia no evaluada. Observación preliminar: La plataforma explica especies, distribución, características, beneficios y relación con el entorno mediante texto, imágenes, ilustración y audio, y define categorías ecológicas en lenguaje accesible. Evidencia disponible: experiencia activa y descripción oficial BID26. Información faltante: objetivos de aprendizaje, pruebas de comprensión, analítica significativa, retención y decisiones posteriores. Pregunta: ¿Cómo saben si las personas que utilizan la plataforma realmente aprenden algo nuevo o toman mejores decisiones?"
+    },
+    {
+      "criterionId": "C4",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "verified",
+      "strategies": [
+        {
+          "id": "c4-local-context-record",
+          "title": "Documentar cómo el contexto puertorriqueño guía cada decisión",
+          "description": "Registrar decisiones de lenguaje, taxonomía, geografía, viveros, imágenes, usos y necesidades de siembra, incluyendo quién validó su pertinencia y cómo se actualiza.",
+          "status": "considering",
+          "notes": "La adaptación observable está respaldada; el proceso que la produjo requiere verificación."
+        }
+      ],
+      "notes": "Estado de evidencia: Verificado para adaptación observable al contexto local; proceso no evaluado. Observación preliminar: La herramienta está en español, se centra en especies de Puerto Rico y usa categorías de distribución, condiciones locales y esfuerzos de reforestación de las islas. Evidencia disponible: sitio activo y descripción oficial. Información faltante: investigación cultural, variantes lingüísticas, públicos priorizados, validación regional, conocimiento tradicional y decisiones de representación. Pregunta: ¿Qué aspectos del contexto puertorriqueño influyeron en el lenguaje, la estructura y la experiencia de la plataforma?"
+    },
+    {
+      "criterionId": "C6",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "digital-platform",
+          "species-content",
+          "engagement-outcomes"
+        ]
+      },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "c6-participatory-research-record",
+          "title": "Hacer visible la participación de públicos y especialistas",
+          "description": "Documentar perfiles, momentos, métodos, decisiones modificadas, compensación y retroalimentación continua de viveristas, especialistas, comunidades y usuarios finales.",
+          "status": "considering",
+          "notes": "No se asume participación solo porque el cliente trabaja con comunidades."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: La experiencia está orientada al público y conecta con viveros, pero las fuentes revisadas no explican si usuarios finales, comunidades o profesionales de reforestación participaron en investigación, diseño, pruebas o priorización. Evidencia disponible: producto público; no se encontró evidencia pública del proceso. Información faltante: participantes, métodos, fechas, cambios derivados, accesibilidad de la participación y compensación. Pregunta: ¿Participaron comunidades, especialistas, viveristas o usuarios finales en el desarrollo y qué decisiones cambiaron a partir de sus aportaciones?"
+    },
+    {
+      "criterionId": "C7",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "engagement-outcomes"
+        ]
+      },
+      "relevance": "medium",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "id": "c7-action-pathway",
+          "title": "Conectar información, participación y seguimiento",
+          "description": "Diseñar rutas claras desde una ficha hacia orientación, viveros o actividades comunitarias y ofrecer seguimiento voluntario que permita conocer acciones y necesidades sin excluir a quienes tienen menor conectividad.",
+          "status": "considering",
+          "notes": "Confirmar primero qué rutas y programas ya existen."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: La plataforma enlaza a los esfuerzos de reforestación y Para la Naturaleza declara integrar a la sociedad en la conservación; no se verificó cómo TEMBOL participó en desarrollo comunitario ni si el sitio facilita participación sostenida más allá del enlace. Evidencia disponible: sitio activo y páginas institucionales. Información faltante: actividades, alcance, continuidad, barreras de acceso, roles comunitarios y resultados. Pregunta: ¿Cómo se conecta esta herramienta con iniciativas comunitarias de conservación y reforestación en Puerto Rico?"
+    },
+    {
+      "criterionId": "F1",
+      "scope": {
+        "level": "component",
+        "componentIds": [
+          "engagement-outcomes",
+          "species-content"
+        ]
+      },
+      "relevance": "medium",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "f1-benefit-evaluation",
+          "title": "Evaluar beneficios y distribución de valor",
+          "description": "Investigar si la herramienta ahorra tiempo o costos, mejora selección y supervivencia, apoya viveros o practicantes locales y quién recibe esos beneficios; evitar monetizar beneficios hipotéticos sin datos.",
+          "status": "considering",
+          "notes": "Los ejemplos son hipótesis para la conversación, no resultados confirmados."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: La información puede ser útil para organizaciones, viveros, comunidades y personas que seleccionan especies, pero no se encontró evidencia de beneficios económicos más allá del cliente y la entidad de diseño. Evidencia disponible: funciones públicas de orientación. Información faltante: grupos beneficiarios, costos evitados, tiempo ahorrado, distribución de valor, empleo o apoyo a iniciativas locales. Pregunta: ¿Qué beneficios concretos genera la plataforma para organizaciones o comunidades que trabajan en conservación y cómo los conocen?"
+    },
+    {
+      "criterionId": "F7",
+      "scope": {
+        "level": "project",
+        "componentIds": []
+      },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "id": "f7-value-and-maintenance-plan",
+          "title": "Vincular valor de diseño con un plan de mantenimiento",
+          "description": "Definir valor esperado para usuarios y Para la Naturaleza, indicadores verificables, responsables, presupuesto, calendario de actualizaciones, dependencias externas y criterios para decidir nuevas inversiones.",
+          "status": "considering",
+          "notes": "La existencia de una interfaz útil es evidencia inicial, no valor económico medido."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: La estrategia de diseño organiza información científica y recursos diversos en una experiencia buscable que puede apoyar decisiones; no se encontró medición pública del valor añadido ni un plan de sostenibilidad financiera o técnica. Evidencia disponible: producto activo. Información faltante: objetivos, usuarios, métricas de valor, presupuesto, financiación, responsables, actualización de datos y mantenimiento de integraciones. Pregunta: ¿Cómo está prevista la actualización y el mantenimiento a largo plazo, y qué valor medible esperan que produzca para usuarios y organización?"
+    }
+  ],
+  "projectNotes": "EVALUACIÓN PRELIMINAR — BID 2026. Registro de trabajo colaborativo, no certificación. Verificado públicamente: plataforma activa en español; fichas de árboles y arbustos con fotografías, ilustraciones, audio y datos de especie; categorías ligadas al contexto puertorriqueño; créditos visibles de iNaturalist; enlace y cita a la Lista Roja UICN; búsqueda y filtros; opción de contenido offline ligero. Parcial o pendiente: accesibilidad completa, eficiencia y alojamiento, licencias, gobernanza científica, participación de usuarios, mantenimiento y financiación. No verificado como resultado: aprendizaje, cambio de conducta, selección mejorada, árboles sembrados o supervivientes, restauración ecológica atribuible, reducción de huella digital, beneficios económicos o certificación. Durante la sesión, añadir evidencia y notas primero; cambiar estados y respuestas solo cuando la evidencia lo justifique.",
+  "passport": {
+    "purpose": "Evaluación preliminar y colaborativa de Árboles para la naturaleza: Conoce las especies para conversar con Ramdwin González durante la BID26. Hace visible lo que sabemos, lo que falta investigar y lo que podría mejorarse; no es una certificación ni una puntuación de sostenibilidad.",
+    "location": "Madrid, España",
+    "event": "Bienal Iberoamericana de Diseño 2026 — Pon tu proyecto a prueba",
+    "locale": "es",
+    "heroImage": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "credit": ""
+    },
+    "collaborators": [
+      {
+        "id": "project-author-tembol",
+        "name": "TEMBOL",
+        "role": "Project author / Design studio",
+        "credit": "Árboles para la naturaleza: Conoce las especies"
+      },
+      {
+        "id": "lead-designer-ramdwin-gonzalez",
+        "name": "Ramdwin González",
+        "role": "Lead designer",
+        "credit": "TEMBOL"
+      },
+      {
+        "id": "client-para-la-naturaleza",
+        "name": "Para la Naturaleza",
+        "role": "Client / Conservation organization",
+        "credit": "Puerto Rico"
+      }
+    ],
+    "outcomes": [],
+    "impactSummary": {
+      "emissionsScenarios": [],
+      "emissionSources": []
+    },
+    "attachments": [
+      {
+        "id": "source-bid-project",
+        "title": "Árboles para la naturaleza — ficha oficial BID26",
+        "description": "Referencia oficial del proyecto. Fecha corresponde a la revisión de la fuente para esta evaluación preliminar.",
+        "href": "https://bid-dimad.com/bid/trabajo_pr/arboles-para-la-naturaleza-conoce-las-especies/?filtropais=Puerto%20Rico",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-04",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-bid-event",
+        "title": "Pon tu proyecto a prueba — BID26",
+        "description": "Página oficial de la sesión; describe el proyecto, sus recursos y las conexiones con iNaturalist y la Lista Roja UICN.",
+        "href": "https://bid-dimad.com/evento/pon-tu-proyecto-a-prueba/",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-04",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-live-experience",
+        "title": "Conoce las especies — Para la Naturaleza",
+        "description": "Experiencia digital activa revisada para funciones, contenido, atribuciones y señales preliminares de accesibilidad; no sustituye auditoría formal.",
+        "href": "https://www.paralanaturaleza.org/reforestacion/arboles",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-04",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-matabuey",
+        "title": "Ficha Matabuey — Para la Naturaleza",
+        "description": "Ficha de muestra usada para revisar audio, escala, distribución, estado de conservación, cita UICN y créditos de iNaturalist.",
+        "href": "https://www.paralanaturaleza.org/reforestacion/arboles?arbol=goetzea-elegans",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-04",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-tembol",
+        "title": "TEMBOL — Selected Works",
+        "description": "Sitio del estudio de diseño; referencia institucional revisada para esta evaluación preliminar.",
+        "href": "https://tembol.co/works",
+        "mediaType": "text/html",
+        "language": "en",
+        "date": "2026-11-04",
+        "sizeLabel": ""
+      }
+    ],
+    "improvements": "Oportunidades preliminares para conversar con Ramdwin: 1) definir una cadena de impacto que separe información publicada, aprendizaje, decisiones, conducta y resultados ecológicos; 2) medir y reducir peso, consumo de datos y dependencias de la plataforma sin convertir métricas web genéricas en emisiones; 3) completar una auditoría WCAG con usuarios, incluyendo alternativas y transcripciones de audio; 4) documentar fuentes, licencias, gobernanza científica y actualización de iNaturalist/UICN; 5) establecer indicadores, responsables y financiación para mantenimiento y seguimiento de resultados. Son hipótesis de mejora, no recomendaciones definitivas.",
+    "lastUpdated": "2026-11-04"
+  },
+  "application": {
+    "lastView": "passport",
+    "completedSections": [
+      "project",
+      "components",
+      "criteria",
+      "passport"
+    ],
+    "exportedAt": "2026-11-04T12:00:00.000Z",
+    "generator": {
+      "name": "SD Standard",
+      "version": ""
+    }
+  }
+}

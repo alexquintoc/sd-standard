@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from "react";
-export function PageMeta({ title, description, lang = "en", alternatePath, ogType = "website" }: { title: string; description: string; lang?: string; alternatePath?: string; ogType?: "website" | "article" }) {
+export function PageMeta({ title, description, lang = "en", alternatePath, ogType = "website", seoTitle }: { title: string; description: string; lang?: string; alternatePath?: string; ogType?: "website" | "article"; seoTitle?: string }) {
   useEffect(() => {
-    const fullTitle = `${title} | SD Standard`; const canonicalUrl = `https://sdstandard.org${window.location.pathname.replace(/\/$/, "") || "/"}`;
+    const fullTitle = seoTitle ?? `${title} | SD Standard`; const canonicalUrl = `https://sdstandard.org${window.location.pathname.replace(/\/$/, "") || "/"}`;
     document.title = fullTitle; document.documentElement.lang = lang;
     let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (!meta) { meta = document.createElement("meta"); meta.name = "description"; document.head.append(meta); }
@@ -17,7 +17,7 @@ export function PageMeta({ title, description, lang = "en", alternatePath, ogTyp
     let alternate: HTMLLinkElement | undefined;
     if (alternatePath) { alternate=document.createElement("link"); alternate.rel="alternate"; alternate.hreflang=lang === "es" ? "en" : "es"; alternate.href=`https://sdstandard.org${alternatePath}`; alternate.dataset.pageMeta="true"; document.head.append(alternate); }
     return () => { document.documentElement.lang = "en"; document.title = "SD Standard"; canonical?.remove(); socialNodes.forEach((node)=>node.remove()); alternate?.remove(); };
-  }, [title, description, lang, alternatePath, ogType]); return null;
+  }, [title, description, lang, alternatePath, ogType, seoTitle]); return null;
 }
 export function PageIntro({ title, description, eyebrow = "Explore the Standard", children }: { title: string; description: string; eyebrow?: string; children?: ReactNode }) {
   return <header className="public-intro"><p className="public-eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p>{children}</header>;

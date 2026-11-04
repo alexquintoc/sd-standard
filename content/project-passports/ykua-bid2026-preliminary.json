@@ -1,0 +1,433 @@
+{
+  "schema": {
+    "name": "sd-standard-project",
+    "version": "0.1.0"
+  },
+  "standard": {
+    "criteriaVersion": "criteria-v2",
+    "criteriaSource": "criteria.v2.json"
+  },
+  "project": {
+    "id": "ykua-bid2026-preliminary",
+    "title": "YKUA — Preliminary Sustainability Assessment",
+    "description": "An exploratory assessment of YKUA, an illuminated object collection by Paraguayan designer Laura Giucich, using the Sustainable Design Standard's four pillars. Prepared for a live collaborative evaluation at the Bienal Iberoamericana de Diseño 2026. Confirmed descriptions identify wheel-thrown ceramic bases made with kaolin and clay associated with Areguá, glass associated with Itauguá that is kiln-formed through metal mesh, and integrated LED lighting. Sustainability performance remains preliminary and is not certified.",
+    "stage": "active-use",
+    "projectTypes": [
+      "Physical product",
+      "Lighting",
+      "Object design"
+    ],
+    "createdAt": "2026-11-03T12:00:00.000Z",
+    "updatedAt": "2026-11-03T12:00:00.000Z",
+    "designer": "Laura Giucich",
+    "country": "Paraguay",
+    "referenceUrl": "https://bid-dimad.com/bid/trabajo_pr/ykua/",
+    "assessmentPurpose": "Live collaborative preliminary assessment at BID26; identify evidence gaps, trade-offs, and improvement opportunities without implying certification.",
+    "assessmentStatus": "Preliminary — awaiting designer verification"
+  },
+  "components": [
+    {
+      "id": "glass-elements",
+      "name": "Glass elements",
+      "type": "physical-product-component",
+      "description": "Kiln-formed glass elements. BID26 identifies glass associated with Itauguá, melted over metal mesh to form droplet-like shapes. A 2026 interview reports controlled free-fall fusing at 840 °C and three firing stages. Glass composition, supplier chain, recycled content, yield, and rejected-piece handling remain unverified.",
+      "notes": "Confirm whether 'glass from Itauguá' means local manufacture, local supply, collection, or processing. Confirm the exact process and firing schedule for the BID26 pieces rather than assuming every work in the wider series is identical."
+    },
+    {
+      "id": "ceramic-base",
+      "name": "Ceramic base",
+      "type": "physical-product-component",
+      "description": "Rounded, wheel-thrown ceramic base. BID26 identifies kaolin and clay associated with Areguá; Laura reports that the bases were fired in her own kiln. Exact clay recipe, provenance, firing temperature, number of firings, finishes, and production yield remain unverified.",
+      "notes": "Local material identity is documented, but environmental and labor claims require supplier and process evidence."
+    },
+    {
+      "id": "lighting-electrical",
+      "name": "Lighting and electrical components",
+      "type": "lighting",
+      "description": "LED light source and associated electrical assembly integrated into each illuminated object. Component specifications, rated power, expected life, safety certification, replaceability, and end-of-life route remain unverified.",
+      "notes": "The existence of LED lighting is confirmed by Laura's quoted description; no electrical bill of materials was found."
+    },
+    {
+      "id": "design-production-process",
+      "name": "Design and production process",
+      "type": "process",
+      "description": "Concept development, glass and ceramic fabrication, electrical assembly, transport, exhibition, and any collaboration with craftspeople or suppliers. Available sources describe Laura performing several stages herself; the identities, roles, compensation, and decision-making participation of any other contributors remain to be confirmed.",
+      "notes": "Provisional process component created for the live assessment. Update after Laura confirms who participated and where each stage occurred."
+    }
+  ],
+  "criteriaAssessments": [
+    {
+      "criterionId": "E1",
+      "scope": { "level": "project", "componentIds": [] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e1-process-inventory",
+          "title": "Build a simple production impact inventory before making reduction claims",
+          "description": "Record material masses, firing schedules, electricity use, yields, transport, and rejected pieces for a representative YKUA unit, then use the inventory to identify the highest-impact reduction opportunity.",
+          "status": "considering",
+          "notes": "Potential improvement, not a confirmed commitment."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: La producción combina vidrio y cerámica cocidos y componentes eléctricos, por lo que el impacto material y energético es relevante. Evidencia: ficha y evento oficial BID26; entrevista de Forbes Paraguay del 26-10-2026. Información faltante: masas, consumos, mermas, transporte y cualquier estudio de ciclo de vida. Pregunta: ¿Registras cuánto material y electricidad requiere una pieza completa, desde la primera cocción hasta el ensamblaje?"
+    },
+    {
+      "criterionId": "E3",
+      "scope": { "level": "component", "componentIds": ["glass-elements", "ceramic-base", "lighting-electrical"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e3-bill-of-materials",
+          "title": "Create a bill of materials and supplier record",
+          "description": "List glass type and additives, clay and kaolin sources, glazes or finishes, metal mesh, LEDs, wiring, driver, fasteners, adhesives, and packaging with quantities and known hazards.",
+          "status": "considering",
+          "notes": "Start with supplier declarations where laboratory data are unavailable."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: Se confirman vidrio, malla metálica, caolín/arcilla, cerámica torneada y luces LED, pero no existe una lista completa de materiales. Evidencia: BID26 y Forbes Paraguay. Información faltante: composición, cantidades, aditivos, esmaltes, metales, adhesivos, cableado, embalaje y proveedores. Pregunta: ¿Qué tipo de vidrio utilizas: nuevo, reciclado o recuperado, y qué otros materiales lleva cada pieza?"
+    },
+    {
+      "criterionId": "E7",
+      "scope": { "level": "component", "componentIds": ["glass-elements", "ceramic-base", "lighting-electrical"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e7-replaceable-lighting",
+          "title": "Design and document replaceable lighting parts",
+          "description": "Use accessible connections and standard LED/electrical parts, and provide basic cleaning, handling, repair, and replacement guidance without compromising safety.",
+          "status": "considering",
+          "notes": "Confirm current assembly before deciding whether redesign is needed."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: El formato más pequeño fue diseñado para ser transportable, pero no se encontró evidencia sobre vida útil, mantenimiento o reparación. Evidencia: Forbes Paraguay confirma la nueva escala transportable. Información faltante: pruebas de durabilidad, piezas reemplazables, método de unión, garantía y cuidados. Pregunta: ¿Qué vida útil esperas que tengan estas piezas y, si algo se rompe o deja de funcionar, se puede reparar o reemplazar?"
+    },
+    {
+      "criterionId": "E14",
+      "scope": { "level": "component", "componentIds": ["glass-elements", "ceramic-base", "lighting-electrical"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e14-disassembly-plan",
+          "title": "Assess disassembly and reuse routes",
+          "description": "Test whether glass, ceramic, metal, and electrical parts can be separated safely for repair, reuse, take-back, or material recovery, and document realistic local routes.",
+          "status": "considering",
+          "notes": "Do not claim recyclability until an actual collection or recovery route is identified."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: La combinación de vidrio, cerámica, metal y electrónica puede dificultar la recuperación si las uniones son permanentes. Evidencia: composición general confirmada por BID26. Información faltante: método de ensamblaje, desmontaje, rutas locales de recuperación y posibilidad de reutilizar piezas. Pregunta: ¿Las partes de vidrio, cerámica y electricidad se pueden separar sin dañarlas?"
+    },
+    {
+      "criterionId": "E13",
+      "scope": { "level": "component", "componentIds": ["glass-elements", "ceramic-base", "design-production-process"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e13-waste-log",
+          "title": "Track and reduce firing losses",
+          "description": "Record offcuts, test pieces, kiln failures, ceramic trimmings, and packaging by batch; identify which streams can be safely reused in tests or future work.",
+          "status": "considering",
+          "notes": "The criterion is Zero Waste; this strategy alone would not establish compliance."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: El proceso experimental y de tres horneadas puede producir pruebas o piezas no conformes, pero no se hallaron datos de residuos. Evidencia: Casa Mayor describe tres horneadas; no documenta las mermas. Información faltante: rendimiento por hornada, roturas, sobrantes, pruebas, embalaje y destino. Pregunta: ¿Qué sucede con los materiales sobrantes o las piezas que no cumplen con el resultado esperado?"
+    },
+    {
+      "criterionId": "E16",
+      "scope": { "level": "component", "componentIds": ["glass-elements", "ceramic-base", "design-production-process"] },
+      "relevance": "medium",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e16-energy-source",
+          "title": "Document the kiln electricity source and renewable options",
+          "description": "Confirm the workshop electricity mix and assess feasible renewable electricity procurement or on-site generation before making renewable-energy claims.",
+          "status": "considering",
+          "notes": "No renewable energy use is currently evidenced."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: Las fuentes confirman hornos propios, pero no el origen de la electricidad. Evidencia: Forbes Paraguay y Casa Mayor. Información faltante: proveedor, tarifa, mezcla eléctrica y cualquier generación renovable. Pregunta: ¿Sabes de dónde proviene la electricidad de tus hornos o si tu taller usa energía renovable?"
+    },
+    {
+      "criterionId": "E18",
+      "scope": { "level": "component", "componentIds": ["lighting-electrical"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e18-lighting-spec",
+          "title": "Record lighting power, controls, and expected lifetime",
+          "description": "Document LED wattage, driver efficiency, operating modes, expected hours, replaceability, and instructions for low-energy use.",
+          "status": "considering",
+          "notes": "LED technology is confirmed; efficiency performance is not."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: Las piezas usan LED, pero la tecnología por sí sola no demuestra eficiencia del sistema. Evidencia: cita de Laura en Forbes Paraguay. Información faltante: potencia, lúmenes, driver, controles, horas de uso y vida útil. Pregunta: ¿Qué potencia y vida útil tienen las luces LED y se pueden apagar, regular o reemplazar fácilmente?"
+    },
+    {
+      "criterionId": "energy-efficiency",
+      "scope": { "level": "component", "componentIds": ["glass-elements", "ceramic-base", "design-production-process"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e17-kiln-log",
+          "title": "Measure energy per successful piece",
+          "description": "Log kiln power, firing duration, peak temperature, number of cycles, batch occupancy, and successful output to establish kWh per accepted piece and compare process changes.",
+          "status": "considering",
+          "notes": "Use measured electricity where possible rather than estimates."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: El vidrio alcanza 840 °C y una fuente describe tres horneadas; la eficiencia depende de curvas, carga del horno y rendimiento. Evidencia: Forbes Paraguay y perfil de Casa Mayor. Información faltante: kWh, duración, temperaturas de cerámica, ocupación, ciclos y tasa de éxito. Pregunta: ¿Cuántas cocciones requiere cada pieza y cuántas piezas produces por hornada?"
+    },
+    {
+      "criterionId": "E19",
+      "scope": { "level": "component", "componentIds": ["design-production-process"] },
+      "relevance": "medium",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "e19-transport-packaging",
+          "title": "Map transport and reusable protective packaging",
+          "description": "Record supplier-to-workshop and workshop-to-client routes, transport mode, shipment consolidation, and packaging reuse, especially for fragile glass and ceramic pieces.",
+          "status": "considering",
+          "notes": "The smaller format is described as transportable, but no efficiency data are available."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: La edición BID26 fue reducida para facilitar transporte, pero no se documentan rutas, embalajes ni cargas. Evidencia: Forbes Paraguay. Información faltante: origen exacto de materiales, distancias, modo de transporte, embalaje y retornos. Pregunta: ¿De dónde viajan los materiales y cómo embalas y transportas cada YKUA?"
+    },
+    {
+      "criterionId": "S3",
+      "scope": { "level": "component", "componentIds": ["design-production-process"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "s3-local-value-chain",
+          "title": "Document the local production network",
+          "description": "Identify every person and workshop involved, their location and role, and which project expenditures remain in Paraguay or the relevant local communities.",
+          "status": "considering",
+          "notes": "Material-place associations do not by themselves prove local labor."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: Laura trabaja en Patiño, Itauguá, y las fuentes asocian materiales con Areguá e Itauguá; no se confirma quién produjo o suministró cada elemento. Evidencia: BID26, Forbes Paraguay y Casa Mayor. Información faltante: participantes, ubicación, contratos y proporción de trabajo local. Pregunta: ¿Participaron artesanos o proveedores locales en el desarrollo o producción de las piezas y qué hizo cada persona?"
+    },
+    {
+      "criterionId": "SM3",
+      "scope": { "level": "component", "componentIds": ["design-production-process"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "sm3-work-records",
+          "title": "Confirm safe and fair working arrangements",
+          "description": "Document roles, working conditions, kiln and glass safety practices, agreements, payment terms, and any supplier expectations concerning fundamental worker rights.",
+          "status": "considering",
+          "notes": "Mandatory criterion; no adverse finding is implied by the current evidence gap."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: No se encontró información suficiente sobre acuerdos, seguridad o derechos laborales. Evidencia: las fuentes públicas describen el proceso, no las condiciones de trabajo. Información faltante: participantes, contratos, pagos, horarios, protección frente al calor/vidrio y prácticas de proveedores. Pregunta: ¿Cómo se organizó el trabajo entre las personas involucradas y qué medidas de seguridad y acuerdos utilizaron? Criterio obligatorio: mantener pendiente hasta verificar."
+    },
+    {
+      "criterionId": "S9",
+      "scope": { "level": "project", "componentIds": [] },
+      "relevance": "medium",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "s9-credit-permissions",
+          "title": "Clarify authorship, credits, and image permissions",
+          "description": "Record authorship of the concept and techniques, contributor credits, permissions for photographs and exhibition use, and any agreements governing replication or sale.",
+          "status": "considering",
+          "notes": "The public sources credit Laura and named photographers; full permissions were not reviewed."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: Laura está identificada como autora y las fotografías publicadas tienen créditos, pero no se revisaron acuerdos de colaboración, imagen o reproducción. Evidencia: BID26, Forbes Paraguay y Casa Mayor. Información faltante: contratos, permisos, créditos de colaboradores y licencias. Pregunta: ¿Cómo definiste la autoría, los créditos y los permisos de uso de imágenes o reproducción de YKUA?"
+    },
+    {
+      "criterionId": "C4",
+      "scope": { "level": "project", "componentIds": [] },
+      "relevance": "high",
+      "status": "in-progress",
+      "response": "baseline",
+      "strategies": [
+        {
+          "id": "c4-context-documentation",
+          "title": "Document the cultural references in Laura's own words",
+          "description": "Add a concise bilingual account of the term ykua, the springs' role in Paraguayan memory and territory, and how material and form translate that relationship without reducing it to a sustainability claim.",
+          "status": "considering",
+          "notes": "Cultural relevance and environmental footprint must remain separate findings."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: YKUA se inspira explícitamente en vertientes paraguayas, recuerdos familiares, territorio e identidad local; la arcilla representa la tierra roja que rodea las nacientes. Evidencia: BID26 y declaraciones de Laura en Forbes Paraguay. Información faltante: proceso de investigación, voces comunitarias y cómo evita generalizaciones culturales. Pregunta: ¿Cómo se relaciona YKUA con las tradiciones, memorias y paisajes de Paraguay?"
+    },
+    {
+      "criterionId": "C7",
+      "scope": { "level": "component", "componentIds": ["design-production-process"] },
+      "relevance": "medium",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "c7-community-dialogue",
+          "title": "Explore dialogue with communities connected to ykua and local craft",
+          "description": "If appropriate and invited, involve relevant local participants in documenting meanings, material knowledge, environmental change, and future iterations, with clear roles and benefit sharing.",
+          "status": "considering",
+          "notes": "Do not imply community participation unless direct participation is documented."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: La obra alude a nacientes y lugares compartidos, pero no se encontró evidencia de participación comunitaria en el diseño. Evidencia: Forbes Paraguay describe memoria personal y referencias compartidas. Información faltante: consultas, co-diseño, participación y beneficios. Pregunta: ¿Alguna comunidad vinculada a los ykua, Areguá o Itauguá participó en el proyecto o dialogó sobre su representación?"
+    },
+    {
+      "criterionId": "F1",
+      "scope": { "level": "component", "componentIds": ["design-production-process"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "f1-value-distribution",
+          "title": "Track local economic value distribution",
+          "description": "Record payments to suppliers, craftspeople, fabricators, and service providers and describe any opportunities created beyond the designer's own revenue.",
+          "status": "considering",
+          "notes": "Sales listings show market activity, not community benefit."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: Algunas obras YKUA se ofrecen comercialmente y BID26 amplía visibilidad, pero no se conoce la distribución de beneficios. Evidencia: catálogo público de Casa Mayor y participación BID26. Información faltante: proveedores pagados, encargos, márgenes, empleo y beneficios regionales. Pregunta: ¿Qué oportunidades económicas ha generado el proyecto para las personas o comunidades participantes?"
+    },
+    {
+      "criterionId": "F2",
+      "scope": { "level": "project", "componentIds": [] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "f2-full-costing",
+          "title": "Calculate full cost and margin per piece",
+          "description": "Include materials, firing electricity, failed tests, labor, equipment wear, packaging, transport, commissions, and after-sales support when setting price and evaluating viability.",
+          "status": "considering",
+          "notes": "Public retail prices do not establish profitability or adequate compensation."
+        }
+      ],
+      "notes": "Estado de evidencia: Parcialmente respaldado. Observación preliminar: Casa Mayor muestra precios de venta para varias piezas, pero no costos, ventas realizadas ni compensación efectiva. Evidencia: catálogo público de Casa Mayor revisado el 03-11-2026. Información faltante: presupuesto, horas, costos energéticos, comisiones, ventas y margen. Pregunta: ¿El precio cubre materiales, energía, pruebas fallidas, horas de trabajo, comisiones y una ganancia sostenible?"
+    },
+    {
+      "criterionId": "FM3",
+      "scope": { "level": "component", "componentIds": ["design-production-process"] },
+      "relevance": "high",
+      "status": "considering",
+      "response": "not-assessed",
+      "strategies": [
+        {
+          "id": "fm3-paid-contributions",
+          "title": "Verify that every professional contribution is paid or explicitly agreed",
+          "description": "List all design, craft, fabrication, photography, transport, and exhibition contributions and record whether compensation, exchange, or voluntary participation was clearly agreed.",
+          "status": "considering",
+          "notes": "Mandatory criterion; no unpaid work is alleged."
+        }
+      ],
+      "notes": "Estado de evidencia: No evaluado. Observación preliminar: No se encontró información sobre remuneración de posibles colaboradores. Evidencia: las fuentes públicas no cubren contratos ni pagos. Información faltante: lista de contribuciones, términos y compensación. Pregunta: ¿Todas las personas que aportaron diseño, producción, fotografía o montaje recibieron una compensación o un acuerdo claro? Criterio obligatorio: mantener pendiente hasta verificar."
+    }
+  ],
+  "projectNotes": "PRELIMINARY STATUS — This is a collaborative working record, not a certification. Confirmed: illuminated objects by Laura Giucich; Paraguayan spring/ykua reference; wheel-thrown ceramic base; kaolin and Areguá-associated clay; Itauguá-associated glass; metal mesh; controlled kiln-forming; LED lighting; 840 °C glass process reported in 2026; three firings reported for the wider YKUA process. Not confirmed as sustainability achievements: recycled content, renewable energy, low impact, zero waste, durability, repairability, fair compensation, community participation, economic benefit, or profitability. During the live session, update the criterion notes first, then change status/response only when the evidence justifies it.",
+  "passport": {
+    "purpose": "Evaluación preliminar y colaborativa de YKUA para conversar con Laura Giucich durante la BID26. Distingue hechos documentados, información pendiente y oportunidades posibles; no es una certificación ni una puntuación de sostenibilidad.",
+    "location": "Madrid, España",
+    "event": "Bienal Iberoamericana de Diseño 2026 — Pon tu proyecto a prueba",
+    "locale": "es",
+    "heroImage": {
+      "src": "",
+      "alt": "",
+      "caption": "",
+      "credit": ""
+    },
+    "collaborators": [
+      {
+        "id": "project-author-laura-giucich",
+        "name": "Laura Giucich",
+        "role": "Project author / Designer",
+        "credit": "YKUA"
+      }
+    ],
+    "outcomes": [],
+    "impactSummary": {
+      "emissionsScenarios": [],
+      "emissionSources": []
+    },
+    "attachments": [
+      {
+        "id": "source-bid-project",
+        "title": "YKUA — ficha oficial BID26",
+        "description": "Referencia principal del proyecto. Fecha corresponde a la revisión de la fuente para esta evaluación preliminar.",
+        "href": "https://bid-dimad.com/bid/trabajo_pr/ykua/",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-03",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-bid-event",
+        "title": "Pon tu proyecto a prueba — BID26",
+        "description": "Página oficial de la sesión, con descripción de materiales y proceso de YKUA. Fecha corresponde a la revisión de la fuente.",
+        "href": "https://bid-dimad.com/evento/pon-tu-proyecto-a-prueba/",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-03",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-forbes-paraguay",
+        "title": "Artista paraguaya convierte vidrio en nacientes de agua",
+        "description": "Entrevista de Forbes Paraguay con declaraciones de Laura sobre técnica, materiales, 840 °C, cerámica, LED y referencias culturales.",
+        "href": "https://www.forbes.com.py/forbes-women/artista-paraguaya-convierte-vidrio-nacientes-agua-bienal-iberoamericana-diseno-n101131",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-10-26",
+        "sizeLabel": ""
+      },
+      {
+        "id": "source-casa-mayor",
+        "title": "Laura Giucich — Casa Mayor",
+        "description": "Perfil y catálogo público que describe el proceso de tres horneadas y muestra piezas YKUA ofrecidas a la venta. Fecha corresponde a la revisión de la fuente.",
+        "href": "https://casamayorgaleriadearte.com/collections/laura-giucich",
+        "mediaType": "text/html",
+        "language": "es",
+        "date": "2026-11-03",
+        "sizeLabel": ""
+      }
+    ],
+    "improvements": "Oportunidades preliminares para explorar con Laura: 1) medir materiales, electricidad, ciclos y rendimiento por pieza antes de afirmar reducciones ambientales; 2) crear una lista completa de materiales y proveedores, incluyendo contenido reciclado y sustancias auxiliares; 3) facilitar y documentar reparación, reemplazo de LED y desmontaje seguro; 4) registrar mermas, pruebas y piezas fallidas para reducir residuos de cocción; 5) documentar participantes, condiciones, pagos y distribución de valor local. Estas son posibilidades de investigación, no recomendaciones definitivas.",
+    "lastUpdated": "2026-11-03"
+  },
+  "application": {
+    "lastView": "passport",
+    "completedSections": [
+      "project",
+      "components",
+      "criteria",
+      "passport"
+    ],
+    "exportedAt": "2026-11-03T12:00:00.000Z",
+    "generator": {
+      "name": "SD Standard",
+      "version": ""
+    }
+  }
+}

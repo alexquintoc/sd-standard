@@ -1,5 +1,5 @@
 import ProjectTypes from "@/public-site/ProjectTypes";
-import AbiertoPassport from "@/public-site/ProjectPassport";
+import AbiertoPassport, { ArbolesPassport, YkuaPassport } from "@/public-site/ProjectPassport";
 import GetInvolved from "@/public-site/GetInvolved";
 import AbiertoInvitation from "@/public-site/AbiertoInvitation";
 import Explore from "@/public-site/Explore";
@@ -21,6 +21,7 @@ import Baselines from "@/pages/Baselines";
 const BriefGenerator = lazy(() => import("@/pages/BriefGenerator"));
 import References from "@/pages/Footprints";
 const Home = lazy(() => import("@/pages/Home"));
+const ResearchPilot = lazy(() => import("@/public-site/ResearchPilot"));
 import Index from "@/pages/Index";
 import ProjectDetail from "@/pages/ProjectDetail";
 import ProjectWorkspace from "@/pages/ProjectWorkspace";
@@ -49,6 +50,8 @@ function Router() {
       <Route path="/" component={Index} />
       <Route path="/explore/project-types" component={ProjectTypes} />
       <Route path="/about/get-involved" component={GetInvolved} />
+      <Route path="/research-pilot" component={ResearchPilot} />
+      <Route path="/research-pilot/" component={ResearchPilot} />
       <Route path="/es/abierto/economia">{() => <AbiertoInvitation kind="economia" />}</Route>
       <Route path="/es/abierto/segunda-vida">{() => <AbiertoInvitation kind="segunda-vida" />}</Route>
       <Route path="/es/abierto/colabora">{() => <AbiertoInvitation kind="colabora" />}</Route>
@@ -100,6 +103,8 @@ function Router() {
       <Route path="/projects" component={Projects} />
       <Route path="/projects/" component={Projects} />
       <Route path="/projects/abierto" component={AbiertoPassport} />
+      <Route path="/projects/arboles-para-la-naturaleza" component={ArbolesPassport} />
+      <Route path="/projects/ykua" component={YkuaPassport} />
       <Route path="/projects/:slug">
         {(params) => <ProjectDetail params={params} />}
       </Route>
