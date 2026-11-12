@@ -90,9 +90,9 @@ export const roadmap = [
   },
   {
     stage: "Stage 3",
-    title: "Pilot with Partners",
+    title: "Collaborate in Practice",
     description:
-      "Work with designers, educators, suppliers, nonprofits, and organizations to test the standard on real projects.",
+      "Bring designers, researchers, educators, students, nonprofits, and organizations together through the Design Impact Collaborative.",
   },
   {
     stage: "Stage 4",

@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from "react";
-export function PageMeta({ title, description, lang = "en", alternatePath, ogType = "website", seoTitle }: { title: string; description: string; lang?: string; alternatePath?: string; ogType?: "website" | "article"; seoTitle?: string }) {
+export function PageMeta({ title, description, lang = "en", alternatePath, ogType = "website", seoTitle, socialTitle, socialDescription }: { title: string; description: string; lang?: string; alternatePath?: string; ogType?: "website" | "article"; seoTitle?: string; socialTitle?: string; socialDescription?: string }) {
   useEffect(() => {
     const fullTitle = seoTitle ?? `${title} | SD Standard`; const canonicalUrl = `https://sdstandard.org${window.location.pathname.replace(/\/$/, "") || "/"}`;
     document.title = fullTitle; document.documentElement.lang = lang;
@@ -10,14 +10,14 @@ export function PageMeta({ title, description, lang = "en", alternatePath, ogTyp
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.append(canonical); }
     canonical.href = canonicalUrl;
     const social: Array<[string,string,string]> = [
-      ["property","og:title",fullTitle], ["property","og:description",description], ["property","og:type",ogType], ["property","og:url",canonicalUrl], ["property","og:locale",lang === "es" ? "es_MX" : "en_US"],
-      ["name","twitter:card","summary"], ["name","twitter:title",fullTitle], ["name","twitter:description",description],
+      ["property","og:title",socialTitle ?? fullTitle], ["property","og:description",socialDescription ?? description], ["property","og:type",ogType], ["property","og:url",canonicalUrl], ["property","og:locale",lang === "es" ? "es_MX" : "en_US"],
+      ["name","twitter:card","summary"], ["name","twitter:title",socialTitle ?? fullTitle], ["name","twitter:description",socialDescription ?? description],
     ];
     const socialNodes = social.map(([attribute,name,content]) => { const node=document.createElement("meta"); node.setAttribute(attribute,name); node.content=content; node.dataset.pageMeta="true"; document.head.append(node); return node; });
     let alternate: HTMLLinkElement | undefined;
     if (alternatePath) { alternate=document.createElement("link"); alternate.rel="alternate"; alternate.hreflang=lang === "es" ? "en" : "es"; alternate.href=`https://sdstandard.org${alternatePath}`; alternate.dataset.pageMeta="true"; document.head.append(alternate); }
     return () => { document.documentElement.lang = "en"; document.title = "SD Standard"; canonical?.remove(); socialNodes.forEach((node)=>node.remove()); alternate?.remove(); };
-  }, [title, description, lang, alternatePath, ogType, seoTitle]); return null;
+  }, [title, description, lang, alternatePath, ogType, seoTitle, socialTitle, socialDescription]); return null;
 }
 export function PageIntro({ title, description, eyebrow = "Explore the Standard", children }: { title: string; description: string; eyebrow?: string; children?: ReactNode }) {
   return <header className="public-intro"><p className="public-eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p>{children}</header>;

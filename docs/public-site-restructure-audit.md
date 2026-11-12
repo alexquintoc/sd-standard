@@ -77,7 +77,7 @@ Generated metadata already has scope and URLs; the Workspace catalog currently e
 | `/projects/:slug` | Preserve existing case-study detail URLs |
 | `/about` | Reused initiative, rationale and development content |
 | `/about/updates` and `/about/updates/:slug` | Existing update index/detail content |
-| `/about/get-involved` | Reused participation copy, Call for Pilots and existing contact CTA |
+| `/about/get-involved` | Reused participation copy, Design Impact Collaborative callout, and existing contact CTA |
 | `/es/abierto/economia` | Concise Spanish economic-value invitation |
 | `/es/abierto/segunda-vida` | Concise Spanish next-life invitation |
 | `/es/abierto/colabora` | Concise Spanish participation invitation linking to Get Involved |

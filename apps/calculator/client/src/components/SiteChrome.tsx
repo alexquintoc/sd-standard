@@ -32,7 +32,7 @@ export default function SiteChrome({ children }: { children: ReactNode }) {
   );
   return <div className="public-site">
     <a className="public-skip" href="#main-content">Skip to content</a>
-    {showResearchPilotAnnouncement && !spanish && <aside className="public-announcement" aria-label="Announcement"><p><strong>Open Call: SD Standard Research Pilot 2027</strong> — Applications close December 6. <Link href="/research-pilot">Express your interest →</Link></p><button aria-label="Dismiss announcement" onClick={() => { try { localStorage.setItem(researchPilotAnnouncementKey, "dismissed"); } catch { /* Optional preference. */ } setShowResearchPilotAnnouncement(false); }}><X size={18} /></button></aside>}
+    {showResearchPilotAnnouncement && !spanish && <aside className="public-announcement" aria-label="Announcement"><p><strong>Design Impact Collaborative: 2027 Inaugural Cohort</strong> <span aria-hidden="true">|</span> Applications close December 6. <Link href="/design-impact-collaborative">Express your interest →</Link></p><button aria-label="Dismiss announcement" onClick={() => { try { localStorage.setItem(researchPilotAnnouncementKey, "dismissed"); } catch { /* Optional preference. */ } setShowResearchPilotAnnouncement(false); }}><X size={18} /></button></aside>}
     <header className="public-header">
       <div className="public-header-inner">
         <Link href="/" className="public-logo">SD Standard</Link>

@@ -7,14 +7,14 @@ const releaseAvailable = process.env.SD_UPDATES_INCLUDE_SCHEDULED === "1" || Dat
 const releaseRoutes = releaseAvailable ? ["/about/updates/what-is-a-design-made-of-abierto-2026", "/es/about/updates/de-que-esta-hecho-un-diseno-abierto-2026"] : [];
 const bidRoute = "/about/updates/sd-standard-selected-bienal-iberoamericana-diseno-2026";
 
-test("Research Pilot announcement links to the open call and remains dismissible on mobile", async ({ page }) => {
+test("Design Impact Collaborative announcement links to the open call and remains dismissible on mobile", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
 
   const banner = page.locator(".public-announcement");
-  await expect(banner).toContainText("Open Call: SD Standard Research Pilot 2027");
+  await expect(banner).toContainText("Design Impact Collaborative: 2027 Inaugural Cohort");
   await expect(banner).toContainText("Applications close December 6.");
-  await expect(banner.getByRole("link", { name: "Express your interest →" })).toHaveAttribute("href", "/research-pilot");
+  await expect(banner.getByRole("link", { name: "Express your interest →" })).toHaveAttribute("href", "/design-impact-collaborative");
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
@@ -93,7 +93,7 @@ test("seven design questions disclose current criterion links", async ({ page })
   }
 });
 test("new content, preserved gallery and legacy routes", async ({ page }) => {
-  for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/explore/project-types", "/explore/sdgs", "/explore/connections", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
+  for (const route of ["/projects", "/projects/abierto", "/about", "/about/updates", "/about/get-involved", "/design-impact-collaborative", "/explore/project-types", "/explore/sdgs", "/explore/connections", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.goto(route); await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /.+/);
     await expect(page.locator("html")).toHaveAttribute("lang", route.startsWith("/es/") || route === "/projects/abierto" ? "es" : "en");
@@ -210,7 +210,7 @@ test("legacy migration, valid import, save failure and local deletion", async ({
 });
 test("public pages have no automated WCAG A/AA violations and fit narrow screens", async ({ page }) => {
   test.setTimeout(120000);
-  for (const route of ["/", "/explore", "/explore/pillars", "/explore/criteria", "/es/criteria", "/explore/project-types", "/explore/connections", "/projects", "/projects/abierto", "/about", "/about/get-involved", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
+  for (const route of ["/", "/explore", "/explore/pillars", "/explore/criteria", "/es/criteria", "/explore/project-types", "/explore/connections", "/projects", "/projects/abierto", "/about", "/about/get-involved", "/design-impact-collaborative", "/es/abierto/economia", "/es/abierto/segunda-vida", "/es/abierto/colabora", ...releaseRoutes]) {
     await page.setViewportSize({ width: 390, height: 844 }); await page.goto(route);
     await expect(page.locator("main h1")).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), route).toBeTruthy();

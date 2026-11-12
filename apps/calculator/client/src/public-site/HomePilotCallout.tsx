@@ -8,11 +8,11 @@ export function HomePilotCallout() {
       </div>
 
       <div className="home-pilot-callout">
-        <p className="home-pilot-label">Call for Pilots</p>
-        <h3>Test the Standard.<br />Run a pilot project.</h3>
-        <p>Designers, studios, schools, organizations, clients and design associations: bring a project and help explore how the Standard works in practice.</p>
-        <a className="public-button" href="mailto:info@sdstandard.org?subject=SD%20Standard%20pilot%20interest">
-          Express interest in a pilot →
+        <p className="home-pilot-label">Design Impact Collaborative</p>
+        <h3>Explore. Apply.<br />Share.</h3>
+        <p>Join designers, researchers, educators, students, and organizations exploring sustainable communication design through projects, research, and shared learning.</p>
+        <a className="public-button" href="/design-impact-collaborative#apply">
+          Express your interest →
         </a>
       </div>
     </section>

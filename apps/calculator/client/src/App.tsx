@@ -34,12 +34,12 @@ import SiteChrome from "@/components/SiteChrome";
 import Updates from "@/pages/Updates";
 import UpdateDetail from "@/pages/UpdateDetail";
 
-function Redirect({ to }: { to: string }) {
+function Redirect({ to, preserveSearch = false }: { to: string; preserveSearch?: boolean }) {
   const [, setLocation] = useLocation();
 
   useEffect(() => {
-    setLocation(to, { replace: true });
-  }, [setLocation, to]);
+    setLocation(`${to}${preserveSearch ? window.location.search : ""}${window.location.hash}`, { replace: true });
+  }, [preserveSearch, setLocation, to]);
 
   return null;
 }
@@ -50,8 +50,10 @@ function Router() {
       <Route path="/" component={Index} />
       <Route path="/explore/project-types" component={ProjectTypes} />
       <Route path="/about/get-involved" component={GetInvolved} />
-      <Route path="/research-pilot" component={ResearchPilot} />
-      <Route path="/research-pilot/" component={ResearchPilot} />
+      <Route path="/design-impact-collaborative" component={ResearchPilot} />
+      <Route path="/design-impact-collaborative/" component={ResearchPilot} />
+      <Route path="/research-pilot">{() => <Redirect to="/design-impact-collaborative" preserveSearch />}</Route>
+      <Route path="/research-pilot/">{() => <Redirect to="/design-impact-collaborative" preserveSearch />}</Route>
       <Route path="/es/abierto/economia">{() => <AbiertoInvitation kind="economia" />}</Route>
       <Route path="/es/abierto/segunda-vida">{() => <AbiertoInvitation kind="segunda-vida" />}</Route>
       <Route path="/es/abierto/colabora">{() => <AbiertoInvitation kind="colabora" />}</Route>

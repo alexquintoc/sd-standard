@@ -28,6 +28,16 @@
   status = 301
 
 [[redirects]]
+from = "/research-pilot"
+to = "/design-impact-collaborative"
+status = 301
+
+[[redirects]]
+from = "/research-pilot/"
+to = "/design-impact-collaborative"
+status = 301
+
+[[redirects]]
   from = "/updates"
   to = "/about/updates"
   status = 301
